@@ -1,0 +1,376 @@
+<!DOCTYPE=html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/vg-icons/vgplayer.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+    <link rel="icon" 
+          type="image/ico" 
+          href="/default_skin_theme/static/img/favicon.ico" />
+    
+    <style>
+    
+/*    <!-- Default event view -->*/
+        
+        .vg-event .edit-event-top-input {display: none;}
+        .vg-event .edit-event {padding: 10px 15px 25px 3px; border-radius: 5px;}
+        .vg-event .edit-event-tags-clip-area {display: inline-flex;}
+        .vg-event .edit-event-tags {display: inline; padding-top: 6px; padding-right: 0;}
+        .vg-event .edit-event-right-clip {display: inline; margin-left: 45px;}
+        .vg-event .edit-event .vgl-timing {padding-bottom: 4px;}
+        .vg-event .edit-event:hover {background-color: #3f4042;}
+        .vg-event .edit-description-done-button {display: none;}    
+    
+/*    <!-- Edditing Keywords -->*/
+    
+        .vg-keyword-editting .vg_icon-clip-style-two {display: none;}
+        .vg-keyword-editting .edit-event {padding-bottom: 3px; border: solid #00b9ff; border-width: 0 0 0 6px;}
+        .vg-keyword-editting .edit-event-tags {padding-left: 10px;}
+        .vg-keyword-editting .edit-description-done-button {display: none;}
+        .vg-keyword-editting .edit-event-right-clip {display: none;}
+    
+/*    <!-- Edditing Description -->    */
+    
+        .vg-description-editting .edit-event .vg_icon-clip-style-two {display: none;}
+        .vg-description-editting .edit-event {padding-top: 10px; padding-bottom: 3px; border: solid #00b9ff; border-width: 0 0 0 6px;}
+        .vg-description-editting .edit-event-top-input {display: none;}
+        .vg-description-editting .edit-event .edit-event-tags {padding: 0 0 35px 10px;}
+        .vg-description-editting .edit-event .vg-event-description-input input {padding-right: 8px;} 
+        .vg-description-editting .edit-event-right-clip {display: none;}
+        
+    </style>
+    
+    <title>VG Logging tool</title>
+</head>
+<body class="vgl-magic-background">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-8" style="padding-top:20px;">
+                <iframe width="100%" height="90%" src="https://www.youtube.com/embed/IwfUnkBfdZ4" frameborder="0"
+                        allowfullscreen></iframe>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="keyword-search">
+                    <table class="search-table">
+                        <tr>
+                            <td class="search-input-cell">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Keyword Search">
+                                    <span class="input-group-btn"><button class="btn btn-default vg_icon-search vg_icon-search-style" type="button"></button></span>
+                                </div>
+                            </td>
+                            <td class="search-clear-button-cell">
+                                <div class="input-group">
+                                    <a class="clear-events-button" href=""><span><span class="vg_icon-x"></span><span>Clear Events</span></span></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="dropdown-menu-wrapper">
+                        <table class="dropdown-menu-table">    
+                            <tr>
+                                <td class="dropdown-menu-left-item">
+                                    <div class="dropdown">
+                                        <label>View:</label>
+                                        <button type="button" class="btn btn-labeled btn-sm dropdown-toggle" data-toggle="dropdown">Tape Timecode
+                                            <span class="btn-label btn-label-chevron-down left-item-chevron"><i class="glyphicon glyphicon-chevron-down"></i></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Standard Timecode</a></li>
+                                            <li><a href="#">Frame</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="dropdown-menu-right-item">
+                                    <div class="dropdown">
+                                        <label>Track:</label>
+                                        <button type="button" class="btn btn-labeled btn-sm dropdown-toggle" data-toggle="dropdown">
+                                            Comments<span class="btn-label btn-label-chevron-down right-item-chevron"><i class="glyphicon glyphicon-chevron-down"></i></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Sub-Titling</a></li>
+                                            <li><a href="#">Compliance</a></li>
+                                            <li><a href="#">Commercials</a></li>
+                                            <li><a href="#">Textless Elements</a></li>
+                                            <li><a href="#">Promo</a></li>
+                                            <li><a href="#">Dubbing</a></li>
+                                            <li><a href="#">Comments</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="scrollable">
+                <div class="vgl-form new-event">
+                    <form action="#" method="POST">
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:90%">
+                                    <div class="row-fluid keyword-input">
+                                        <div class="input-group new-keyword-input">
+                                            <input type="text" class="form-control" placeholder="Add Keyword">
+                                            <span id="keywordInput" class="input-group-addon">
+                                                <a href=""><span class="vg_icon-plus"></span></a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="width:10%;">
+                                    <span class="new-keyword-done">
+                                    <a href="">Done</a>
+                                </span>        
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="group-form tags-area">
+                            <div class="new-event-tags">
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Dark<a href=""><span
+                                        class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Knife<a href=""><span
+                                        class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Super<a href=""><span
+                                        class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Hero<a href=""><span
+                                        class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Expectation<a href=""><span
+                                        class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Super Heroes<a href=""><span
+                                        class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Illumination<a href=""><span
+                                        class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Apples<a href=""><span
+                                        class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Exploited<a href=""><span
+                                        class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Classical music<a href=""><span class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Sunshine<a href=""><span
+                                        class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Sunrise<a href=""><span
+                                        class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Many different items<a
+                                        href=""><span class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Cosmic space<a href=""><span
+                                        class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                            </div>
+                        </div>                                    
+                        <div class="description-input">
+                            <input type="text" class="form-control" placeholder="Add Description">
+                        </div>
+                        <div class="row-fluid vgl-timing">
+                            <div class="col-xs-3 time-from"><a href=""><span class="vg-icon vg_icon-in vg_icon-in-style"></span>00:00:00:00</a></div>
+                            <div class="col-xs-3 time-to" ><a href=""><span class="vg-icon vg_icon-out vg_icon-out-style vg_icon-out vg_icon-out-style-style"></span>00:00:00:00</a></div>
+                            <div class="col-xs-2"></div>
+                            <div class="col-xs-2 time-total"><span class="vg-icon vg_icon-clock vg_icon-clock-style"></span>00:00:00:00</div>
+                            <div class="col-xs-2"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="events-list">
+                    <ul class="list-group">
+                        <div class="li-wrapper vg-keyword-editting">
+                            <li class="list-group-item list-event-item">
+                                <div class="vgl-form edit-event">
+                                    <form action="#" method="POST">
+                                        <div>
+                                            <table class="edit-event-top-input">
+                                                <tr>
+                                                    <td style="width:90%;">
+                                                        <div class="row-fluid keyword-input">
+                                                            <div class="input-group edit-event-input">
+                                                                <input type="text" class="form-control" placeholder="Add keyword">
+                                                                <span id="keywordInput" class="input-group-addon">
+                                                                    <a href=""><span class="vg_icon-plus"></span></a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:10%;">
+                                                        <span class="edit-keyword-done">
+                                                            <a href="">Done</a>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div class="row-fluid">
+                                                <div class="edit-event-tags-clip-area">
+                                                    <div class="edit-event-tags col-xs-10">
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword Keyword Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword Keyword Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                    </div>
+                                                    <div class="edit-description-done-button col-xs-2"><a href="">Done</a></div>
+                                                    <div class="edit-event-right-clip">
+                                                        <a href=""><span class="vg_icon-clip vg_icon-clip-style-two"></span></a>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="edit-event-description-input">
+                                                <input type="text" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do">
+                                            </div>
+                                            <div class="row-fluid vgl-timing">
+                                                <div class="col-xs-3 time-from"><a href=""><span class="vg-icon vg_icon-in vg_icon-in-style"></span>00:00:00:00</a></div>
+                                                <div class="col-xs-3 time-to" ><a href=""><span class="vg-icon vg_icon-out vg_icon-out-style vg_icon-out vg_icon-out-style-style"></span>00:00:00:00</a></div>
+                                                <div class="col-xs-2"></div>
+                                                <div class="col-xs-2 time-total"><span class="vg-icon vg_icon-clock vg_icon-clock-style"></span>00:00:00:00</div>
+                                                <div class="col-xs-2"></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="li-wrapper vg-description-editting">
+                            <li class="list-group-item list-event-item">
+                                <div class="vgl-form edit-event">
+                                    <form action="#" method="POST">
+                                        <div>
+                                            <table class="edit-event-top-input">
+                                                <tr>
+                                                    <td style="width:90%;">
+                                                        <div class="row-fluid keyword-input">
+                                                            <div class="input-group edit-event-input">
+                                                                <input type="text" class="form-control" placeholder="Add keyword">
+                                                                <span id="keywordInput" class="input-group-addon">
+                                                                    <a href=""><span class="vg_icon-plus"></span></a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:10%;">
+                                                        <span class="edit-keyword-done">
+                                                            <a href="">Done</a>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div class="row-fluid">
+                                                <div class="edit-event-tags-clip-area">
+                                                    <div class="edit-event-tags col-xs-10">
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword Keyword Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword Keyword Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                    </div>
+                                                    <div class="edit-description-done-button col-xs-2"><a href="">Done</a></div>
+                                                    <div class="edit-event-right-clip">
+                                                        <a href=""><span class="vg_icon-clip vg_icon-clip-style-two"></span></a>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="edit-event-description-input">
+                                                <input type="text" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do">
+                                            </div>
+                                            <div class="row-fluid vgl-timing">
+                                                <div class="col-xs-3 time-from"><a href=""><span class="vg-icon vg_icon-in vg_icon-in-style"></span>00:00:00:00</a></div>
+                                                <div class="col-xs-3 time-to" ><a href=""><span class="vg-icon vg_icon-out vg_icon-out-style vg_icon-out vg_icon-out-style-style"></span>00:00:00:00</a></div>
+                                                <div class="col-xs-2"></div>
+                                                <div class="col-xs-2 time-total"><span class="vg-icon vg_icon-clock vg_icon-clock-style"></span>00:00:00:00</div>
+                                                <div class="col-xs-2"></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="li-wrapper vg-event">
+                            <li class="list-group-item list-event-item">
+                                <div class="vgl-form edit-event">
+                                    <form action="#" method="POST">
+                                        <div>
+                                            <table class="edit-event-top-input">
+                                                <tr>
+                                                    <td style="width:90%;">
+                                                        <div class="row-fluid keyword-input">
+                                                            <div class="input-group edit-event-input">
+                                                                <input type="text" class="form-control" placeholder="Add keyword">
+                                                                <span id="keywordInput" class="input-group-addon">
+                                                                    <a href=""><span class="vg_icon-plus"></span></a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:10%;">
+                                                        <span class="edit-keyword-done">
+                                                            <a href="">Done</a>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div class="row-fluid">
+                                                <div class="edit-event-tags-clip-area">
+                                                    <div class="edit-event-tags col-xs-10">
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword Keyword Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword Keyword Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                        <span class="vgl-tag-element"><span class="vgl-tag-sub-element"><span class="vgl-tag-name">Keyword<a href=""><span
+                                                                class="vg_icon-x vg_icon-x-style"></span></a></span></span></span>
+                                                    </div>
+                                                    <div class="edit-description-done-button col-xs-2"><a href="">Done</a></div>
+                                                    <div class="edit-event-right-clip">
+                                                        <a href=""><span class="vg_icon-clip vg_icon-clip-style-two"></span></a>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="edit-event-description-input">
+                                                <input type="text" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do">
+                                            </div>
+                                            <div class="row-fluid vgl-timing">
+                                                <div class="col-xs-3 time-from"><a href=""><span class="vg-icon vg_icon-in vg_icon-in-style"></span>00:00:00:00</a></div>
+                                                <div class="col-xs-3 time-to" ><a href=""><span class="vg-icon vg_icon-out vg_icon-out-style vg_icon-out vg_icon-out-style-style"></span>00:00:00:00</a></div>
+                                                <div class="col-xs-2"></div>
+                                                <div class="col-xs-2 time-total"><span class="vg-icon vg_icon-clock vg_icon-clock-style"></span>00:00:00:00</div>
+                                                <div class="col-xs-2"></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
