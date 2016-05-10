@@ -6,6 +6,14 @@
     background: linear-gradient(#3b3d3f, #1e1e1f);
 }
 
+.vg-magic-left {
+    width: 65%;
+    display: inline;
+    padding-top: 20px;
+    float: left;
+    padding-right: 10px;
+}
+
 .keyword-search {
     padding-bottom: 15px;
 }
@@ -143,8 +151,18 @@
     color: #f4f4f4;
 }
 
-.resizible {
-    border-left: 100px solid white;
+.vg-magic-resizer {
+    display: -webkit-inline-box;
+    width: 5px;
+    height: 100%;
+    background-color: red;
+    cursor: col-resize;
+}
+
+.vg-magic-right {
+    width: 34%;
+    float: right;
+    display: inline;
 }
 
 .btn-label-chevron-down-style {

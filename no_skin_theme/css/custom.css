@@ -1,0 +1,116 @@
+.vg-add-edit-tracks {
+    padding-top: 10%;
+}
+
+.vg-pipka {
+    position: relative;
+}
+
+.vg-triangle-top-right {
+	width: 0;
+	height: 0;
+	border-top: 35px solid limegreen;
+	border-left: 35px solid transparent;
+    float: right;
+    position: relative;
+}
+
+.vg-close-window {
+    position: absolute;
+    right: 0;
+    padding-right: 3px;
+}
+
+.vg-close-window a {
+    text-decoration: none;
+}
+
+.vg-close-window .vg_icon-x {
+    color: black;
+}
+
+.vg-close-window a:hover {
+    color: black;
+}
+
+.vg-add-edit-tracks .container {
+    width: 40%;
+    border: 1px solid;
+    padding-bottom: 15px;
+    padding-right: 0;
+}
+
+.vg-add-edit-tracks-table-name {
+    text-align: center;
+    font-size: 18px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.vg-add-edit-tracks-table {
+    padding-right: 15px;
+}
+
+.vg-add-edit-tracks-table tbody {
+    height: 150px;
+    overflow-y: scroll;
+}
+
+.vg-add-edit-tracks-table table th, .table td { 
+    border-top: none !important;
+ }
+
+.vg-add-edit-tracks-table table thead tr th {
+    border-bottom: none !important;
+}
+
+.vg-add-edit-tracks-table .vg_icon-edit {
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.vg-add-edit-tracks-table tbody tr td a {
+    text-decoration: none;
+}
+
+.vg-add-edit-tracks-table .vg_icon-x {
+    font-size: 16px;
+    font-weight: 900;
+    padding-left: 10px;
+}
+
+.vg-new-track-input {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid black;
+}
+
+.vg-new-track-input input {
+    border-right: 0;
+    box-shadow: none;
+}
+
+.vg-new-track-input .input-group-addon {
+    background: none;
+}
+
+.vg-new-track-input .input-group-addon a {
+    text-decoration: none;
+}
+
+.vg-add-edit-tracks-cansel-save {
+    float: right;
+    padding-top: 15px;
+}
+
+.vg-add-edit-tracks-cansel-save button.btn.btn-link {
+    text-decoration: none;
+}
+
+.save-btn-style {
+    color: limegreen;
+    border-color: limegreen;
+    background: inherit;
+    padding-right: 55px;
+    padding-left: 55px;
+}
