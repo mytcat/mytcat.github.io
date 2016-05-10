@@ -9,7 +9,7 @@
 .vg-triangle-top-right {
 	width: 0;
 	height: 0;
-	border-top: 35px solid limegreen;
+	border-top: 35px solid #d2fc66;
 	border-left: 35px solid transparent;
     float: right;
     position: relative;
@@ -108,8 +108,8 @@
 }
 
 .save-btn-style {
-    color: limegreen;
-    border-color: limegreen;
+    color: #d2fc66;
+    border-color: #d2fc66;
     background: inherit;
     padding-right: 55px;
     padding-left: 55px;

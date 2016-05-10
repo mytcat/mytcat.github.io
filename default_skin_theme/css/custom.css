@@ -555,3 +555,187 @@ span.input-group-addon a {
     padding: 0px 5px 3px 5px;
     margin-right: -5px;
 }
+
+
+/* Add/Edit Tracks Styles */
+
+
+.vg-add-edit-tracks {
+    padding-top: 10%;
+}
+
+.vg-add-edit-tracks .container {
+    background-color: #2E2F33;
+}
+
+.vg-pipka {
+    position: relative;
+}
+
+.vg-triangle-top-right {
+	width: 0;
+	height: 0;
+	border-top: 35px solid #00FFA3;
+	border-left: 35px solid transparent;
+    float: right;
+    position: relative;
+}
+
+.vg-close-window {
+    position: absolute;
+    right: 0;
+    padding-right: 3px;
+}
+
+.vg-close-window a {
+    text-decoration: none;
+}
+
+.vg-close-window .vg_icon-x {
+    color: black;
+}
+
+.vg-close-window a:hover {
+    color: black;
+}
+
+.vg-add-edit-tracks .container {
+    width: 40%;
+    border: 1px solid;
+    padding-bottom: 15px;
+    padding-right: 0;
+}
+
+.vg-add-edit-tracks-table-name {
+    text-align: center;
+    font-size: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #f4f4f4;
+}
+
+.vg-add-edit-tracks-table {
+    padding-right: 15px;
+}
+
+.vg-add-edit-tracks-table tbody {
+    height: 150px;
+    overflow-y: scroll;
+    background-color: #27282C;
+}
+
+.vg-add-edit-tracks-table th {
+    color: #999999;
+    font-size: 13px;
+    background-color: #222327;
+}
+
+.vg-add-edit-tracks-table #trackId {
+    color: #f4f4f4;
+    font-size: 13px;
+}
+
+.vg-add-edit-tracks-table #logId {
+    color: #7B7B7D;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.vg-add-edit-tracks-table #timeId {
+    color: #7B7B7D;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.vg-add-edit-tracks-table #defaultItem {
+    color: #4F5155;
+}
+
+.vg-add-edit-tracks-table table th, .table td { 
+    border-top: none !important;
+ }
+
+.vg-add-edit-tracks-table table thead tr th {
+    border-bottom: none !important;
+}
+
+.vg-add-edit-tracks-table .vg_icon-edit {
+    font-size: 16px;
+    color: #4F5155;
+}
+
+.vg-add-edit-tracks-table tbody tr td a {
+    text-decoration: none;
+}
+
+.vg-add-edit-tracks-table .vg_icon-x {
+    font-size: 16px;
+    font-weight: 900;
+    padding-left: 15px;
+    color: #E7116B;
+}
+
+.vg-new-track-input {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid black;
+    color: #f4f4f4;
+}
+
+.vg-new-track-input input {
+    outline: none;
+    box-shadow: none !important;
+    border: solid #232425;
+    border-width: 2px 0 0 2px;
+    background-color: #27282C;
+    color: #65676A;
+}
+
+.vg-new-track-input input:focus {
+    outline: none;
+    border: solid #232425;
+    border-width: 2px 0 0 2px;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.vg-new-track-input .input-group-addon {
+    background: #27282C;
+    border: solid #232425;
+    border-width: 2px 0 0 0;
+}
+
+.vg-new-track-input .input-group-addon a {
+    text-decoration: none;
+    color: #00b9ff;
+}
+
+.vg-add-edit-tracks-cansel-save {
+    float: right;
+    color: #00FFA3;
+    padding-top: 15px;
+}
+
+.vg-add-edit-tracks-cansel-save button.btn.btn-link {
+    text-decoration: none;
+    color: #00b9ff;
+    outline: none;
+}
+
+.vg-add-edit-tracks-cansel-save button.btn.save-btn-style {
+    color: #00FFA3;
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+
+.save-btn-style {
+    color: #00FFA3;
+    border-color: #00FFA3;
+    background: inherit;
+    padding-right: 55px;
+    padding-left: 55px;
+}
