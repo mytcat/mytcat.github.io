@@ -618,6 +618,15 @@ span.input-group-addon a {
     padding-right: 15px;
 }
 
+.vg-add-edit-tracks-table .table-wrapper {
+    overflow-y: scroll;
+    height: 185px;
+}
+
+.vg-add-edit-tracks-table table {
+    margin-bottom: 0;
+}
+
 .vg-add-edit-tracks-table tbody {
     height: 150px;
     overflow-y: scroll;
@@ -680,6 +689,7 @@ span.input-group-addon a {
     padding-bottom: 30px;
     border-bottom: 1px solid black;
     color: #f4f4f4;
+    font-size: 13px;
 }
 
 .vg-new-track-input input {
@@ -688,7 +698,8 @@ span.input-group-addon a {
     border: solid #232425;
     border-width: 2px 0 0 2px;
     background-color: #27282C;
-    color: #65676A;
+    font-size: 13px;
+    color: #f4f4f4;
 }
 
 .vg-new-track-input input:focus {
