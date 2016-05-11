@@ -1,3 +1,5 @@
+/* Logging Tool Styles */
+
 .vgl-magic-background {
     background: #3b3d3f;
     background: -webkit-linear-gradient(#3b3d3f, #1e1e1f);
@@ -99,6 +101,7 @@
 .dropdown-menu-left-item {
     width: 50%;
     white-space: nowrap;
+    padding-right: 6px;
 }
 
 .dropdown-menu-left-item label {
@@ -155,12 +158,17 @@
     display: -webkit-inline-box;
     width: 5px;
     height: 100%;
-    background-color: red;
     cursor: col-resize;
+    background: #3b3d3f;
+    background: -webkit-linear-gradient(#3b3d3f, #1e1e1f);
+    background: -o-linear-gradient(#3b3d3f, #1e1e1f);
+    background: -moz-linear-gradient(#3b3d3f, #1e1e1f);
+    background: linear-gradient(#3b3d3f, #1e1e1f);
 }
 
 .vg-magic-right {
     width: 34%;
+    min-width: 350px;
     float: right;
     display: inline;
 }
@@ -182,7 +190,7 @@
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 5px;
     border-left-width: 6px;
-    border-left-color: #b6f832;
+    border-left-color: #1FF396;
     min-height: 60px;
 }
 
@@ -193,7 +201,6 @@
 .edit-event {
     padding-top: 8px;
     min-width: 340px;
-    background: rgba(255,255,255,.1);
     border-radius: 5px;
     min-height: 60px;
 }
@@ -408,11 +415,26 @@
     font-weight: 900 !important;
 }
 
+.vg_icon-clip-style-two:hover {
+    color: #337ab7;
+}
+
+.vg_icon-clip-style-two:active {
+    color: #f4f4f4;
+}
+
 .vg_icon-x-style {
     padding: 4px 1px 2px 8px;
-    color: #cccccc;
+    color: #989898;
     font-weight: 100;
     display: none;
+}
+
+.vg_icon-x-style-two {
+    padding-left: 4px;
+    color: #989898;
+    font-size: 15px;
+    font-weight: 100;
 }
 
 .vg_icon-in-style {
@@ -526,24 +548,56 @@ span.input-group-addon a {
 .new-keyword-input input::-moz-placeholder { color: #999999; }
 .new-keyword-input input::-ms-input-placeholder { color: #999999; }
 
-.new-keyword-done a {
-    padding-right: 5px;
-    color: #b6f832;
+.new-keyword-save button {
+    color: #1FF396;
+    border-color: #1FF396;
+    background: inherit;
+    padding-right: 12px;
+    margin-right: 5px;
+    margin-bottom: 2px;
 }
 
-.new-keyword-done a:hover {
-    color: #b6f832;
-    text-decoration: none;
+.new-keyword-save button:hover {
+    background: inherit;
+    color: #1FF396;
+    border-color: #1FF396;
 }
 
-.edit-keyword-done a {
-    padding-right: 5px;
-    color: #21bafd;
+.new-keyword-save button:focus {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
-.edit-keyword-done a:hover {
-    color: #21bafd;
-    text-decoration: none;
+.new-keyword-save button:active {
+    background: inherit !important;
+    color: #1FF396 !important;
+    border-color: #1FF396 !important;
+}
+
+.edit-keyword-save button {
+    color: #00b9ff;
+    border-color: #00b9ff;
+    background: inherit;
+    padding-right: 12px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+
+.edit-keyword-save button:hover {
+    background: inherit;
+    color: #00b9ff;
+    border-color: #00b9ff;
+}
+
+.edit-keyword-save button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.edit-keyword-save button:active {
+    background: inherit !important;
+    color: #00b9ff !important;
+    border-color: #00b9ff !important;
 }
 
 .add-keyword {
@@ -556,6 +610,9 @@ span.input-group-addon a {
     margin-right: -5px;
 }
 
+.edit-event-tags-clip-area .edit-event-right-clip a {
+    text-decoration: none;
+}
 
 /* Add/Edit Tracks Styles */
 
