@@ -8,7 +8,6 @@
                 height: 50px;
                 display: inline-flex;
                 align-items: center;
-/*                border: 1px solid red;*/
             }
             .zoom-pipka-out {
                 width: 10px;
@@ -28,11 +27,9 @@
                 min-width: 200px;
                 min-height: 20px;
             }
-            .zoom-line {
-                width: 100%;
-                height: 6px;
-                background: black;
-                margin: 2px 0 2px 0;
+            .zoomer {
+                display: flex;
+                padding-top: 2px;
             }
             .container-items * {
                 width: 3px;
@@ -55,9 +52,53 @@
                 background: #f4f4f4;
                 visibility: hidden;
             }
+            input[type="range"] {
+                -webkit-appearance: none;
+                width: 100%;
+                height: 6px;
+                margin: 0;
+                background: #000000;
+                cursor: pointer;
+                padding: 0;
+            }
+            input[type="range"]::-moz-range-track {
+                width: 100%;
+                height: 6px;
+                padding: 0;
+                background: #000000;
+                cursor: pointer;
+            }
+            input[type="range"]::-moz-focus-outer {
+                border: 0;
+            }
+            input[type=range]:focus {
+                box-shadow: none;
+                outline: none;
+            }
+            input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height: 22px;
+                width: 3px;
+                background: #ffffff;
+                cursor: pointer;
+            }
+            input[type=range]::-moz-range-thumb {
+                height: 22px;
+                width: 3px;
+                background: #ffffff;
+                border: 0;
+                border-radius: 0;
+                cursor: pointer;
+            }
+            input[type=range]::-ms-thumb {
+                height: 22px;
+                width: 3px;
+                background: #ffffff;
+                cursor: pointer;
+            }   
         </style>
     </head>
-    <body>
+    <body style="background: #1D2024;">
         <div class="zoom-pipka">
             <div class="zoom-pipka-out"></div>
             <div class="container">
@@ -88,7 +129,9 @@
                             <div class="three"></div>
                         </div>
                     </div>
-                    <div class="zoom-line"></div>
+                    <div class="zoomer">
+                        <input type="range">
+                    </div>
             </div>
             <div class="zoom-pipka-in"></div>
         </div>
