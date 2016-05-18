@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        body {
+            background: #1D2024;
+            font-family: sans-serif;
+        }
+        .vg_events ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .vg_event {
+            position: relative;
+        }
+        .vg_event__data {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            bottom: 100%;
+            width: 300px;
+            height: 70px;
+            background: #000000;
+            color: white;
+            font-size: 14px;
+        }
+        .data #dataKeyword {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            padding-left: 10px;
+            cursor: pointer;
+        }
+        .data #dataKeyword > span:hover {
+            border: 1px solid #999999;
+            border-radius: 2px;
+            padding: 1px 130px 1px 1px;
+        }
+        .data #deleteTimecodeData {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #000000;
+            background: #00B9FF;
+            padding: 2px 5px 2px 3px;
+            margin-top: 15px;
+            margin-right: 10px;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        .data #deleteTimecodeData > span:hover {
+            padding: 1px;
+        }
+        .data #startEndTimecode {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            color: #cccccc;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            cursor: pointer;
+        }
+        .data #startEndTimecode > span:hover {
+            border: 1px solid #999999;
+            border-radius: 2px;
+            padding: 1px;
+        }
+        .data #duration {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: #cccccc;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            cursor: pointer;
+        }
+        .data #duration > span:hover {
+            border: 1px solid #999999;
+            border-radius: 2px;
+            padding: 1px;
+        }
+        .filmstrip {
+            width: 150px;
+            height: 48px;
+            left: 30%;
+            background: green;
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+        li .vg_event:hover .vg_event__data {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body style="padding-top: 50px;">
+	<div class="vg_events active">
+		<ul>
+			<li>
+				<div class="vg_event" style="left:0%;">
+					<div class="vg_event__data">
+							<div class="data">
+								<div class="top-data">
+                                    <span id="dataKeyword"><span>Black</span></span>
+                                    <span id="deleteTimecodeData"><span>DELETE</span></span>
+                                </div>
+                                <div class="bottom-data">
+                                    <span id="startEndTimecode"><span>00:58:54.0 - 00:59:57.23</span></span>
+                                    <span id="duration"><span>&#8596; 00:58:54.00</span></span>
+                                </div>
+							</div>
+					</div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:25px;"></div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="vg_event" style="left: 2%">
+					<div class="vg_event__data">
+							<div class="data">
+								<div class="top-data">
+                                    <span id="dataKeyword"><span>Black</span></span>
+                                    <span id="deleteTimecodeData"><span>DELETE</span></span>
+                                </div>
+                                <div class="bottom-data">
+                                    <span id="startEndTimecode"><span>00:58:54.0 - 00:59:57.23</span></span>
+                                    <span id="duration"><span>&#8596; 00:58:54.00</span></span>
+                                </div>
+							</div>
+					</div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width: 55px;"></div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="vg_event" style="left: 6%">
+					<div class="vg_event__data">
+							<div class="data">
+                                <div class="top-data">
+                                    <span id="dataKeyword"><span>Black</span></span>
+                                    <span id="deleteTimecodeData"><span>DELETE</span></span>
+                                </div>
+                                <div class="bottom-data">
+                                    <span id="startEndTimecode"><span>00:58:54.0 - 00:59:57.23</span></span>
+                                    <span id="duration"><span>&#8596; 00:58:54.00</span></span>
+                                </div>
+							</div>
+					</div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:25px;"></div>
+					</div>
+				</div>
+			</li>
+            <li>
+				<div class="vg_event" style="left: 8%">
+					<div class="vg_event__data">
+							<div class="data">
+                                <div class="top-data">
+                                    <span id="dataKeyword"><span>Black</span></span>
+                                    <span id="deleteTimecodeData"><span>DELETE</span></span>
+                                </div>
+                                <div class="bottom-data">
+                                    <span id="startEndTimecode"><span>00:58:54.0 - 00:59:57.23</span></span>
+                                    <span id="duration"><span>&#8596; 00:58:54.00</span></span>
+                                </div>
+							</div>
+					</div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:5px;"></div>
+					</div>
+				</div>
+			</li>
+            <li>
+				<div class="vg_event" style="left:8.2%;">
+					<div class="vg_event__data">
+							<div class="data">
+								<div class="top-data">
+                                    <span id="dataKeyword"><span>Black</span></span>
+                                    <span id="deleteTimecodeData"><span>DELETE</span></span>
+                                </div>
+                                <div class="bottom-data">
+                                    <span id="startEndTimecode"><span>00:58:54.0 - 00:59:57.23</span></span>
+                                    <span id="duration"><span>&#8596; 00:58:54.00</span></span>
+                                </div>
+							</div>
+					</div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:4px;"></div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="vg_event" style="left: 8.3%">
+					<div class="vg_event__data">
+							<div class="data">
+								<div class="top-data">
+                                    <span id="dataKeyword"><span>Black</span></span>
+                                    <span id="deleteTimecodeData"><span>DELETE</span></span>
+                                </div>
+                                <div class="bottom-data">
+                                    <span id="startEndTimecode"><span>00:58:54.0 - 00:59:57.23</span></span>
+                                    <span id="duration"><span>&#8596; 00:58:54.00</span></span>
+                                </div>
+							</div>
+					</div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width: 4px;"></div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="vg_event" style="left: 8.5%">
+					<div class="vg_event__data">
+							<div class="data">
+                                <div class="top-data">
+                                    <span id="dataKeyword"><span>Black</span></span>
+                                    <span id="deleteTimecodeData"><span>DELETE</span></span>
+                                </div>
+                                <div class="bottom-data">
+                                    <span id="startEndTimecode"><span>00:58:54.0 - 00:59:57.23</span></span>
+                                    <span id="duration"><span>&#8596; 00:58:54.00</span></span>
+                                </div>
+							</div>
+					</div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:1215px;"></div>
+					</div>
+				</div>
+			</li>
+            <li>
+				<div class="vg_event" style="left: 94%">
+					<div class="vg_event__data">
+							<div class="data">
+                                <div class="top-data">
+                                    <span id="dataKeyword"><span>Black</span></span>
+                                    <span id="deleteTimecodeData"><span>DELETE</span></span>
+                                </div>
+                                <div class="bottom-data">
+                                    <span id="startEndTimecode"><span>00:58:54.0 - 00:59:57.23</span></span>
+                                    <span id="duration"><span>&#8596; 00:58:54.00</span></span>
+                                </div>
+							</div>
+					</div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:5px;"></div>
+					</div>
+				</div>
+			</li>
+            <li>
+				<div class="vg_event" style="left:94.6%;">
+					<div class="vg_event__data">
+							<div class="data">
+								<div class="top-data">
+                                    <span id="dataKeyword"><span>Black</span></span>
+                                    <span id="deleteTimecodeData"><span>DELETE</span></span>
+                                </div>
+                                <div class="bottom-data">
+                                    <span id="startEndTimecode"><span>00:58:54.0 - 00:59:57.23</span></span>
+                                    <span id="duration"><span>&#8596; 00:58:54.00</span></span>
+                                </div>
+							</div>
+					</div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:20px;"></div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="vg_event" style="left: 96.2%">
+					<div class="vg_event__data">
+							<div class="data">
+								<div class="top-data">
+                                    <span id="dataKeyword"><span>Black</span></span>
+                                    <span id="deleteTimecodeData"><span>DELETE</span></span>
+                                </div>
+                                <div class="bottom-data">
+                                    <span id="startEndTimecode"><span>00:58:54.0 - 00:59:57.23</span></span>
+                                    <span id="duration"><span>&#8596; 00:58:54.00</span></span>
+                                </div>
+							</div>
+					</div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width: 5px;"></div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="vg_event" style="left: 96.8%">
+					<div class="vg_event__data">
+							<div class="data">
+                                <div class="top-data">
+                                    <span id="dataKeyword"><span>Black</span></span>
+                                    <span id="deleteTimecodeData"><span>DELETE</span></span>
+                                </div>
+                                <div class="bottom-data">
+                                    <span id="startEndTimecode"><span>00:58:54.0 - 00:59:57.23</span></span>
+                                    <span id="duration"><span>&#8596; 00:58:54.00</span></span>
+                                </div>
+							</div>
+					</div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:25px;"></div>
+					</div>
+				</div>
+			</li>
+            <li>
+				<div class="vg_event" style="left: 98%">
+					<div class="vg_event__data">
+							<div class="data">
+                                <div class="top-data">
+                                    <span id="dataKeyword"><span>Black</span></span>
+                                    <span id="deleteTimecodeData"><span>DELETE</span></span>
+                                </div>
+                                <div class="bottom-data">
+                                    <span id="startEndTimecode"><span>00:58:54.0 - 00:59:57.23</span></span>
+                                    <span id="duration"><span>&#8596; 00:58:54.00</span></span>
+                                </div>
+							</div>
+					</div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:20px;"></div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
