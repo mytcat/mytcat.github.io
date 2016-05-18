@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body {
+                background: #1D2024;
+                font-family: sans-serif;
+            }
+            .main-dropdown-menu-name {
+                color: #f4f4f4;
+                padding-right: 5px; 
+            }
+            .selected-track {
+                display: flex;
+                cursor: pointer;
+            }
+            .tracks-name-header {
+                color: #cccccc;
+            }
+            .vg-magic-dropdown.active .triangle {
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid #50C2FF;
+                margin-top: 7px;
+                margin-right: 2px;
+            }
+            .vg-magic-dropdown.active .dropdown-menu-content {
+                display: block;
+            }
+            .vg-tracks-dropdown-menu {
+                display: flex;
+            }
+            .triangle {
+                width: 0;
+                height: 0;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid #50C2FF;
+                margin-top: 3px;
+                margin-right: 2px;
+            }
+            .add-new-track {
+                display: inline-flex;
+                padding: 5px 0 0 5px;
+            }
+            .create-new-track {
+                color: #50C2FF;
+            }
+            .dropdown-menu-content {
+                display: none;
+                color: #f4f4f4;
+                font-size: 12px;
+                width: 165px;
+                height: 250px;
+                line-height: 1.6;
+                background: #050607;
+                border-radius: 2px;
+                overflow-y: scroll;
+            }
+            .plus {
+                height: 20px;
+                width: 20px;
+                text-align: center;
+                line-height: 20px;
+                font-size: 20px;
+                font-weight: bold;
+                color: black;
+                background: #50C2FF;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+            .track-name-wrapper {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: 100px;
+            }
+            .track-name {
+                cursor: pointer;
+            }
+            .track-name.active {
+                background: #f4f4f4;
+                color: #000000;
+                padding-left: 3px;
+                padding-right: 3px;
+                border-radius: 1px;
+            }
+            .delete {
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 11px;
+                color: #000000;
+                background: #50C2FF;
+                border-radius: 1px;
+                float: right;
+                display: none;
+                cursor: pointer;
+                padding: 0 5px 0 3px;
+                margin-right: 10px;
+            }
+            ul {
+                padding-left: 10px;
+            }
+            ul li {
+                position: relative;
+                list-style: none;
+                width: 100%;
+            }
+            ul .li-item:hover .delete {
+                display: flex;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="vg-tracks-dropdown-menu">
+            <div class="main-dropdown-menu-name">TRACKS</div>
+            <div class="vg-magic-dropdown active"><!--.active - open dropdown triangle-down??
+                        no .active - close dropdown triangle-right
+                        -->
+                
+                <div class="selected-track">
+                    <div class="triangle"></div><div class="tracks-name-header">Master</div>
+                </div>
+                <div class="dropdown-menu-content">
+                    <div class="add-new-track"><div class="plus">+</div><div class="create-new-track">CREATE NEW TRACK</div></div>
+                    <ul>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name active">Master</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Caption</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Subtitle</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">QC Report</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">QC Problem</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Rejection Issue</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Logo</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Mains and Ends</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">On Screen Text</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Preview</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Textless Matching</span></div><span class="delete">DELETE</span></li>
+                        
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Subtitle</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">QC Report</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">QC Problem</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Rejection Issue</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Logo</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Mains and Ends</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">On Screen Text</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Preview</span></div><span class="delete">DELETE</span></li>
+                        <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Textless Matching</span></div><span class="delete">DELETE</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

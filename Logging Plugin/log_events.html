@@ -4,160 +4,159 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
-	body {
-		background: #1D2024;
-	}
-	.vg_events ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-	.vg_event {
-		background: #1D2024;
-		position: relative;
-		display: flex;
-	}
-	.vg_event:hover>.vg_event__data {
-		display: block;
-		background: black;
-		z-index: 3;
-		background: rgba(0,0,0,0.3);
-	}
-	.vg_event:hover .filmstrip {
-		/*background: rgba(0, 255, 0, 0.4);*/
-		background: #17394C;
-		z-index: 2;
-	}
-	.data {
-		color: white;
-		padding-top: 15px;
-		font-size: 14px;
-	}
-	.data #startEndTimecode {
-		padding-left: 15px;
-	}
-	.data #startEndTimecode, #duration {
-		color: #cccccc;
-	}
-	.data #duration, #dataKeyword {
-		padding-left: 35px;
-	}
-	.vg_events .data #deleteTimecodeData {
-		display: none;
-	}
-	.vg_event__data {
-		background: #1D2024;
-		display: none;		
-		position: absolute;
-		z-index: 1;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-	}
-	.vg_event__filmstrip {
-		flex: 2;
-		height: 50px;
-		position: relative;
-	}
-	.filmstrip {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 30%;
-		width: 150px;
-		background: green;
-		border: 1px solid white;
-		border-radius: 2px;
-	}
-	.vg_events.active .vg_event {
-		border: 1px solid black;
-	}
-	.vg_events.active .data #startEndTimecode > span {
-		bottom: 0;
-		left: 0;
-		position: absolute;
-		padding-left: 5px;
-	}
-	.vg_events.active:hover #startEndTimecode > span:hover {
-		cursor: pointer;
-		border: 1px solid #999999;
-		border-radius: 2px;
-		padding: 1px;
-		padding-left: 5px;
-	}
-	.vg_events.active .data {
-		position: relative;
-    	height: 35px;
-	}
-	.vg_events.active .data #duration {
-		bottom: 0;
-		right: 0;
-		position: absolute;
-		padding-bottom: 1px;
-		padding-right: 70px;
-	}
-	.vg_events.active .data #duration > span:hover {
-		cursor: pointer;
-		border: 1px solid #999999;
-		border-radius: 2px;
-		padding: 1px;
-	}
-	.vg_events.active .data #dataKeyword {
-		top: 0;
-		left: 0;
-		position: absolute;
-		padding-left: 5px;
-	}
-	.vg_events.active .data #dataKeyword > span {
-		padding-right: 130px;
-		padding-left: 5px;
-	}
-	.vg_events.active .data #dataKeyword:hover {
-		cursor: pointer;
-		border: 1px solid #999999;
-		border-radius: 1px;
-		padding: 1px;
-	}
-	.vg_events.active .data #deleteTimecodeData {
-		display: flex;
-		top: 0;
-		right: 0;
-		position: absolute;
-		padding-top: 1px;
-		padding-right: 70px;
-	}
-	.vg_events.active .data #deleteTimecodeData span {
-		background: #00B9FF;
-		padding: 1px;
-		border-radius: 2px;
-		color: #000000;
-	}
-	.vg_events.active .data #deleteTimecodeData > span:hover {
-		cursor: pointer;
-		padding: 2px;
-	}
-	.vg_events.active .vg_event:hover .vg_event__data {
-		background: #666666;
-	}
-	.vg_events.active .vg_event:hover .vg_event__filmstrip {
-		background: #666666;
-	}
-	.vg_events.active:hover .filmstrip {
-		background: green;
-	}
-	.vg_events.active .filmstrip {
-		z-index: 1;
-	}
-	.vg_events.active .vg_event__data {
-		display: block;
-		position: static;
-		flex: 1;
-		width: 300px;
-		height: inherit;
-	}
-</style>
-
+        body {
+            background: #1D2024;
+            font-family: sans-serif;
+        }
+        .vg_events ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .vg_event {
+            background: #1D2024;
+            position: relative;
+            display: flex;
+        }
+        .vg_event:hover>.vg_event__data {
+            display: block;
+            background: black;
+            z-index: 3;
+            background: rgba(0,0,0,0.3);
+        }
+        .vg_event:hover .filmstrip {
+            background: #17394C;
+            z-index: 2;
+        }
+        .data {
+            color: white;
+            padding-top: 15px;
+            font-size: 14px;
+        }
+        .data #startEndTimecode {
+            padding-left: 15px;
+        }
+        .data #startEndTimecode, #duration {
+            color: #cccccc;
+        }
+        .data #duration, #dataKeyword {
+            padding-left: 35px;
+        }
+        .vg_events .data #deleteTimecodeData {
+            display: none;
+        }
+        .vg_event__data {
+            background: #1D2024;
+            display: none;		
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .vg_event__filmstrip {
+            flex: 2;
+            height: 50px;
+            position: relative;
+        }
+        .filmstrip {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 30%;
+            width: 150px;
+            background: green;
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+        .vg_events.active .vg_event {
+            border: 1px solid black;
+        }
+        .vg_events.active .data #startEndTimecode > span {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            padding-left: 5px;
+        }
+        .vg_events.active:hover #startEndTimecode > span:hover {
+            cursor: pointer;
+            border: 1px solid #999999;
+            border-radius: 2px;
+            padding: 1px;
+            padding-left: 5px;
+        }
+        .vg_events.active .data {
+            position: relative;
+            height: 35px;
+        }
+        .vg_events.active .data #duration {
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            padding-bottom: 1px;
+            padding-right: 70px;
+        }
+        .vg_events.active .data #duration > span:hover {
+            cursor: pointer;
+            border: 1px solid #999999;
+            border-radius: 2px;
+            padding: 1px;
+        }
+        .vg_events.active .data #dataKeyword {
+            top: 0;
+            left: 0;
+            position: absolute;
+            padding-left: 5px;
+        }
+        .vg_events.active .data #dataKeyword > span {
+            padding-right: 130px;
+            padding-left: 5px;
+        }
+        .vg_events.active .data #dataKeyword:hover {
+            cursor: pointer;
+            border: 1px solid #999999;
+            border-radius: 1px;
+            padding: 1px;
+        }
+        .vg_events.active .data #deleteTimecodeData {
+            display: flex;
+            top: 0;
+            right: 0;
+            position: absolute;
+            padding-top: 1px;
+            padding-right: 70px;
+        }
+        .vg_events.active .data #deleteTimecodeData span {
+            background: #00B9FF;
+            padding: 1px;
+            border-radius: 2px;
+            color: #000000;
+        }
+        .vg_events.active .data #deleteTimecodeData > span:hover {
+            cursor: pointer;
+            padding: 2px;
+        }
+        .vg_events.active .vg_event:hover .vg_event__data {
+            background: #666666;
+        }
+        .vg_events.active .vg_event:hover .vg_event__filmstrip {
+            background: #666666;
+        }
+        .vg_events.active:hover .filmstrip {
+            background: green;
+        }
+        .vg_events.active .filmstrip {
+            z-index: 1;
+        }
+        .vg_events.active .vg_event__data {
+            display: block;
+            position: static;
+            flex: 1;
+            width: 300px;
+            height: inherit;
+        }
+    </style>
 </head>
 <body>
 	<div class="vg_events active">
