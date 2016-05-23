@@ -95,6 +95,9 @@
                 border-radius: 2px;
                 overflow-y: scroll;
             }
+            .vg-import-track-container {
+                cursor: pointer;
+            }
             .plus {
                 height: 20px;
                 width: 20px;
@@ -105,7 +108,6 @@
                 color: black;
                 background: #50C2FF;
                 margin-right: 5px;
-                cursor: pointer;
             }
             .track-name-wrapper {
                 white-space: nowrap;
@@ -167,7 +169,9 @@
                     <div class="triangle"></div><div class="tracks-name-header">Master</div>
                 </div>
                 <div class="dropdown-menu-content">
-                    <div class="add-new-track"><div class="plus">+</div><div class="import-new-track">IMPORT NEW TRACK</div></div>
+                    <div class="vg-import-track-container">
+                        <div class="add-new-track"><div class="plus">+</div><div class="import-new-track">IMPORT NEW TRACK</div></div>
+                    </div>
                     <ul>
                         <li class="li-item"><div class="track-name-wrapper"><span class="track-name active">Master</span></div><span class="delete">DELETE</span></li>
                         <li class="li-item"><div class="track-name-wrapper"><span class="track-name">Caption</span></div><span class="delete">DELETE</span></li>
