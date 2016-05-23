@@ -5,10 +5,11 @@
 	<title>Document</title>
 	<style>
         body {
-            width: 100%;
             background: #1D2024;
+        }
+        .vg_events {
+            width: auto;
             font-family: sans-serif;
-            overflow-x: hidden;
         }
         .vg_events ul {
             list-style: none;
@@ -91,23 +92,13 @@
             border-radius: 2px;
             padding: 1px;
         }
-        .vg_event__filmstrip__wrapper {
-            width: 150px;
-        }
-        .vg_event__filmstrip {
-            border: 1px solid white;
-            border-radius: 1px;
-        }
         .filmstrip {
-            width: 100%;
+            width: 150px;
             height: 48px;
             background: green;
+            border: 1px solid white;
             border-radius: 2px;
             cursor: pointer;
-        }
-        .vg_event__waveform {
-            width: 100%;
-            height: 15px;
         }
         li .vg_event:hover .vg_event__data {
             visibility: visible;
@@ -116,44 +107,49 @@
         /* Colored event styles */
         
         .vg_event.bars-and-tone .vg_event__data {border-top: 5px solid #00FF64;}
-        .vg_event.bars-and-tone .vg_event__filmstrip__wrapper {border: solid #00FF64; border-width: 5px 1px 1px 1px;}
-        .vg_event.bars-and-tone .vg_event__filmstrip {border: none;}
+        .vg_event.bars-and-tone .filmstrip {border: solid #00FF64; border-width: 5px 1px 1px 1px;}
         
         .vg_event.slate .vg_event__data {border-top: 5px solid #B25AFF;}
-        .vg_event.slate .vg_event__filmstrip__wrapper {border: solid #B25AFF; border-width: 5px 1px 1px 1px;}
-        .vg_event.slate .vg_event__filmstrip {border: none;}
+        .vg_event.slate .filmstrip {border: solid #B25AFF; border-width: 5px 1px 1px 1px;}
         
         .vg_event.blacks .vg_event__data {border-top: 5px solid #000000;}
-        .vg_event.blacks .vg_event__filmstrip__wrapper {border: solid #000000; border-width: 5px 1px 1px 1px;}
-        .vg_event.blacks .vg_event__filmstrip {border: none;}
+        .vg_event.blacks .filmstrip {border: solid #000000; border-width: 5px 1px 1px 1px;}
         
         .vg_event.audio .vg_event__data {border-top: 5px solid #00ACFF;}
-        .vg_event.audio .vg_event__filmstrip__wrapper {border: solid #00ACFF; border-width: 5px 1px 1px 1px;}
-        .vg_event.audio .vg_event__filmstrip {border: none;}
+        .vg_event.audio .filmstrip {border: solid #00ACFF; border-width: 5px 1px 1px 1px;}
         
         .vg_event.imf .vg_event__data {border-top: 5px solid #FFFFFF;}
-        .vg_event.imf .vg_event__filmstrip__wrapper {border: solid #FFFFFF; border-width: 5px 1px 1px 1px;}
-        .vg_event.imf .vg_event__filmstrip {border: none;}
+        .vg_event.imf .filmstrip {border: solid #FFFFFF; border-width: 5px 1px 1px 1px;}
         
         .vg_event.textless .vg_event__data {border-top: 5px solid #D78F5C;}
-        .vg_event.textless .vg_event__filmstrip__wrapper {border: solid #D78F5C; border-width: 5px 1px 1px 1px;}
-        .vg_event.textless .vg_event__filmstrip {border: none;}
+        .vg_event.textless .filmstrip {border: solid #D78F5C; border-width: 5px 1px 1px 1px;}
         
         .vg_event.unknown .vg_event__data {border-top: 5px solid #999999;}
-        .vg_event.unknown .vg_event__filmstrip__wrapper {border: solid #999999; border-width: 5px 1px 1px 1px;}
-        .vg_event.unknown .vg_event__filmstrip {border: none;}
+        .vg_event.unknown .filmstrip {border: solid #999999; border-width: 5px 1px 1px 1px;}
         
         .vg_event.mark-end .vg_event__data {border-top: 5px solid #F8E71C;}
-        .vg_event.mark-end .vg_event__filmstrip__wrapper {border: solid #F8E71C; border-width: 5px 1px 1px 1px;}
-        .vg_event.mark-end .vg_event__filmstrip {border: none;}
+        .vg_event.mark-end .filmstrip {border: solid #F8E71C; border-width: 5px 1px 1px 1px;}
         
     </style>
+    
+    <script type="text/javascript">
+        function filmstrip(){
+            var canvas = document.getElementById("superFilmstrip");
+            var context = canvas.getContext("2d");
+            var myImg = new Image();
+            myImg.src = "https://dl.dropboxusercontent.com/u/53778939/2_img.png";
+            myImg.onload = function(){
+                context.drawImage(myImg,0,0);
+            }
+        }
+        window.onload = filmstrip;
+    </script>
 </head>
 <body style="padding-top: 80px;">
 	<div class="vg_events active">
 		<ul>
 			<li>
-				<div class="vg_event unknown" style="left:0%;">
+				<div class="vg_event unknown" style="margin-left:0;">
 					<div class="vg_event__data">
 							<div class="data">
 								<div class="top-data">
@@ -166,16 +162,13 @@
                                 </div>
 							</div>
 					</div>
-					<div class="vg_event__filmstrip__wrapper" style="width:25px;">
-                        <div class="vg_event__filmstrip">
-                            <div class="filmstrip" style="background-image: url('./static/img/2_wvf_img.png');background-repeat:round;"></div>
-                            <div class="vg_event__waveform" style="background-image: url('./static/img/2_wvf.png');background-repeat:round;"></div>
-                        </div>
-                    </div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:25px;background:#00FF64;"></div>
+					</div>
 				</div>
 			</li>
 			<li>
-				<div class="vg_event slate" style="left: 2%">
+				<div class="vg_event slate" style="margin-left:27px;">
 					<div class="vg_event__data">
 							<div class="data">
 								<div class="top-data">
@@ -188,16 +181,13 @@
                                 </div>
 							</div>
 					</div>
-					<div class="vg_event__filmstrip__wrapper" style="width:55px;">
-                        <div class="vg_event__filmstrip">
-                            <div class="filmstrip" style="background-image: url('./static/img/1_wvf_img.png');background-repeat:round;"></div>
-                            <div class="vg_event__waveform" style="background-image: url('./static/img/1_wvf.png');background-repeat:round;"></div>
-                        </div>
-                    </div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width: 55px;background-image:url('./static/img/1_wout_waves.png');background-repeat:round;"></div>
+					</div>
 				</div>
 			</li>
 			<li>
-				<div class="vg_event" style="left: 6%">
+				<div class="vg_event" style="margin-left:84px;">
 					<div class="vg_event__data">
 							<div class="data">
                                 <div class="top-data">
@@ -210,16 +200,13 @@
                                 </div>
 							</div>
 					</div>
-					<div class="vg_event__filmstrip__wrapper" style="width:25px;">
-                        <div class="vg_event__filmstrip">
-                            <div class="filmstrip" style="background-image: url('./static/img/3_wvf_img.png');background-repeat:round;"></div>
-                            <div class="vg_event__waveform" style="background-image: url('./static/img/3_wvf.png');background-repeat:round;"></div>
-                        </div>
-                    </div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:25px;background-image:url('./static/img/3_wout_waves.png');background-repeat:round;"></div>
+					</div>
 				</div>
 			</li>
             <li>
-				<div class="vg_event" style="left: 8%">
+				<div class="vg_event" style="margin-left:108px;">
 					<div class="vg_event__data">
 							<div class="data">
                                 <div class="top-data">
@@ -232,16 +219,13 @@
                                 </div>
 							</div>
 					</div>
-					<div class="vg_event__filmstrip__wrapper" style="width:5px;">
-                        <div class="vg_event__filmstrip">
-                            <div class="filmstrip" style="background: lawngreen;"></div>
-                            <div class="vg_event__waveform" style="background-image: url('./static/img/4_wvf.png');background-repeat:round;"></div>
-                        </div>
-                    </div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:5px;background:#00B9FF;"></div>
+					</div>
 				</div>
 			</li>
             <li>
-				<div class="vg_event" style="left:8.2%;">
+				<div class="vg_event" style="margin-left:113px;">
 					<div class="vg_event__data">
 							<div class="data">
 								<div class="top-data">
@@ -254,16 +238,13 @@
                                 </div>
 							</div>
 					</div>
-					<div class="vg_event__filmstrip__wrapper" style="width:4px;">
-                        <div class="vg_event__filmstrip">
-                            <div class="filmstrip" style="background: #00ACFF;"></div>
-                            <div class="vg_event__waveform" style="background-image: url('./static/img/4_wvf.png');background-repeat:round;"></div>
-                        </div>
-                    </div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:4px;background:#000000;"></div>
+					</div>
 				</div>
 			</li>
 			<li>
-				<div class="vg_event" style="left: 8.3%">
+				<div class="vg_event" style="margin-left:116px;">
 					<div class="vg_event__data">
 							<div class="data">
 								<div class="top-data">
@@ -276,16 +257,13 @@
                                 </div>
 							</div>
 					</div>
-					<div class="vg_event__filmstrip__wrapper" style="width:4px;">
-                        <div class="vg_event__filmstrip">
-                            <div class="filmstrip" style="background: #FFFFFF;"></div>
-                            <div class="vg_event__waveform" style="background-image: url('./static/img/4_wvf.png');background-repeat:round;"></div>
-                        </div>
-                    </div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width: 4px;background:#f4f4f4;"></div>
+					</div>
 				</div>
 			</li>
 			<li>
-				<div class="vg_event slate" style="left: 8.5%">
+				<div class="vg_event slate" style="margin-left:120px;">
 					<div class="vg_event__data">
 							<div class="data">
                                 <div class="top-data">
@@ -298,16 +276,15 @@
                                 </div>
 							</div>
 					</div>
-                    <div class="vg_event__filmstrip__wrapper" style="width:1230px;">
+                    <div class="vg_event__filmstrip__wrapper">
                         <div class="vg_event__filmstrip">
-                            <div class="filmstrip" style="background-image: url('./static/img/2_wout_waves.png');background-repeat:round;"></div>
-                            <div class="vg_event__waveform" style="background-image: url('./static/img/2_waveform.png');background-repeat:round;"></div>
+                            <canvas class="filmstrip" id="superFilmstrip" width="1215" height="48" style="width:1215px;"></canvas>
                         </div>
                     </div>
 				</div>
 			</li>
             <li>
-				<div class="vg_event" style="left: 94%">
+				<div class="vg_event" style="margin-left:1337px;">
 					<div class="vg_event__data vg_event__data__left">
 							<div class="data">
                                 <div class="top-data">
@@ -320,16 +297,13 @@
                                 </div>
 							</div>
 					</div>
-					<div class="vg_event__filmstrip__wrapper" style="width:5px;">
-                        <div class="vg_event__filmstrip">
-                            <div class="filmstrip" style="background: orange;"></div>
-                            <div class="vg_event__waveform" style="background-image: url('./static/img/4_wvf.png');background-repeat:round;"></div>
-                        </div>
-                    </div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:5px;background:#f4f4f4;"></div>
+					</div>
 				</div>
 			</li>
             <li>
-				<div class="vg_event mark-end" style="left:94.6%;">
+				<div class="vg_event imf" style="margin-left:1342px;">
 					<div class="vg_event__data vg_event__data__left">
 							<div class="data">
 								<div class="top-data">
@@ -342,16 +316,13 @@
                                 </div>
 							</div>
 					</div>
-					<div class="vg_event__filmstrip__wrapper" style="width:20px;">
-                        <div class="vg_event__filmstrip">
-                            <div class="filmstrip" style="background-image: url('./static/img/5_wvf_img.png');background-repeat:round;"></div>
-                            <div class="vg_event__waveform" style="background-image: url('./static/img/5_wvf.png');background-repeat:round;"></div>
-                        </div>
-                    </div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:20px;background:#000000;"></div>
+					</div>
 				</div>
 			</li>
 			<li>
-				<div class="vg_event" style="left: 96.2%">
+				<div class="vg_event" style="margin-left:1363px;">
 					<div class="vg_event__data vg_event__data__left">
 							<div class="data">
 								<div class="top-data">
@@ -364,16 +335,13 @@
                                 </div>
 							</div>
 					</div>
-					<div class="vg_event__filmstrip__wrapper" style="width:5px;">
-                        <div class="vg_event__filmstrip">
-                            <div class="filmstrip" style="background: yellow;"></div>
-                            <div class="vg_event__waveform" style="background-image: url('./static/img/4_wvf.png');background-repeat:round;"></div>
-                        </div>
-                    </div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width: 5px;background:#D78F5C;"></div>
+					</div>
 				</div>
 			</li>
 			<li>
-				<div class="vg_event" style="left: 96.8%">
+				<div class="vg_event" style="margin-left:1368px;">
 					<div class="vg_event__data vg_event__data__left">
 							<div class="data">
                                 <div class="top-data">
@@ -386,16 +354,13 @@
                                 </div>
 							</div>
 					</div>
-					<div class="vg_event__filmstrip__wrapper" style="width:25px;">
-                        <div class="vg_event__filmstrip">
-                            <div class="filmstrip" style="background-image: url('./static/img/6_wvf_img.png');background-repeat:round;"></div>
-                            <div class="vg_event__waveform" style="background-image: url('./static/img/6_wvf.png');background-repeat:round;"></div>
-                        </div>
-                    </div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:25px;background-image:url('./static/img/4_wout_waves.png');background-repeat:round;"></div>
+					</div>
 				</div>
 			</li>
             <li>
-				<div class="vg_event audio" style="left: 98%">
+				<div class="vg_event unknown" style="margin-left:1393px;">
 					<div class="vg_event__data vg_event__data__left">
 							<div class="data">
                                 <div class="top-data">
@@ -408,12 +373,9 @@
                                 </div>
 							</div>
 					</div>
-					<div class="vg_event__filmstrip__wrapper" style="width:19px;">
-                        <div class="vg_event__filmstrip">
-                            <div class="filmstrip" style="background-image: url('./static/img/7_wvf_img.png');background-repeat:round;"></div>
-                            <div class="vg_event__waveform" style="background-image: url('./static/img/7_wvf.png');background-repeat:round;"></div>
-                        </div>
-                    </div>
+					<div class="vg_event__filmstrip">
+						<div class="filmstrip" style="width:19px;background:#000000;"></div>
+					</div>
 				</div>
 			</li>
 		</ul>
