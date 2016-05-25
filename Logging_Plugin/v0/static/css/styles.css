@@ -1,0 +1,330 @@
+.vg-events-and-tracks-continer {
+    position: relative;
+}
+.vg-events-and-tracks-wrapper {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin-left: 20px;
+    margin-right: 20px;
+    background: #1D2024;
+}
+
+/* Log vents styles */
+
+.vg-events-panel {
+    padding-top: 70px;
+}
+
+.vg_events ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: scroll;
+}
+.vg_event {
+    background: #1D2024;
+    position: relative;
+    display: flex;
+}
+.vg_event:hover>.vg_event__data {
+    display: block;
+    background: black;
+    z-index: 3;
+    background: rgba(0,0,0,0.3);
+}
+.vg_event:hover .filmstrip {
+    background: #17394C;
+    z-index: 2;
+}
+.data {
+    color: white;
+    padding-top: 7px;
+    font-size: 14px;
+}
+.start-end-timecode {
+    width: 165px;
+    height: 22px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 2px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.start-end-timecode:hover {
+    border: 1px solid #999999;
+}
+.data #startEndTimecode {
+    padding-left: 15px;
+}
+.data #startEndTimecode, #duration {
+    color: #cccccc;
+}
+.data #duration, #dataKeyword {
+    padding-left: 35px;
+}
+.vg_events .data #deleteTimecodeData {
+    display: none;
+}
+.vg_event__data {
+    background: #1D2024;
+    display: none;		
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 5px;
+}
+.vg_event__filmstrip {
+    flex: 2;
+    height: 50px;
+}
+.filmstrip {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 30%;
+    width: 150px;
+    background: green;
+    border: 1px solid white;
+    border-radius: 2px;
+}
+.vg_events.active .data #startEndTimecode > span {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    padding-left: 5px;
+    padding-bottom: 3px;
+}
+.data #startEndTimecode > span:nth-child(2) {
+    margin-left: 70px;
+}
+.vg_events.active .data {
+    position: relative;
+    height: 35px;
+}
+.vg_events.active .data #duration {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    padding-bottom: 1px;
+    padding-right: 70px;
+}
+.vg_events.active .data #duration > span:hover {
+    cursor: pointer;
+    border: 1px solid #999999;
+    border-radius: 2px;
+    padding: 1px;
+}
+.vg_events.active .data #dataKeyword {
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-left: 5px;
+}
+.vg_events.active .data #dataKeyword > span {
+    padding-right: 286px;
+    padding-left: 5px;
+}
+.vg_events.active .data #dataKeyword:hover {
+    cursor: pointer;
+    border: 1px solid #999999;
+    border-radius: 1px;
+    padding: 1px;
+}
+.vg_events.active .data #deleteTimecodeData {
+    display: flex;
+    top: 0;
+    right: 0;
+    position: absolute;
+    padding-top: 1px;
+    padding-right: 70px;
+}
+.vg_events.active .data #deleteTimecodeData span {
+    background: #00B9FF;
+    padding: 1px;
+    border-radius: 2px;
+    color: #000000;
+}
+.vg_events.active .data #deleteTimecodeData > span:hover {
+    cursor: pointer;
+    padding: 2px;
+}
+.vg_events.active .vg_event:hover .vg_event__data {
+    background: #666666;
+}
+.vg_events.active .vg_event:hover .vg_event__filmstrip {
+    background: #666666;
+}
+.vg_events.active:hover .filmstrip {
+    background: green;
+}
+.vg_events.active .filmstrip {
+    z-index: 1;
+}
+.vg_events.active .vg_event__data {
+    display: block;
+    flex: 1;
+    width: 400px;
+    height: inherit;
+}
+
+
+/* Tracks dropdown menu styles*/
+
+.vg-tracks-panel {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    padding-top: 20px;
+    margin-left: 10px;
+}
+.main-dropdown-menu-name {
+    color: #f4f4f4;
+    padding-right: 5px; 
+}
+.selected-track {
+    display: flex;
+    cursor: pointer;
+}
+.tracks-name-header {
+    color: #cccccc;
+}
+.vg-have-no-tracks-wrapper {
+    visibility: hidden;
+}
+.vg-have-no-tracks-wrapper.active {
+    display: inline-flex;
+    visibility: visible;
+}
+.vg-have-no-tracks {
+    color: #666666;
+    font-size: 16px;
+}
+.vg-import-new-track-wrapper {
+    padding-left: 10px;
+}
+.vg-import-new-track-wrapper .import-new-track {
+    font-size: 12px;
+    margin-top: 3px;
+}
+.vg-import-new-track-wrapper .add-new-track {
+    padding: 0;
+    cursor: pointer;
+}
+.vg-import-new-track-wrapper .add-new-track .plus {
+    height: 17px;
+    width: 17px;
+    text-align: center;
+    line-height: 17px;
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+    background: #50C2FF;
+    margin-right: 5px;
+}
+.vg-magic-dropdown {
+    visibility: hidden;
+    z-index: 10;
+}
+.vg-magic-dropdown.active {visibility: visible;}
+.vg-magic-dropdown.open .triangle {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent; 
+    border-top: 5px solid #50C2FF; 
+    margin-top: 7px; 
+    margin-right: 2px;
+}
+.vg-magic-dropdown.open .dropdown-menu-content {
+    display: block;
+}
+.vg-tracks-dropdown-menu {
+    display: flex;
+}
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #50C2FF;
+    margin-top: 3px;
+    margin-right: 2px;
+}
+.add-new-track {
+    display: inline-flex;
+    padding: 5px 0 0 5px;
+    cursor: pointer;
+}
+.import-new-track {
+    color: #50C2FF;
+}
+.dropdown-menu-content {
+    display: none;
+    color: #f4f4f4;
+    font-size: 12px;
+    width: 165px;
+    height: 250px;
+    line-height: 1.6;
+    background: #050607;
+    border-radius: 2px;
+    overflow-y: scroll;
+}
+.plus {
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    background: #50C2FF;
+    margin-right: 5px;
+}
+.track-name-wrapper {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100px;
+}
+.track-name {
+    cursor: pointer;
+}
+.track-name.active {
+    background: #f4f4f4;
+    color: #000000;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 1px;
+}
+.delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 11px;
+    color: #000000;
+    background: #50C2FF;
+    border-radius: 1px;
+    float: right;
+    display: none;
+    cursor: pointer;
+    padding: 0 5px 0 3px;
+    margin-right: 10px;
+}
+.dropdown-menu-content ul {
+    padding-left: 10px;
+}
+.dropdown-menu-content ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+}
+.dropdown-menu-content ul .li-item:hover .delete {
+    display: flex;
+}
