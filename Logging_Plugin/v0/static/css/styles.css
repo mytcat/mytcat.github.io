@@ -57,13 +57,13 @@
 .start-end-timecode:hover {
     border: 1px solid #999999;
 }
-.data #startEndTimecode {
+.data .start_end_timecode {
     padding-left: 15px;
 }
-.data #startEndTimecode, #duration {
+.data .start_end_timecode, .duration {
     color: #cccccc;
 }
-.data #duration, #dataKeyword {
+.data .duration, .data-keyword {
     padding-left: 35px;
 }
 .vg_events .data #deleteTimecodeData {
@@ -94,44 +94,44 @@
     border: 1px solid white;
     border-radius: 2px;
 }
-.vg_events.active .data #startEndTimecode > span {
+.vg_events.active .data .start_end_timecode > span {
     bottom: 0;
     left: 0;
     position: absolute;
     padding-left: 5px;
     padding-bottom: 3px;
 }
-.data #startEndTimecode > span:nth-child(2) {
+.data .start_end_timecode > span:nth-child(2) {
     margin-left: 70px;
 }
 .vg_events.active .data {
     position: relative;
     height: 35px;
 }
-.vg_events.active .data #duration {
+.vg_events.active .data .duration {
     bottom: 0;
     right: 0;
     position: absolute;
     padding-bottom: 1px;
     padding-right: 70px;
 }
-.vg_events.active .data #duration > span:hover {
+.vg_events.active .data .duration > span:hover {
     cursor: pointer;
     border: 1px solid #999999;
     border-radius: 2px;
     padding: 1px;
 }
-.vg_events.active .data #dataKeyword {
+.vg_events.active .data .data-keyword {
     top: 0;
     left: 0;
     position: absolute;
     padding-left: 5px;
 }
-.vg_events.active .data #dataKeyword > span {
+.vg_events.active .data .data-keyword > span {
     padding-right: 286px;
     padding-left: 5px;
 }
-.vg_events.active .data #dataKeyword:hover {
+.vg_events.active .data .data-keyword:hover {
     cursor: pointer;
     border: 1px solid #999999;
     border-radius: 1px;
@@ -198,11 +198,10 @@
     color: #cccccc;
 }
 .vg-have-no-tracks-wrapper {
-    visibility: hidden;
+    display: none;
 }
 .vg-have-no-tracks-wrapper.active {
     display: inline-flex;
-    visibility: visible;
 }
 .vg-have-no-tracks {
     color: #666666;
@@ -270,7 +269,7 @@
     color: #f4f4f4;
     font-size: 12px;
     width: 165px;
-    height: 250px;
+    max-height: 250px;
     line-height: 1.6;
     background: #050607;
     border-radius: 2px;
