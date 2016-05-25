@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .vg-add-track-container {
+                position: absolute;
+                width: 800px;
+                height: 610px;
+                background: linear-gradient(#000000,#17191C);
+                border-radius: 4px;
+                
+            }
+            .box-button {
+                padding: 0;
+                border: 0;
+                width: 158px;
+                height: 40px;
+                outline: none;
+                cursor: pointer;
+            }
+            .vg-add-tracks {
+                padding: 7px 10px;
+                font-size: 15px;
+                color: #f4f4f4;
+            }
+            .close {
+                position: absolute;
+                right: 8px;
+                top: 1px;
+                font-size: 18px;
+                color: #666666;
+                text-decoration: none;
+            }
+            .vg-tracks-middle {
+                background: #222322;
+            }
+            .vg-select-input-row {
+                display: inline-flex;
+                padding: 10px;
+            }
+            .vg-select-or-input {
+                color: #f4f4f4;
+                padding: 0 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 13px;
+            }
+            .vg-url-input {
+                display: flex;
+            }
+            .vg-url-input input {
+                background: inherit;
+                border: 1px solid #666666;
+                border-radius: 3px;
+                width: 575px;
+                color: #f4f4f4;
+                outline: none;
+                font-size: 18px;
+                text-indent: 10px;
+            }
+            .vg-url-input input.field {
+                padding-left: 40px;
+            }
+            .vg-url-input input[placeholder]::-webkit-input-placeholder {
+                color: #f4f4f4;
+                font-size: 20px;
+            }
+            .vg-tracks-header {
+                display: inline-flex;
+                padding: 20px 0 20px 12px;
+            }
+            .vg-imported-tracks {
+                height: 400px;
+                overflow-y: scroll;
+            }
+            .vg-imported-tracks-list {
+                display: flex;
+                flex-direction: column;
+            }
+            .vg-tracks {
+                font-weight: 100;
+                color: #f4f4f4;
+                padding-right: 10px;
+            }
+            .vg-tracks-counter {
+                color: #6A6154;
+                font-size: 15px;
+            }
+            .vg-tracks-list ul {
+                list-style: none;
+            }
+            .vg-track-checkbox input {
+                width: 15px;
+                height: 15px;
+                outline: none;
+                border: 0;
+                cursor: pointer;
+            }
+            .vg-checkbox-input input[type=checkbox]:before {
+                border-radius: 1px;
+            }
+            .vg-checkbox-input input[type=checkbox]:checked + label:before {
+                content: "\2713";
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+                font-size: 15px;
+                color: #f3f3f3;
+                text-align: center;
+                line-height: 15px;
+            }
+            .vg-track-import-spinner {
+                display: none !important;
+                z-index: 1000;
+                -webkit-animation-duration: 0.65s;
+                -moz-animation-duration: 0.65s;
+                animation-duration: 0.65s;
+                -webkit-animation-iteration-count: infinite;
+                -moz-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+                -webkit-animation-name: rotate-forever;
+                -moz-animation-name: rotate-forever;
+                animation-name: rotate-forever;
+                -webkit-animation-timing-function: linear;
+                -moz-animation-timing-function: linear;
+                animation-timing-function: linear;
+                height: 7px;
+                width: 7px;
+                border: 3px solid #ffffff ;
+                border-right-color: transparent;
+                border-radius: 50%;
+                display: inline-block;
+            }
+            @keyframes rotate-forever {
+                to{transform: rotate(360deg)}
+            }
+            .vg-track-content {
+                display: inline-flex;
+                align-items: baseline;
+                padding-left: 10px;
+                padding-bottom: 15px;
+            }
+            .vg-track-triangle {
+                width: 0;
+                height: 0;
+                position: absolute;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid #50C2FF;
+                margin-top: 3px;
+                margin-right: 2px;
+            }
+            .vg-track-name {
+                position: relative;
+                cursor: pointer;
+                padding: 0 10px 0 5px;
+            }
+            .vg-track-name-dropdown {
+                display: none;
+                left: 0;
+                right: 0;
+                position: absolute;
+                padding-left: 25px;
+                background: #383631;
+            }
+            .vg-track-subtitles {
+                padding-left: 10px;
+                margin-top: 5px;
+            }
+            .vg-track-subtitle-description {
+                color: #f4f4f4;
+                font-size: 14px;
+                font-weight: 300;
+                padding-left: 15px;
+            }
+            .vg-imported-track-name {
+                margin-left: 12px;
+                color: #6A6154;
+            }
+            .vg-track-time {
+                color: #544F45;
+            }
+            .vg-track-importing {
+                display: none;
+                color: #544F45;
+                padding-left: 10px;
+            }
+            .vg-track-error {
+                display: none;
+                color: red;
+                font-weight: 100;
+            }
+            .vg-tracks-bottom {
+                display: inline-flex;
+                padding-top: 15px;
+                padding-left: 15px;
+            }
+            .vg-add-selected-tracks {
+                width: 125px;
+                height: 35px;
+                line-height: 35px;
+                text-align: center;
+                border-radius: 3px;
+                color: #f4f4f4;
+                background: #2C6D79;
+                cursor: pointer;
+            }
+            .vg-cancel-selected-tracks {
+                color: #f4f4f4;
+                background: #000000;
+                width: 70px;
+                height: 35px;
+                line-height: 35px;
+                text-align: center;
+                margin-left: 30px;
+                cursor: pointer;
+            }
+            
+            .vg-track-content.import .vg-track-checkbox {display: none;}
+            .vg-track-content.import .vg-track-import-spinner {display: inline !important;}
+            .vg-track-content.import .vg-track-importing {display: inline;}
+            .vg-track-content.import .vg-track-time {display: none;}
+            .vg-track-content.import {padding-left: 13px;}
+            .vg-track-content.import .vg-imported-track-wrapper {padding-left: 5px;}
+            .vg-track-content.short .vg-track-time {display: none;}
+            .vg-track-content.error .vg-track-triangle {display: none;}
+            .vg-track-content.error .vg-track-time {display: none;}
+            .vg-track-content.error .vg-track-name {padding-left: 0;}
+            .vg-track-content.error .vg-imported-track-name {text-decoration: underline; -moz-text-decoration-color: red;}
+            .vg-track-content.error .vg-track-error {display: inline;}
+            
+            .vg-track-content.open .vg-imported-track-name {margin-left: 15px;}
+            .vg-track-content.open .vg-track-triangle {border-left: 5px solid transparent; border-right: 5px solid transparent; 
+                                                    border-top: 5px solid #50C2FF; margin-top: 7px; margin-right: 2px;}
+            .vg-track-content.open {background: #383631;}
+            .vg-track-content.open .vg-track-name-dropdown {display: block;}
+        </style>
+    </head>
+    <body style="font-family: sans-serif;">
+        <div class="vg-add-track-container">
+            <div class="vg-tracks-top">
+                <div class="vg-add-tracks">Add tracks</div><a href="#" class="close">&times;</a>
+            </div>
+            <div class="vg-tracks-middle">
+                <div class="vg-select-input-row">
+                    <button class="box-button"><img src="./static/img/box_button.png"></button>
+                    <div class="vg-select-or-input">OR</div>
+                    <div class="vg-url-input">
+                        <input placeholder="Enter tracks URL..." type="url">
+                    </div>
+                </div>
+                <div class="vg-tracks-header">
+                    <div class="vg-tracks">TRACKS</div><div class="vg-tracks-counter">5 files</div>
+                </div>
+                <div class="vg-imported-tracks">
+                    <div class="vg-tracks-list">
+                        <div class="vg-imported-tracks-list">
+<!--                     1        -->
+                            <div class="vg-track-content short">
+                                <div class="vg-track-import-spinner"></div>
+                                <div class="vg-track-checkbox">
+                                    <input class="vg-checkbox-input" type="checkbox" id="track-checkbox">
+                                    <label for="track-checkbox"></label>
+                                </div>
+                                <div class="vg-imported-track-wrapper">    
+                                    <div class="vg-track-name">
+                                        <div class="vg-track-triangle"></div>
+                                        <div class="vg-imported-track-name">Polehshe.fcp</div>
+                                    </div>
+                                    <div class="vg-track-name-dropdown">
+                                        <ul class="vg-track-subtitles">
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Did you know John is ambidexter?</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Who?</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="vg-track-time">
+                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                    <span class="vg-track-time-to">10:04:01.00</span>
+                                </div>
+                                <div class="vg-track-importing">Importing track...</div>
+                                <div class="vg-track-error">Incompatible file</div>
+                            </div>
+                            
+<!--                     2        -->
+                            <div class="vg-track-content import">
+                                <div class="vg-track-import-spinner"></div>
+                                <div class="vg-track-checkbox">
+                                    <input class="vg-checkbox-input" type="checkbox" id="track-checkbox">
+                                    <label for="track-checkbox"></label>
+                                </div>
+                                <div class="vg-imported-track-wrapper">    
+                                    <div class="vg-track-name">
+                                        <div class="vg-track-triangle"></div>
+                                        <div class="vg-imported-track-name">Sub my titles man.xls</div>
+                                    </div>
+                                    <div class="vg-track-name-dropdown">
+                                        <ul class="vg-track-subtitles">
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Did you know John is ambidexter?</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Who?</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="vg-track-time">
+                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                    <span class="vg-track-time-to">10:04:01.00</span>
+                                </div>
+                                <div class="vg-track-importing">Importing track...</div>
+                                <div class="vg-track-error">Incompatible file</div>
+                            </div>
+                            
+<!--                     3        -->
+                            <div class="vg-track-content default">
+                                <div class="vg-track-import-spinner"></div>
+                                <div class="vg-track-checkbox">
+                                    <input class="vg-checkbox-input" type="checkbox" id="track-checkbox">
+                                    <label for="track-checkbox"></label>
+                                </div>
+                                <div class="vg-imported-track-wrapper">    
+                                    <div class="vg-track-name">
+                                        <div class="vg-track-triangle"></div>
+                                        <div class="vg-imported-track-name">King-Kong remastered</div>
+                                    </div>
+                                    <div class="vg-track-name-dropdown">
+                                        <ul class="vg-track-subtitles">
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Did you know John is ambidexter?</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Who?</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="vg-track-time">
+                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                    <span class="vg-track-time-to">10:04:01.00</span>
+                                </div>
+                                <div class="vg-track-importing">Importing track...</div>
+                                <div class="vg-track-error">Incompatible file</div>
+                            </div>
+                            
+                            
+<!--                     4        -->
+                            <div class="vg-track-content error">
+                                <div class="vg-track-import-spinner"></div>
+                                <div class="vg-track-checkbox">
+                                    <input class="vg-checkbox-input" type="checkbox" id="track-checkbox">
+                                    <label for="track-checkbox"></label>
+                                </div>
+                                <div class="vg-imported-track-wrapper">    
+                                    <div class="vg-track-name">
+                                        <div class="vg-track-triangle"></div>
+                                        <div class="vg-imported-track-name">0mg 0löló.stl</div>
+                                    </div>
+                                    <div class="vg-track-name-dropdown">
+                                        <ul class="vg-track-subtitles">
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Did you know John is ambidexter?</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Who?</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="vg-track-time">
+                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                    <span class="vg-track-time-to">10:04:01.00</span>
+                                </div>
+                                <div class="vg-track-importing">Importing track...</div>
+                                <div class="vg-track-error">Incompatible file</div>
+                            </div>
+                            
+<!--                     5        -->
+                            <div class="vg-track-content open">
+                                <div class="vg-track-import-spinner"></div>
+                                <div class="vg-track-checkbox">
+                                    <input class="vg-checkbox-input" type="checkbox" id="track-checkbox">
+                                    <label for="track-checkbox"></label>
+                                </div>
+                                <div class="vg-imported-track-wrapper">    
+                                    <div class="vg-track-name">
+                                        <div class="vg-track-triangle"></div>
+                                        <div class="vg-imported-track-name">Yet another.fcp</div>
+                                    </div>
+                                    <div class="vg-track-name-dropdown">
+                                        <ul class="vg-track-subtitles">
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Did you know John is ambidexter?</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Who?</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">John?</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">I mean knok-knok.</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Who's there?</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Ida</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Ida who?</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">Idunno who's ambidexter!</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="vg-track-time">
+                                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                    <span class="vg-track-time-to">00:00:02.10</span>
+                                                    <span class="vg-track-subtitle-description">I've told you before</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="vg-track-time">
+                                    <span class="vg-track-time-from">00:20:01.00 &#8596;</span>
+                                    <span class="vg-track-time-to">00:24:01.00</span>
+                                </div>
+                                <div class="vg-track-importing">Importing track...</div>
+                                <div class="vg-track-error">Incompatible file</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="vg-tracks-bottom">
+                <div class="vg-add-selected-tracks">Add selected</div>
+                <div class="vg-cancel-selected-tracks">Cancel</div>
+            </div>
+        </div>
+    </body>
+</html>
