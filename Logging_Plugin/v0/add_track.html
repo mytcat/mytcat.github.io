@@ -9,7 +9,6 @@
                 height: 610px;
                 background: linear-gradient(#000000,#17191C);
                 border-radius: 4px;
-                
             }
             .box-button {
                 padding: 0;
@@ -66,6 +65,7 @@
             .vg-url-input input[placeholder]::-webkit-input-placeholder {
                 color: #f4f4f4;
                 font-size: 20px;
+                font-weight: 400;
             }
             .vg-tracks-header {
                 display: inline-flex;
@@ -98,16 +98,27 @@
                 border: 0;
                 cursor: pointer;
             }
-            .vg-checkbox-input input[type=checkbox]:before {
-                border-radius: 1px;
+            input[type="checkbox"] {
+                display: none;
             }
-            .vg-checkbox-input input[type=checkbox]:checked + label:before {
-                content: "\2713";
-                text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-                font-size: 15px;
-                color: #f3f3f3;
-                text-align: center;
+            input[type="checkbox"] + span:before {
+                display: inline-block;
+                background: inherit;
+                content: ''; 
+                height: 13px; 
+                width: 13px;
                 line-height: 15px;
+                border: 1px solid white;
+                text-align: center;
+                vertical-align: middle;
+                margin: 0 5px 2px 0;
+                cursor: pointer;
+            }
+            input[type="checkbox"]:checked + span:before {
+                background-color: #FFFFFF;
+                color: #000000;
+                font-size: 14px;
+                content: '\2713'; 
             }
             .vg-track-import-spinner {
                 display: none !important;
@@ -147,21 +158,20 @@
                 border-top: 5px solid transparent;
                 border-bottom: 5px solid transparent;
                 border-left: 5px solid #50C2FF;
-                margin-top: 3px;
+                margin-top: 8px;
                 margin-right: 2px;
+                cursor: pointer;
             }
             .vg-track-name {
                 position: relative;
-                cursor: pointer;
                 padding: 0 10px 0 5px;
             }
             .vg-track-name-dropdown {
                 display: none;
-                left: 0;
-                right: 0;
-                position: absolute;
-                padding-left: 25px;
                 background: #383631;
+            }
+            .vg-track-name-dropdown ul {
+                padding-left: 0;
             }
             .vg-track-subtitles {
                 padding-left: 10px;
@@ -174,11 +184,17 @@
                 padding-left: 15px;
             }
             .vg-imported-track-name {
-                margin-left: 12px;
+                display: flex;
+                align-items: baseline;
                 color: #6A6154;
+                margin-left: 12px;
+            }
+            .vg-track {
+                cursor: pointer;
             }
             .vg-track-time {
                 color: #544F45;
+                padding-left: 20px;
             }
             .vg-track-importing {
                 display: none;
@@ -222,16 +238,21 @@
             .vg-track-content.import .vg-track-time {display: none;}
             .vg-track-content.import {padding-left: 13px;}
             .vg-track-content.import .vg-imported-track-wrapper {padding-left: 5px;}
+            .vg-track-content.import .vg-track-triangle {margin-top: 3px;}
+            
             .vg-track-content.short .vg-track-time {display: none;}
+            .vg-track-content.short .vg-track-triangle {margin-top: 3px;}
+            
             .vg-track-content.error .vg-track-triangle {display: none;}
             .vg-track-content.error .vg-track-time {display: none;}
             .vg-track-content.error .vg-track-name {padding-left: 0;}
-            .vg-track-content.error .vg-imported-track-name {text-decoration: underline; -moz-text-decoration-color: red;}
+            .vg-track-content.error .vg-imported-track-name {text-decoration: underline; -moz-text-decoration-color: red;
+                                                                margin-left: 3px;}
             .vg-track-content.error .vg-track-error {display: inline;}
             
             .vg-track-content.open .vg-imported-track-name {margin-left: 15px;}
             .vg-track-content.open .vg-track-triangle {border-left: 5px solid transparent; border-right: 5px solid transparent; 
-                                                    border-top: 5px solid #50C2FF; margin-top: 7px; margin-right: 2px;}
+                                                    border-top: 5px solid #50C2FF; margin-top: 11px; margin-right: 2px;}
             .vg-track-content.open {background: #383631;}
             .vg-track-content.open .vg-track-name-dropdown {display: block;}
         </style>
@@ -259,13 +280,18 @@
                             <div class="vg-track-content short">
                                 <div class="vg-track-import-spinner"></div>
                                 <div class="vg-track-checkbox">
-                                    <input class="vg-checkbox-input" type="checkbox" id="track-checkbox">
-                                    <label for="track-checkbox"></label>
+                                    <label><input class="vg-checkbox-input" type="checkbox"><span></span></label>
                                 </div>
                                 <div class="vg-imported-track-wrapper">    
                                     <div class="vg-track-name">
                                         <div class="vg-track-triangle"></div>
-                                        <div class="vg-imported-track-name">Polehshe.fcp</div>
+                                        <div class="vg-imported-track-name">
+                                            <div class="vg-track">Polehshe.fcp</div>
+                                            <div class="vg-track-time">
+                                                <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                <span class="vg-track-time-to">10:04:01.00</span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="vg-track-name-dropdown">
                                         <ul class="vg-track-subtitles">
@@ -285,10 +311,6 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
-                                <div class="vg-track-time">
-                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
-                                    <span class="vg-track-time-to">10:04:01.00</span>
                                 </div>
                                 <div class="vg-track-importing">Importing track...</div>
                                 <div class="vg-track-error">Incompatible file</div>
@@ -298,13 +320,18 @@
                             <div class="vg-track-content import">
                                 <div class="vg-track-import-spinner"></div>
                                 <div class="vg-track-checkbox">
-                                    <input class="vg-checkbox-input" type="checkbox" id="track-checkbox">
-                                    <label for="track-checkbox"></label>
+                                    <label><input class="vg-checkbox-input" type="checkbox"><span></span></label>
                                 </div>
                                 <div class="vg-imported-track-wrapper">    
                                     <div class="vg-track-name">
                                         <div class="vg-track-triangle"></div>
-                                        <div class="vg-imported-track-name">Sub my titles man.xls</div>
+                                        <div class="vg-imported-track-name">
+                                            <div class="vg-track">Sub my titles man.xls</div>
+                                            <div class="vg-track-time">
+                                                <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                <span class="vg-track-time-to">10:04:01.00</span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="vg-track-name-dropdown">
                                         <ul class="vg-track-subtitles">
@@ -324,26 +351,27 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
-                                <div class="vg-track-time">
-                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
-                                    <span class="vg-track-time-to">10:04:01.00</span>
                                 </div>
                                 <div class="vg-track-importing">Importing track...</div>
                                 <div class="vg-track-error">Incompatible file</div>
                             </div>
                             
 <!--                     3        -->
-                            <div class="vg-track-content default">
+                            <div class="vg-track-content">
                                 <div class="vg-track-import-spinner"></div>
                                 <div class="vg-track-checkbox">
-                                    <input class="vg-checkbox-input" type="checkbox" id="track-checkbox">
-                                    <label for="track-checkbox"></label>
+                                    <label><input class="vg-checkbox-input" type="checkbox"><span></span></label>
                                 </div>
                                 <div class="vg-imported-track-wrapper">    
                                     <div class="vg-track-name">
                                         <div class="vg-track-triangle"></div>
-                                        <div class="vg-imported-track-name">King-Kong remastered</div>
+                                        <div class="vg-imported-track-name">
+                                            <div class="vg-track">King-Kong remastered</div>
+                                            <div class="vg-track-time">
+                                                <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                <span class="vg-track-time-to">10:04:01.00</span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="vg-track-name-dropdown">
                                         <ul class="vg-track-subtitles">
@@ -363,27 +391,27 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
-                                <div class="vg-track-time">
-                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
-                                    <span class="vg-track-time-to">10:04:01.00</span>
                                 </div>
                                 <div class="vg-track-importing">Importing track...</div>
                                 <div class="vg-track-error">Incompatible file</div>
                             </div>
                             
-                            
 <!--                     4        -->
                             <div class="vg-track-content error">
                                 <div class="vg-track-import-spinner"></div>
                                 <div class="vg-track-checkbox">
-                                    <input class="vg-checkbox-input" type="checkbox" id="track-checkbox">
-                                    <label for="track-checkbox"></label>
+                                    <label><input class="vg-checkbox-input" type="checkbox"><span></span></label>
                                 </div>
                                 <div class="vg-imported-track-wrapper">    
                                     <div class="vg-track-name">
                                         <div class="vg-track-triangle"></div>
-                                        <div class="vg-imported-track-name">0mg 0löló.stl</div>
+                                        <div class="vg-imported-track-name">
+                                            <div class="vg-track">0mg 0löló.stl</div>
+                                            <div class="vg-track-time">
+                                                <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
+                                                <span class="vg-track-time-to">10:04:01.00</span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="vg-track-name-dropdown">
                                         <ul class="vg-track-subtitles">
@@ -403,10 +431,6 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
-                                <div class="vg-track-time">
-                                    <span class="vg-track-time-from">00:00:01.00 &#8596;</span>
-                                    <span class="vg-track-time-to">10:04:01.00</span>
                                 </div>
                                 <div class="vg-track-importing">Importing track...</div>
                                 <div class="vg-track-error">Incompatible file</div>
@@ -416,13 +440,18 @@
                             <div class="vg-track-content open">
                                 <div class="vg-track-import-spinner"></div>
                                 <div class="vg-track-checkbox">
-                                    <input class="vg-checkbox-input" type="checkbox" id="track-checkbox">
-                                    <label for="track-checkbox"></label>
+                                    <label><input class="vg-checkbox-input" type="checkbox"><span></span></label>
                                 </div>
                                 <div class="vg-imported-track-wrapper">    
                                     <div class="vg-track-name">
                                         <div class="vg-track-triangle"></div>
-                                        <div class="vg-imported-track-name">Yet another.fcp</div>
+                                        <div class="vg-imported-track-name">
+                                            <div class="vg-track">Yet another.fcp</div>
+                                            <div class="vg-track-time">
+                                                <span class="vg-track-time-from">00:20:01.00 &#8596;</span>
+                                                <span class="vg-track-time-to">00:24:01.00</span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="vg-track-name-dropdown">
                                         <ul class="vg-track-subtitles">
@@ -492,14 +521,9 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="vg-track-time">
-                                    <span class="vg-track-time-from">00:20:01.00 &#8596;</span>
-                                    <span class="vg-track-time-to">00:24:01.00</span>
-                                </div>
                                 <div class="vg-track-importing">Importing track...</div>
                                 <div class="vg-track-error">Incompatible file</div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
