@@ -8,7 +8,15 @@
                 width: 800px;
                 height: 610px;
                 background: linear-gradient(#000000,#17191C);
-                border-radius: 4px;
+                border-radius: 3px;
+                z-index: 1000;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                
+               /* -webkit-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 1);
+                -moz-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 1);
+                box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 1);*/
             }
             .box-button {
                 padding: 0;
@@ -104,7 +112,7 @@
             input[type="checkbox"] + span:before {
                 display: inline-block;
                 background: inherit;
-                content: ''; 
+                content: '';
                 height: 13px; 
                 width: 13px;
                 line-height: 15px;
@@ -147,7 +155,7 @@
             }
             .vg-track-content {
                 display: inline-flex;
-                align-items: baseline;
+                -webkit-align-items: baseline;
                 padding-left: 10px;
                 padding-bottom: 15px;
             }
@@ -176,6 +184,13 @@
             .vg-track-subtitles {
                 padding-left: 10px;
                 margin-top: 5px;
+                margin-bottom: 0;
+            }
+            .vg-track-subtitles .vg-track-time-from {
+                color: #746F5F;
+            }
+            .vg-track-subtitles .vg-track-time-to {
+                color: #746F5F;
             }
             .vg-track-subtitle-description {
                 color: #f4f4f4;
@@ -189,8 +204,12 @@
                 color: #6A6154;
                 margin-left: 12px;
             }
-            .vg-track {
+            .vg-imported-track-name .vg-track {
+                color: #746F5F;
                 cursor: pointer;
+            }
+            .vg-imported-track-name .vg-track-time {
+                color: #4F4B42;
             }
             .vg-track-time {
                 color: #544F45;
@@ -198,7 +217,7 @@
             }
             .vg-track-importing {
                 display: none;
-                color: #544F45;
+                color: #4F4B42;
                 padding-left: 10px;
             }
             .vg-track-error {
@@ -217,16 +236,21 @@
                 line-height: 35px;
                 text-align: center;
                 border-radius: 3px;
-                color: #f4f4f4;
+                color: rgb(153,166,157);
                 background: #2C6D79;
                 cursor: pointer;
+            }
+            .vg-add-selected-tracks:hover {
+                color: rgb(164,175,167);
+                background: rgba(44,109,121,0.95);
             }
             .vg-cancel-selected-tracks {
                 color: #f4f4f4;
                 background: #000000;
-                width: 70px;
+                width: 75px;
                 height: 35px;
                 line-height: 35px;
+                border-radius: 3px;
                 text-align: center;
                 margin-left: 30px;
                 cursor: pointer;
@@ -236,23 +260,36 @@
             .vg-add-track-container.closed .vg-imported-tracks {display: none;}
             .vg-add-track-container.closed {height: 156px;}
             
+            .vg-track-content.default .vg-track-checkbox input[type="checkbox"] + span:before {
+                                                        color: #000000; background: #FFFFFF; content: '\2713'}
+            .vg-track-content.default .vg-track-checkbox input[type="checkbox"]:checked + span:before {
+                                                        background: inherit; content: ''}
+            
             .vg-track-content.import .vg-track-checkbox {display: none;}
+            .vg-track-content.import .vg-track-time {display: none;}
+            .vg-track-content.import .vg-track-triangle {display: none;}
+            .vg-track-content.import {padding-left: 11px;}
             .vg-track-content.import .vg-track-import-spinner {display: inline !important;}
             .vg-track-content.import .vg-track-importing {display: inline;}
-            .vg-track-content.import .vg-track-time {display: none;}
-            .vg-track-content.import {padding-left: 13px;}
-            .vg-track-content.import .vg-imported-track-wrapper {padding-left: 5px;}
-            .vg-track-content.import .vg-track-triangle {margin-top: 3px;}
+            .vg-track-content.import .vg-imported-track-wrapper {padding-left: 6px;}
+            .vg-track-content.import .vg-imported-track-name {margin-left: 0;}
+            .vg-track-content.import .vg-track-name {padding-left: 3px;}
             
             .vg-track-content.short .vg-track-time {display: none;}
             .vg-track-content.short .vg-track-triangle {margin-top: 3px;}
+            .vg-track-content.short .vg-track-checkbox input[type="checkbox"] + span:before {
+                                                        color: #000000; background: #FFFFFF; content: '\2713'}
+            .vg-track-content.short .vg-track-checkbox input[type="checkbox"]:checked + span:before {
+                                                        background: inherit; content: ''}
+            
             
             .vg-track-content.error .vg-track-triangle {display: none;}
             .vg-track-content.error .vg-track-time {display: none;}
             .vg-track-content.error .vg-track-name {padding-left: 0;}
             .vg-track-content.error .vg-imported-track-name {text-decoration: underline; -moz-text-decoration-color: red;
-                                                                margin-left: 3px;}
+                                                                margin-left: 4px;}
             .vg-track-content.error .vg-track-error {display: inline;}
+            .vg-track-content.error .vg-track-checkbox input:disabled {}
             
             .vg-track-content.open .vg-imported-track-name {margin-left: 15px;}
             .vg-track-content.open .vg-track-triangle {border-left: 5px solid transparent; border-right: 5px solid transparent; 
@@ -361,7 +398,7 @@
                             </div>
                             
 <!--                     3        -->
-                            <div class="vg-track-content">
+                            <div class="vg-track-content default">
                                 <div class="vg-track-import-spinner"></div>
                                 <div class="vg-track-checkbox">
                                     <label><input class="vg-checkbox-input" type="checkbox"><span></span></label>
