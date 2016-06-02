@@ -13,10 +13,6 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                
-               /* -webkit-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 1);
-                -moz-box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 1);
-                box-shadow: 1px 1px 3px 1px rgba(50, 50, 50, 1);*/
             }
             .box-button {
                 padding: 0;
@@ -291,9 +287,11 @@
             .vg-track-content.error .vg-track-triangle {display: none;}
             .vg-track-content.error .vg-track-time {display: none;}
             .vg-track-content.error .vg-track-name {padding-left: 0;}
-            .vg-track-content.error .vg-imported-track-name {text-decoration: underline; -moz-text-decoration-color: red;
-                                                                margin-left: 4px;}
+            .vg-track-content.error .vg-imported-track-name {text-decoration: underline; margin-left: 4px;}
             .vg-track-content.error .vg-track-error {display: inline;}
+            .vg-track-content.error .vg-track {cursor: default;}
+            .vg-track-content.error input[type="checkbox"] + span:before {border: 1px solid #515151; cursor: default;}
+            .vg-track-content.error .vg-track-error {cursor: default;}
             
             .vg-track-content.open .vg-imported-track-name {margin-left: 15px;}
             .vg-track-content.open .vg-track-triangle {border-left: 5px solid transparent; border-right: 5px solid transparent; 
