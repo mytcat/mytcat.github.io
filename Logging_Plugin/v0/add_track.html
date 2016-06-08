@@ -6,7 +6,8 @@
             .vg-add-track-container {
                 position: absolute;
                 width: 800px;
-                height: 610px;
+                height: auto;
+                max-height: 610px;
                 background: linear-gradient(#000000,#17191C);
                 border-radius: 3px;
                 z-index: 1000;
@@ -14,13 +15,16 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
-            .box-button {
-                padding: 0;
-                border: 0;
-                width: 158px;
-                height: 40px;
-                outline: none;
+            .box-select {
+                width: 160px;
+                height: 42px;
+                border: none;
                 cursor: pointer;
+                background: url('https://app.box.com/img/box_select/Item_Selector_Button_Sprites.png') no-repeat;
+                background-position: -50px -100px;
+            }
+            .box-select:active {
+                background-position: -50px 0;
             }
             .vg-add-tracks {
                 padding: 7px 10px;
@@ -71,12 +75,23 @@
                 font-size: 20px;
                 font-weight: 400;
             }
+            .vg-url-input input[placeholder]::-moz-placeholder {
+                color: #666666;
+                font-size: 20px;
+                font-weight: 200;
+            }
+            .vg-url-input input[placeholder]:-ms-input-placeholder {
+                color: #f4f4f4;
+                font-size: 20px;
+                font-weight: 400;
+            }
             .vg-tracks-header {
                 display: inline-flex;
                 padding: 20px 0 20px 12px;
             }
             .vg-imported-tracks {
-                height: 400px;
+                height: auto;
+                max-height: 400px;
                 overflow-y: scroll;
             }
             .vg-imported-tracks-list {
@@ -141,7 +156,7 @@
                 animation-timing-function: linear;
                 height: 7px;
                 width: 7px;
-                border: 3px solid #ffffff ;
+                border: 3px solid #FFFFFF;
                 border-right-color: transparent;
                 border-radius: 50%;
                 display: inline-block;
@@ -228,8 +243,7 @@
             }
             .vg-tracks-bottom {
                 display: inline-flex;
-                padding-top: 15px;
-                padding-left: 15px;
+                padding: 13px;
             }
             .vg-add-selected-tracks {
                 width: 125px;
@@ -307,7 +321,7 @@
             </div>
             <div class="vg-tracks-middle">
                 <div class="vg-select-input-row">
-                    <button class="box-button"><img src="./static/img/box_button.png"></button>
+                    <div class="box-select" data-link-type="direct" data-multiselect="true" data-client-id="5r24jw3wvgzz0wk1mzo7htrbefs6ejmg"></div>
                     <div class="vg-select-or-input">OR</div>
                     <div class="vg-url-input">
                         <input placeholder="Enter tracks URL..." type="url">
