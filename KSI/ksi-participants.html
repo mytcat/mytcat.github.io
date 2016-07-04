@@ -1,0 +1,203 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Foundation Starter Template</title>
+    <link rel="stylesheet" href="bower_components/foundation-sites/dist/foundation.min.css"/>
+</head>
+<style>
+    .vg-participants-panel-wrapper {
+        width: 20%;
+        height: 100%;
+        font-family: Roboto-Regular;
+        background: rgb(34,34,51);
+    }
+    .vg-participants-container {
+        padding: 10px;
+        color: #FFFFFF;
+    }
+    .vg-participants-header {
+        display: flex;
+        font-size: 16px;
+        color: #FFFFFF;
+        padding-top: 10px;
+    }
+    .vg-participants-name {
+        padding-left: 10px;
+    }
+    .vg-participants-counter {
+        display: -webkit-flex;
+        display: flex;
+        align-items: baseline;
+        padding-top: 25px;
+    }
+    .vg-participants-counter-number {
+        font-size: 13px;
+        padding-right: 5px;
+    }
+    .vg-participants-counter-name {
+        font-size: 10px;
+    }
+    .vg-participants-list {
+        padding-bottom: 30px;
+    }
+    .vg-icon-unmuted, .vg-icon-muted {
+        visibility: hidden;
+    }
+    .vg-participant {
+        display: -webkit-flex;
+        display: flex;
+        align-items: baseline;
+    }
+    .vg-participant .vg-icon {
+        padding-left: 2px;
+    }
+    .vg-participant-name {
+        font-size: 13px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        color: rgba(255,255,255,0.6);
+    }
+    .vg-observers-header {
+        display: -webkit-flex;
+        display: flex;
+        align-items: baseline;
+        color: #FFFFFF;
+    }
+    .vg-observers-counter-number {
+        font-size: 13px;
+        padding-right: 5px;
+    }
+    .vg-observers-counter-name {
+        font-size: 10px;
+    }
+    .vg-observer {
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        padding-left: 28px;
+    }
+    .vg-observer-name {
+        width: 70%;
+        font-size: 13px;
+        color: #FFFFFF;
+        opacity: 0.6;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .vg-icon-minus {
+        align-self: flex-end;
+        margin-left: auto;
+        cursor: pointer;
+    }
+    .vg-participant.active .vg-icon-unmuted { visibility: visible; }
+    .vg-participant.active .vg-participant-name { color: #FFFFFF; }
+    .vg-participant.muted .vg-icon-muted {visibility: visible; }
+    .vg-participant.muted .vg-icon-unmuted { display: none; }
+    .vg-participant.muted .vg-participant-name { color: rgba(255,255,255,0.4); padding-left: 14px; }
+</style>
+
+<body>
+    <div class="vg-participants-panel-wrapper">
+        <div class="vg-participants-container">
+            <div class="vg-participants-header">
+                <div class="vg-participants-logo">
+                    <img src="img/vg-la-fd-icon.svg">
+                </div>
+                <div class="vg-participants-name">
+                    Los Angeles Fire Department
+                </div>
+            </div>
+            <div class="vg-participants-counter">
+                <div class="vg-participants-counter-number">6</div>
+                <div class="vg-participants-counter-name"> PARTICIPANTS</div>
+            </div>
+            <div class="vg-participants-list">
+                <div class="vg-participant">
+                    <div class="vg-icon vg-icon-unmuted">
+                        <img src="img/vg-unmute-icon.svg" alt="">
+                    </div>
+                    <div class="vg-icon vg-icon-muted">
+                        <img src="img/vg-mute-icon.svg" alt="">
+                    </div>
+                    <div class="vg-participant-name">John Gaster</div>
+                </div>
+
+                <div class="vg-participant">
+                    <div class="vg-icon vg-icon-unmuted">
+                        <img src="img/vg-unmute-icon.svg" alt="">
+                    </div>
+                    <div class="vg-icon vg-icon-muted">
+                        <img src="img/vg-mute-icon.svg" alt="">
+                    </div>
+                    <div class="vg-participant-name">Sophie Johnson</div>
+                </div>
+                <div class="vg-participant active">
+                    <div class="vg-icon vg-icon-unmuted">
+                        <img src="img/vg-unmute-icon.svg" alt="">
+                    </div>
+                    <div class="vg-icon vg-icon-muted">
+                        <img src="img/vg-mute-icon.svg" alt="">
+                    </div>
+                    <div class="vg-participant-name">Rob Smith</div>
+                </div>
+                <div class="vg-participant">
+                    <div class="vg-icon vg-icon-unmuted">
+                        <img src="img/vg-unmute-icon.svg" alt="">
+                    </div>
+                    <div class="vg-icon vg-icon-muted">
+                        <img src="img/vg-mute-icon.svg" alt="">
+                    </div>
+                    <div class="vg-participant-name">Michael Grice</div>
+                </div>
+                <div class="vg-participant muted">
+                    <div class="vg-icon vg-icon-unmuted">
+                        <img src="img/vg-unmute-icon.svg" alt="">
+                    </div>
+                    <div class="vg-icon vg-icon-muted">
+                        <img src="img/vg-mute-icon.svg" alt="">
+                    </div>
+                    <div class="vg-participant-name">Jason Barton</div>
+                </div>
+                <div class="vg-participant">
+                    <div class="vg-icon vg-icon-unmuted">
+                        <img src="img/vg-unmute-icon.svg" alt="">
+                    </div>
+                    <div class="vg-icon vg-icon-muted">
+                        <img src="img/vg-mute-icon.svg" alt="">
+                    </div>
+                    <div class="vg-participant-name">Josh Withlongestna</div>
+                </div>
+            </div>
+            <div class="vg-observers">
+                <div class="vg-observers-header">
+                    <div class="vg-observers-counter-number">1</div>
+                    <div class="vg-observers-counter-name">OBSERVER</div>
+                </div>
+                <div class="vg-observers-list">
+                    <div class="vg-observer">
+                        <div class="vg-observer-name">Mike DiBona</div>
+                        <div class="vg-icon-minus">
+                            <img src="img/vg-minus-icon.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+
+
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/what-input.min.js"></script>
+<script src="js/foundation.min.js"></script>
+<script>
+    $(document).foundation();
+</script>
+
+</body>
+</html>
