@@ -1,0 +1,299 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Foundation Starter Template</title>
+    <link rel="stylesheet" href="bower_components/foundation-sites/dist/foundation.min.css"/>
+    <link rel="stylesheet" href="css/vgplayer-953.min.css">
+</head>
+
+<body>
+<div class="vg_controlsPanel vg_panel-bg"><div class="vg_playRateBox vg_info vg_invisible">PLAYBACK SPEED <br> <span class="vg_speedText"></span></div><div class="vg_closeLeftPanel"><div></div></div><!--ControlsView--><div class="vg_controlsContainer"><div class="vg_controlls">
+    <div class="vg_playControls">
+        <div class="vg_iconControls vg_info">
+            <div class="vg_playBackButton vg_iconControls__item"><span class="vg_icon-playbackward vg_default"></span>
+            </div>
+            <div class="vg_playPauseButton vg_iconControls__item vg_default"><span class="vg_icon-play"></span></div>
+            <div class="vg_playFasterButton vg_iconControls__item"><span class="vg_icon-playforward vg_default"></span>
+            </div>
+        </div>
+    </div>
+    <div class="vg_time_controls vg_info">
+
+        <!--TimeControlsView--><div><div class="vg_iconControls">
+        <div class="vg_iconControls__item">
+            <span class="vg_icon-clock vg_default"></span>
+        </div>
+        <div class="vg_iconControls__item">
+            <div class="vg_timecode vg_vertical-rule vg_timecode_standard">
+                <span class="vg_timecode__label vg_standard_header vg_default">Standard</span>
+                <input type="text" class="vg_timecode__value vg_standard_time vg_info">
+            </div>
+        </div>
+        <div class="vg_iconControls__item">
+            <div class="vg_timecode vg_vertical-rule vg_timecode_tape">
+                <span class="vg_timecode__label vg_ndftc_header vg_default">Tape</span>
+                <input type="text" class="vg_timecode__value vg_ndftc_time vg_info">
+            </div>
+        </div>
+        <div class="vg_iconControls__item">
+            <div class="vg_timecode vg_timecode_frame">
+                <span class="vg_timecode__label vg_frame_number_header vg_timecode__label vg_default">Frames</span>
+                <input type="text" class="vg_timecode__value vg_frame_number vg_info">
+            </div>
+        </div>
+    </div>
+    </div></div>
+
+    <div class="vg_volumeScreenControls">
+        <div class="vg_iconControls vg_controls--addOn vg_vertical-rule">
+
+            <!--VideoControlView--><div class="vg_addonview"><div class="vg_addon vg_addon__header">
+            <div class="vg_addon__left vg_default">
+                <i class="vg_addon__icon vg_icon-video"></i>
+            </div>
+            <div class="vg_addon__right vg_videolist__info">
+                <span class="vg_headerText vg_info">VIDEO</span>
+
+                <span class="vg_tracksInfo vg_default">1 track</span><div class="vg_hdButton vg_primary-bg vg_panel active"></div>
+            </div>
+        </div>
+            <div class="vg_addon vg_addon__list vg_default-bg vg_videolist"><div class="vg_videoTrack vg_addon">
+                <div class="vg_littlePlayButton vg_addon__left vg_info"><span class="vg_addon__icon vg_icon-vgplay"></span></div>
+                <div class="vg_currentVideoInfo vg_addon__right">
+                    <div class="vg_videoTrack__img">
+                        <canvas class="vg_videoTrack__canvas"></canvas>
+                    </div>
+                </div>
+            </div></div>
+        </div><!--AudioControlView--><div class="vg_addonview"><div class="vg_addon vg_addon__header">
+            <div class="vg_addon__left vg_default">
+                <i class="vg_addon__icon vg_icon-audio"></i>
+            </div>
+            <div class="vg_addon__right vg_audiolist__info">
+                <span class="vg_headerText vg_info">AUDIO</span>
+
+                <span class="vg_tracksInfo vg_default">6 tracks</span><span class="vg_muteAllButton"></span><span class="vgtheme_control-plus"></span><input class="vg_horizontal-range" type="range" min="0" max="100" step="1">
+            </div>
+        </div>
+            <div class="vg_addon vg_addon__list vg_default-bg vg_audiolist" data-proxy="null"><div class="vg_audioTrack" data-trackproxy="m3442/v8048">
+
+
+
+                <div class="vg_addon vg_audioTrack__channel " id="track-m3442/v8048_channel-0" data-track="m3442/v8048" data-channel="0">
+                    <div class="vg_volumeIcon vg_info vg_addon__left">
+                        <span class="vg_addon__icon vg_icon-vgvolume"></span>
+                    </div>
+                    <div class="vg_currentAudioInfo vg_addon__right">
+                        <span class="vg-controls__label vg_audioTrack__label vg_info">front left</span>
+
+                        <div class="vg_waveformIcon"><img style="width:100%;" src="http://kote.videogorillas.com:8042/dash/m3442/v8048/tw00.png"></div>
+                    </div>
+                </div>
+
+
+                <div class="vg_addon vg_audioTrack__channel " id="track-m3442/v8048_channel-1" data-track="m3442/v8048" data-channel="1">
+                    <div class="vg_volumeIcon vg_info vg_addon__left">
+                        <span class="vg_addon__icon vg_icon-vgvolume"></span>
+                    </div>
+                    <div class="vg_currentAudioInfo vg_addon__right">
+                        <span class="vg-controls__label vg_audioTrack__label vg_info">front right</span>
+
+                        <div class="vg_waveformIcon"><img style="width:100%;" src="http://kote.videogorillas.com:8042/dash/m3442/v8048/tw01.png"></div>
+                    </div>
+                </div>
+
+            </div><div class="vg_audioTrack" data-trackproxy="m3441/v8059">
+
+                <div class="vg_audioTrackName vg_addon" title="rus20_3min.m4a">
+                    <span class="vg_info">rus20_3min.m4a</span>
+                </div>
+
+
+
+                <div class="vg_addon vg_audioTrack__channel vg_muted" id="track-m3441/v8059_channel-0" data-track="m3441/v8059" data-channel="0">
+                    <div class="vg_volumeIcon vg_info vg_addon__left">
+                        <span class="vg_addon__icon vg_icon-vgvolume"></span>
+                    </div>
+                    <div class="vg_currentAudioInfo vg_addon__right">
+                        <span class="vg-controls__label vg_audioTrack__label vg_info">front left</span>
+
+                        <div class="vg_waveformIcon"><img style="width:99.97800635506977%;" src="http://kote.videogorillas.com:8042/dash/m3441/v8059/tw00.png"></div>
+                    </div>
+                </div>
+
+
+                <div class="vg_addon vg_audioTrack__channel vg_muted" id="track-m3441/v8059_channel-1" data-track="m3441/v8059" data-channel="1">
+                    <div class="vg_volumeIcon vg_info vg_addon__left">
+                        <span class="vg_addon__icon vg_icon-vgvolume"></span>
+                    </div>
+                    <div class="vg_currentAudioInfo vg_addon__right">
+                        <span class="vg-controls__label vg_audioTrack__label vg_info">front right</span>
+
+                        <div class="vg_waveformIcon"><img style="width:99.97800635506977%;" src="http://kote.videogorillas.com:8042/dash/m3441/v8059/tw01.png"></div>
+                    </div>
+                </div>
+
+            </div><div class="vg_audioTrack" data-trackproxy="m3443/v8054">
+
+                <div class="vg_audioTrackName vg_addon" title="eng20_3min.m4a">
+                    <span class="vg_info">eng20_3min.m4a</span>
+                </div>
+
+
+
+                <div class="vg_addon vg_audioTrack__channel vg_muted" id="track-m3443/v8054_channel-0" data-track="m3443/v8054" data-channel="0">
+                    <div class="vg_volumeIcon vg_info vg_addon__left">
+                        <span class="vg_addon__icon vg_icon-vgvolume"></span>
+                    </div>
+                    <div class="vg_currentAudioInfo vg_addon__right">
+                        <span class="vg-controls__label vg_audioTrack__label vg_info">front left</span>
+
+                        <div class="vg_waveformIcon"><img style="width:99.97800635506977%;" src="http://kote.videogorillas.com:8042/dash/m3443/v8054/tw00.png"></div>
+                    </div>
+                </div>
+
+
+                <div class="vg_addon vg_audioTrack__channel vg_muted" id="track-m3443/v8054_channel-1" data-track="m3443/v8054" data-channel="1">
+                    <div class="vg_volumeIcon vg_info vg_addon__left">
+                        <span class="vg_addon__icon vg_icon-vgvolume"></span>
+                    </div>
+                    <div class="vg_currentAudioInfo vg_addon__right">
+                        <span class="vg-controls__label vg_audioTrack__label vg_info">front right</span>
+
+                        <div class="vg_waveformIcon"><img style="width:99.97800635506977%;" src="http://kote.videogorillas.com:8042/dash/m3443/v8054/tw01.png"></div>
+                    </div>
+                </div>
+
+            </div></div>
+        </div><!--CaptionsControlView--><div class="vg_addonview"><div class="vg_addon vg_addon__header">
+            <div class="vg_addon__left vg_default">
+                <i class="vg_addon__icon vg_icon-captions"></i>
+            </div>
+            <div class="vg_addon__right vg_captionslist__info">
+                <span class="vg_headerText vg_info">Captions</span>
+
+                <span class="vg_tracksInfo vg_default">10 tracks</span>
+                <span class="vgtheme_control-plus"></span></div>
+        </div>
+            <div class="vg_addon vg_addon__list vg_default-bg vg_captionslist"><div class="vg_caption vg_default active" id="null">
+                <div class="vg_addon vg_caption__item">
+                    <div class="vg_addon__left">
+                        <span class="vg_addon__icon vg_caption__switch"></span>
+                    </div>
+                    <div class="vg_caption__info vg_addon__right">
+                        <span class="vg-controls__label vg_caption__label vg_info">100events.js</span>
+                    </div>
+                </div>
+            </div><div class="vg_caption vg_default" id="null">
+                <div class="vg_addon vg_caption__item">
+                    <div class="vg_addon__left">
+                        <span class="vg_addon__icon vg_caption__switch"></span>
+                    </div>
+                    <div class="vg_caption__info vg_addon__right">
+                        <span class="vg-controls__label vg_caption__label vg_info">100events.js</span>
+                    </div>
+                </div>
+            </div><div class="vg_caption vg_default" id="null">
+                <div class="vg_addon vg_caption__item">
+                    <div class="vg_addon__left">
+                        <span class="vg_addon__icon vg_caption__switch"></span>
+                    </div>
+                    <div class="vg_caption__info vg_addon__right">
+                        <span class="vg-controls__label vg_caption__label vg_info">100events.js</span>
+                    </div>
+                </div>
+            </div><div class="vg_caption vg_default" id="null">
+                <div class="vg_addon vg_caption__item">
+                    <div class="vg_addon__left">
+                        <span class="vg_addon__icon vg_caption__switch"></span>
+                    </div>
+                    <div class="vg_caption__info vg_addon__right">
+                        <span class="vg-controls__label vg_caption__label vg_info">100events.js</span>
+                    </div>
+                </div>
+            </div><div class="vg_caption vg_default" id="null">
+                <div class="vg_addon vg_caption__item">
+                    <div class="vg_addon__left">
+                        <span class="vg_addon__icon vg_caption__switch"></span>
+                    </div>
+                    <div class="vg_caption__info vg_addon__right">
+                        <span class="vg-controls__label vg_caption__label vg_info">100events.js</span>
+                    </div>
+                </div>
+            </div><div class="vg_caption vg_default" id="null">
+                <div class="vg_addon vg_caption__item">
+                    <div class="vg_addon__left">
+                        <span class="vg_addon__icon vg_caption__switch"></span>
+                    </div>
+                    <div class="vg_caption__info vg_addon__right">
+                        <span class="vg-controls__label vg_caption__label vg_info">100events.js</span>
+                    </div>
+                </div>
+            </div><div class="vg_caption vg_default" id="null">
+                <div class="vg_addon vg_caption__item">
+                    <div class="vg_addon__left">
+                        <span class="vg_addon__icon vg_caption__switch"></span>
+                    </div>
+                    <div class="vg_caption__info vg_addon__right">
+                        <span class="vg-controls__label vg_caption__label vg_info">100events.js</span>
+                    </div>
+                </div>
+            </div><div class="vg_caption vg_default" id="null">
+                <div class="vg_addon vg_caption__item">
+                    <div class="vg_addon__left">
+                        <span class="vg_addon__icon vg_caption__switch"></span>
+                    </div>
+                    <div class="vg_caption__info vg_addon__right">
+                        <span class="vg-controls__label vg_caption__label vg_info">100events.js</span>
+                    </div>
+                </div>
+            </div><div class="vg_caption vg_default" id="null">
+                <div class="vg_addon vg_caption__item">
+                    <div class="vg_addon__left">
+                        <span class="vg_addon__icon vg_caption__switch"></span>
+                    </div>
+                    <div class="vg_caption__info vg_addon__right">
+                        <span class="vg-controls__label vg_caption__label vg_info">100events.js</span>
+                    </div>
+                </div>
+            </div><div class="vg_caption vg_default" id="null">
+                <div class="vg_addon vg_caption__item">
+                    <div class="vg_addon__left">
+                        <span class="vg_addon__icon vg_caption__switch"></span>
+                    </div>
+                    <div class="vg_caption__info vg_addon__right">
+                        <span class="vg-controls__label vg_caption__label vg_info">TANGLED_TH_STT_23_ENG_D1187819.xml</span>
+                    </div>
+                </div>
+            </div></div>
+        </div></div>
+        <div class="vg_iconControls">
+
+            <div class="vg_iconControls__item vg_ddown--hover vg_default">
+                <span class="vg_volume vg_icon-volume "></span>
+
+
+                <div class="vg_ddown__content vg_background vg_primary">
+                    <div class="vg_vertical-range">
+                        <input class="vg_vertical-inputrange" type="range" min="0" max="100" step="1" hotkeysenabled="true">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="vg_fullScreen vg_iconControls__item">
+                <span class="vg_icon-fullscreen vg_default"></span>
+            </div>
+        </div>
+    </div>
+</div>
+</div><div class="vg_default vg_proPanel__toggle"></div>
+</div>
+
+</body>
+</html>
+
+
