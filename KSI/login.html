@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="foundation-6.2.3-custom/css/foundation.min.css">
+    <link href="foundation-icons/foundation-icons.ttf">
     <style>
         body {
             background: #4e4e4e;
         }
         .vg-login-container {
             width: 25%;
-            height: 45%;
+/*            height: 45%;*/
             position: absolute;
             top: 50%;
             left: 50%;
@@ -26,7 +27,7 @@
             width: 40%;
             margin-left: auto;
             margin-right: auto;
-            padding: 70px 0;
+            padding: 15% 0;
             float: none;
         }
         .vg-login-data input {
@@ -41,8 +42,13 @@
         .vg-username-email {
             padding-bottom: 20px;
         }
-        .vg-usename-password {
+        .vg-username-password {
             padding-bottom: 20px;
+        }
+        .vg-login-error-message {
+            display: none;
+            font-size: 12px;
+            color: #ee2737;
         }
         .vg-login-button {
             width: 100%;
@@ -55,39 +61,81 @@
             margin: 0;
             font-size: 16px;
         }
+        .vg-login-button a {
+            color: #55acee;
+        }
         .vg-login-sign-up {
             position: absolute;
             left: 0;
             right: 0;
-            font-size: 11px;
+            font-size: 14px;
             padding-top: 10px;
         }
-        .vg-login-sign-up a {
+        .vg-login-sign-up a:hover {
+            color: #0079ff;
+        }
+        .vg-login-forgot-password {
+            position: absolute;
+            left: 0;
+            right: 0;
+            font-size: 11px;
+            padding-top: 30px;
+        }
+        footer {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        footer a {
             color: #55acee;
+        }
+        footer a:hover {
+            color: #0079ff;
+        }
+        .vg-login-error-message.show {
+            display: block;
+        }
+        @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 736px)
+            and (orientation: portrait) {
+                .vg-login-container {
+                    width: 60%;
+                }
+                .vg-login-data, .vg-login-error-message > span, .vg-login-button .button, .vg-login-sign-up, footer {
+                    font-size: 2.25em;
+                }
         }
     </style>
 </head>
 <body>
-    <div class="vg-login-main-container">
-        <div class="vg-login-container">
-            <div class="vg-login">
-                <div class="vg-live4-logo">
-                    <img src="img/LIVE4black.svg">
+    <div class="vg-login-container row">
+        <div class="vg-login small-12">
+            <div class="small-4 vg-live4-logo">
+                <img src="img/LIVE4black.svg">
+            </div>
+            <div class="vg-login-data text-center">
+                <div class="vg-username-email">
+                    <input placeholder=" user@email.com">
                 </div>
-                <div class="vg-login-data text-center">
-                    <div class="vg-username-email">
-                        <input placeholder=" user@email.com">
-                    </div>
-                    <div class="vg-username-password">
-                        <input placeholder=" Password">
-                    </div>
+                <div class="vg-username-password">
+                    <span class="prefix"><i class="fi-torsos"></i></span>
+                    <input placeholder=" Password">
                 </div>
-                <div class="vg-login-button">
-                    <button type="button" class="alert button">Log in</button>
-                    <p class="vg-login-sign-up text-center"><a href="">Sign up</a></p>
+                <div class="vg-login-error-message">
+                    <span>Wrong login or password</span>        
+                </div>
+            </div>
+            <div class="vg-login-button">
+                <button type="button" class="alert button">Log in</button>
+                <div>
+                    <p class="vg-login-sign-up text-center"><a href="#">Sign up</a></p>
                 </div>
             </div>
         </div>
     </div>
+    <footer><a href="#">Forgot your password?</a></footer>
 </body>
 </html>
