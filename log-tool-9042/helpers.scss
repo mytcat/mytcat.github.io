@@ -1,0 +1,8 @@
+%flex {
+  display: flex;
+  &-spaced-between {
+    @extend %flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

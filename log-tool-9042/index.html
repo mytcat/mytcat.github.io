@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Logging tool</title>
+        <link rel="stylesheet" href="normalize.css" >
+        <link rel="stylesheet" href="vglogtool.css" >
+    </head>
+    <body>
+        <div class="vg-main-container">
+            <div class="vg-header">
+                <div class="vg-header-left">
+                    <span>Video Log</span>
+                    <span>Frame Match</span>
+                </div>
+                <div class="vg-header-right">
+                    <span>Export</span>
+                    <span>Import</span>
+                </div>
+            </div>
+            <div class="vg-main">
+                <div class="vg-player-wrapper">
+                    <div class="vg-player-section"></div>
+                    <div class="vg-player-bottom">
+                        <div class="vg-controls-section"></div>
+                        <div class="vg-filmstrip-section"></div>
+                    </div>
+                </div>
+                <div class="vg-side-panel">
+                    <div class="vg-track-area-container">
+                        <div class="vg-track-input-container">
+                            <input class="vg-track-input" placeholder="Master">
+                        </div>
+                        <div class="vg-track-actions">
+                            <span>&#8681;</span>
+                            <span>+</span>
+                        </div>
+                    </div>
+                    <div class="vg-tags-search-area">
+                        <div class="vg-selected-events">
+                            <input class="vg-selected-events-input" placeholder="Selected: 1" disabled>
+                        </div>
+                        <div class="vg-tags-search">
+                            <input class="vg-tags-search-input" placeholder="Search tag">
+                        </div>
+                    </div>
+                    <div class="vg-side-panel-events">
+                        <div class="vg-side-panel-events-item">
+                            <div class="vg-side-panel-events-item-time-area">
+                                <div class="start-time">Start: <span>00:01:00:00 <span>&#9998;</span></span></div>
+                                <div class="end-time">End: <span>00:02:00:00 <span>&#9998;</span></span></div>
+                                <div class="duration"><span>&#x23f1;</span> 00:01:00:00 <span>&#9432;</span></div>
+                            </div>
+                            <div class="vg-side-panel-events-item-tags-area">
+                                <span class="vg-event-tag">First Frame of Composition</span>
+                                <span class="vg-event-tag">Textless Start</span>
+                                <span class="vg-event-tag">Music Shmusic</span>
+                                <span class="vg-event-tag">Music</span>
+                                <span class="vg-event-tag">Music</span>
+                            </div>
+                            <div class="vg-side-panel-events-item-description-area">
+                                <input class="description-input" placeholder="Add Description">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vg-side-panel-footer">
+                        <div><input placeholder="Tape timecode"></div>
+                        <div><span>&#x2708;</span><span>&#x2723;</span><span>&#x25b2;</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

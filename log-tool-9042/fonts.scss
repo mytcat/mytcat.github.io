@@ -1,0 +1,10 @@
+$font-family: Sans-Serif, Arial;
+$font-size-normal: 14px;
+
+body {
+  font-family: $font-family;
+  .vg-side-panel {
+    font-size: $font-size-normal;
+    font-weight: 100;
+  }
+}
