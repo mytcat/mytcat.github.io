@@ -53,13 +53,8 @@ html, body {
       .vg-track-input-container {
         width: 85%;
         .vg-track-input {
+          @extend %input-default;
           width: 100%;
-          height: 25px;
-          padding-left: 20px;
-          border-radius: 4px;
-          border: 0;
-          outline: none;
-          background: $bg-color-dark1;
         }
       }
       .vg-track-actions {
@@ -75,31 +70,22 @@ html, body {
       background: $bg-color-light3;
       .vg-selected-events {
         .vg-selected-events-input {
+          @extend %input-default;
           width: 120px;
-          height: 25px;
-          outline: none;
           opacity: 0.6;
-          border-radius: 4px;
-          border: 0;
-          padding-left: 20px;
-          background: $bg-color-dark1;
         }
       }
       .vg-tags-search {
         .vg-tags-search-input {
+          @extend %input-default;
           width: 220px;
-          height: 25px;
           color: white;
-          outline: none;
-          border-radius: 4px;
-          border: 0;
-          padding-left: 20px;
-          background: $bg-color-dark1;        
         }
       }
     }
     &-events {
       overflow-y: scroll;
+      height: inherit;
       max-height: calc(100% - 135px);
       &-item {
         margin: 8px 25px;
@@ -111,8 +97,12 @@ html, body {
         &-time-area {
           @extend %flex-spaced-between;
           color: $bg-color-light2;
+          .vg-edit_icon {
+            visibility: hidden;
+          }
         }
         &-tags-area {
+          position: relative;
           color: white;
           margin: 10px 0;
           padding: 10px 0;
@@ -120,10 +110,37 @@ html, body {
           border-top: 1px solid $bg-color-light;
           border-bottom: 1px solid $bg-color-light;
           .vg-event-tag {
-            padding: 5px 5px 5px 13px;
+            padding: 5px 13px 5px 13px;
             white-space: nowrap;
             background: $bg-color-light;
             border-radius: 13px;
+          }
+          .add_tag {
+            display: none;
+          }
+          &-input {
+            @extend %input-default;
+            display: none;
+            width: 100%;
+            padding-left: 15px !important;
+            color: $bg-color-light2;
+            &-dropdown {
+              position: absolute;
+              width: 100%;
+              background: $bg-color-dark2;
+              //background: $bg-color-light3;
+              top: 55%;
+              border-radius: 4px;
+              list-style: none;
+              line-height: 2rem;
+              padding-left: 0px;
+              box-shadow: -1px 0px 15px -4px black;
+              li {
+                margin-left: 20px;
+                cursor: pointer;
+                border-bottom: 1px solid $bg-color-light3;
+              }
+            }
           }
         }
         &-description-area {
@@ -137,6 +154,28 @@ html, body {
             color: $bg-color-light2;
           }
         }
+        &.editable {
+          background: $bg-color-light3;
+          box-shadow: inset 6px 0px 0px 0px $blue;
+          .vg-edit_icon {
+            visibility: visible;
+          }
+          .add_tag {
+            display: inline;
+            cursor: pointer;
+          }
+        }
+        &.new_event {
+          background: $bg-color-light3;
+          .vg-side-panel-events-item-tags-area-input {
+            display: block;
+            width: calc(100% - 15px);
+          }
+          box-shadow: inset 6px 0px 0px 0px $yellow;
+          .vg-edit_icon {
+            visibility: visible;
+          }
+        }
       }
     }
     &-footer {
@@ -148,14 +187,41 @@ html, body {
       padding: 10px 25px 10px 25px;
       color: $bg-color-light2;
       background: $bg-color-light3;
-      input {
-        width: 200px;
-        height: 25px;
-        outline: none;
-        border-radius: 4px;
-        border: 0;
-        padding-left: 20px;
-        background: $bg-color-dark1;        
+      &-content {
+        position: relative;
+        .vg-icon {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        &-input {
+          @extend %input-default;
+          width: 200px;
+          &:hover {
+            .vg-side-panel-footer-content.yo {
+              display: block !important;
+            }
+          }
+        }
+        &-input-dropdown {
+          position: absolute;
+          width: 220px;
+          background: $bg-color-dark1;
+          bottom: 55%;
+          border-radius: 4px;
+          list-style: none;
+          line-height: 2rem;
+          padding-left: 0px;
+          box-shadow: -1px 0px 15px -4px black;
+          li {
+            padding-left: 20px;
+            cursor: pointer;
+            &:hover {
+              background: $bg-color-light3;
+            }
+          }
+        }
       }
     }
   }

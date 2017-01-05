@@ -37,13 +37,7 @@ html, body {
     .vg-side-panel .vg-track-area-container .vg-track-input-container {
       width: 85%; }
       .vg-side-panel .vg-track-area-container .vg-track-input-container .vg-track-input {
-        width: 100%;
-        height: 25px;
-        padding-left: 20px;
-        border-radius: 4px;
-        border: 0;
-        outline: none;
-        background: #1F2023; }
+        width: 100%; }
     .vg-side-panel .vg-track-area-container .vg-track-actions {
       width: 15%;
       text-align: right; }
@@ -54,24 +48,13 @@ html, body {
     background: #3C3F43; }
     .vg-side-panel .vg-tags-search-area .vg-selected-events .vg-selected-events-input {
       width: 120px;
-      height: 25px;
-      outline: none;
-      opacity: 0.6;
-      border-radius: 4px;
-      border: 0;
-      padding-left: 20px;
-      background: #1F2023; }
+      opacity: 0.6; }
     .vg-side-panel .vg-tags-search-area .vg-tags-search .vg-tags-search-input {
       width: 220px;
-      height: 25px;
-      color: white;
-      outline: none;
-      border-radius: 4px;
-      border: 0;
-      padding-left: 20px;
-      background: #1F2023; }
+      color: white; }
   .vg-side-panel-events {
     overflow-y: scroll;
+    height: inherit;
     max-height: calc(100% - 135px); }
     .vg-side-panel-events-item {
       margin: 8px 25px;
@@ -81,7 +64,10 @@ html, body {
         background: #3C3F43; }
       .vg-side-panel-events-item-time-area {
         color: #8A8B8D; }
+        .vg-side-panel-events-item-time-area .vg-edit_icon {
+          visibility: hidden; }
       .vg-side-panel-events-item-tags-area {
+        position: relative;
         color: white;
         margin: 10px 0;
         padding: 10px 0;
@@ -89,10 +75,31 @@ html, body {
         border-top: 1px solid #4B4E51;
         border-bottom: 1px solid #4B4E51; }
         .vg-side-panel-events-item-tags-area .vg-event-tag {
-          padding: 5px 5px 5px 13px;
+          padding: 5px 13px 5px 13px;
           white-space: nowrap;
           background: #4B4E51;
           border-radius: 13px; }
+        .vg-side-panel-events-item-tags-area .add_tag {
+          display: none; }
+        .vg-side-panel-events-item-tags-area-input {
+          display: none;
+          width: 100%;
+          padding-left: 15px !important;
+          color: #8A8B8D; }
+          .vg-side-panel-events-item-tags-area-input-dropdown {
+            position: absolute;
+            width: 100%;
+            background: #2D3033;
+            top: 55%;
+            border-radius: 4px;
+            list-style: none;
+            line-height: 2rem;
+            padding-left: 0px;
+            box-shadow: -1px 0px 15px -4px black; }
+            .vg-side-panel-events-item-tags-area-input-dropdown li {
+              margin-left: 20px;
+              cursor: pointer;
+              border-bottom: 1px solid #3C3F43; }
       .vg-side-panel-events-item-description-area {
         color: #8A8B8D; }
         .vg-side-panel-events-item-description-area .description-input {
@@ -102,6 +109,22 @@ html, body {
           background: transparent;
           font-weight: 100;
           color: #8A8B8D; }
+      .vg-side-panel-events-item.editable {
+        background: #3C3F43;
+        box-shadow: inset 6px 0px 0px 0px #0082FF; }
+        .vg-side-panel-events-item.editable .vg-edit_icon {
+          visibility: visible; }
+        .vg-side-panel-events-item.editable .add_tag {
+          display: inline;
+          cursor: pointer; }
+      .vg-side-panel-events-item.new_event {
+        background: #3C3F43;
+        box-shadow: inset 6px 0px 0px 0px #ffb617; }
+        .vg-side-panel-events-item.new_event .vg-side-panel-events-item-tags-area-input {
+          display: block;
+          width: calc(100% - 15px); }
+        .vg-side-panel-events-item.new_event .vg-edit_icon {
+          visibility: visible; }
   .vg-side-panel-footer {
     position: absolute;
     left: 0;
@@ -110,20 +133,46 @@ html, body {
     padding: 10px 25px 10px 25px;
     color: #8A8B8D;
     background: #3C3F43; }
-    .vg-side-panel-footer input {
-      width: 200px;
-      height: 25px;
-      outline: none;
-      border-radius: 4px;
-      border: 0;
-      padding-left: 20px;
-      background: #1F2023; }
+    .vg-side-panel-footer-content {
+      position: relative; }
+      .vg-side-panel-footer-content .vg-icon {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%); }
+      .vg-side-panel-footer-content-input {
+        width: 200px; }
+        .vg-side-panel-footer-content-input:hover .vg-side-panel-footer-content.yo {
+          display: block !important; }
+      .vg-side-panel-footer-content-input-dropdown {
+        position: absolute;
+        width: 220px;
+        background: #1F2023;
+        bottom: 55%;
+        border-radius: 4px;
+        list-style: none;
+        line-height: 2rem;
+        padding-left: 0px;
+        box-shadow: -1px 0px 15px -4px black; }
+        .vg-side-panel-footer-content-input-dropdown li {
+          padding-left: 20px;
+          cursor: pointer; }
+          .vg-side-panel-footer-content-input-dropdown li:hover {
+            background: #3C3F43; }
 
 .vg-main, .vg-header, .vg-side-panel .vg-track-area-container, .vg-side-panel .vg-tags-search-area, .vg-side-panel-events-item-time-area, .vg-side-panel-footer {
   display: flex; }
   .vg-header, .vg-side-panel .vg-track-area-container, .vg-side-panel .vg-tags-search-area, .vg-side-panel-events-item-time-area, .vg-side-panel-footer {
     align-items: center;
     justify-content: space-between; }
+
+.vg-side-panel .vg-track-area-container .vg-track-input-container .vg-track-input, .vg-side-panel .vg-tags-search-area .vg-selected-events .vg-selected-events-input, .vg-side-panel .vg-tags-search-area .vg-tags-search .vg-tags-search-input, .vg-side-panel-events-item-tags-area-input, .vg-side-panel-footer-content-input {
+  height: 25px;
+  padding-left: 20px;
+  border-radius: 4px;
+  border: 0;
+  outline: none;
+  background: #1F2023; }
 
 body {
   font-family: Sans-Serif, Arial; }
