@@ -86,18 +86,26 @@ html, body {
           width: 100%;
           padding-left: 15px !important;
           color: #8A8B8D; }
-          .vg-side-panel-events-item-tags-area-input-dropdown {
+          .vg-side-panel-events-item-tags-area-input-container {
             position: absolute;
             width: 100%;
+            background: #3C3F43;
+            border-radius: 4px;
+            box-shadow: -1px 0px 15px -4px black; }
+          .vg-side-panel-events-item-tags-area-input-dropdown {
+            position: relative;
+            width: 96%;
+            height: 200px;
+            padding-left: 0px;
+            margin: 2%;
+            overflow-y: scroll;
+            color: #8A8B8D;
             background: #2D3033;
-            top: 55%;
             border-radius: 4px;
             list-style: none;
-            line-height: 2rem;
-            padding-left: 0px;
-            box-shadow: -1px 0px 15px -4px black; }
+            line-height: 2rem; }
             .vg-side-panel-events-item-tags-area-input-dropdown li {
-              margin-left: 20px;
+              margin-left: 10px;
               cursor: pointer;
               border-bottom: 1px solid #3C3F43; }
       .vg-side-panel-events-item-description-area {

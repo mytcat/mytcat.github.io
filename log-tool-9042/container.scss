@@ -124,19 +124,27 @@ html, body {
             width: 100%;
             padding-left: 15px !important;
             color: $bg-color-light2;
-            &-dropdown {
+            &-container {
               position: absolute;
               width: 100%;
+              background: $bg-color-light3;
+              border-radius: 4px;
+              box-shadow: -1px 0px 15px -4px black;
+            }
+            &-dropdown {
+              position: relative;
+              width: 96%;
+              height: 200px;
+              padding-left: 0px;
+              margin: 2%;
+              overflow-y: scroll;
+              color: $bg-color-light2;
               background: $bg-color-dark2;
-              //background: $bg-color-light3;
-              top: 55%;
               border-radius: 4px;
               list-style: none;
               line-height: 2rem;
-              padding-left: 0px;
-              box-shadow: -1px 0px 15px -4px black;
               li {
-                margin-left: 20px;
+                margin-left: 10px;
                 cursor: pointer;
                 border-bottom: 1px solid $bg-color-light3;
               }
