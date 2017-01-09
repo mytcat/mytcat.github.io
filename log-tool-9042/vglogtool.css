@@ -105,9 +105,11 @@ html, body {
             list-style: none;
             line-height: 2rem; }
             .vg-side-panel-events-item-tags-area-input-dropdown li {
-              margin-left: 10px;
+              padding-left: 10px;
               cursor: pointer;
               border-bottom: 1px solid #3C3F43; }
+              .vg-side-panel-events-item-tags-area-input-dropdown li:hover {
+                background: #4B4E51; }
       .vg-side-panel-events-item-description-area {
         color: #8A8B8D; }
         .vg-side-panel-events-item-description-area .description-input {
@@ -149,12 +151,15 @@ html, body {
         top: 50%;
         transform: translateY(-50%); }
       .vg-side-panel-footer-content-input {
-        width: 200px; }
+        width: 200px;
+        cursor: pointer; }
         .vg-side-panel-footer-content-input:hover .vg-side-panel-footer-content.yo {
           display: block !important; }
       .vg-side-panel-footer-content-input-dropdown {
         position: absolute;
         width: 220px;
+        max-height: 200px;
+        overflow-y: scroll;
         background: #1F2023;
         bottom: 55%;
         border-radius: 4px;
