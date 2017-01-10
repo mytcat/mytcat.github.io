@@ -35,9 +35,29 @@ html, body {
     color: #8A8B8D;
     background: #3C3F43; }
     .vg-side-panel .vg-track-area-container .vg-track-input-container {
+      position: relative;
       width: 85%; }
+      .vg-side-panel .vg-track-area-container .vg-track-input-container.active .vg-track-dropdown {
+        display: block; }
       .vg-side-panel .vg-track-area-container .vg-track-input-container .vg-track-input {
-        width: 100%; }
+        width: 100%;
+        cursor: pointer; }
+      .vg-side-panel .vg-track-area-container .vg-track-input-container .vg-track-dropdown {
+        display: none;
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        padding-left: 20px;
+        top: 55%; }
+        .vg-side-panel .vg-track-area-container .vg-track-input-container .vg-track-dropdown li {
+          display: flex;
+          justify-content: space-between; }
+          .vg-side-panel .vg-track-area-container .vg-track-input-container .vg-track-dropdown li .vg-track-item-actions {
+            display: none; }
+            .vg-side-panel .vg-track-area-container .vg-track-input-container .vg-track-dropdown li .vg-track-item-actions span {
+              padding-right: 15px; }
+          .vg-side-panel .vg-track-area-container .vg-track-input-container .vg-track-dropdown li:hover .vg-track-item-actions {
+            display: block; }
     .vg-side-panel .vg-track-area-container .vg-track-actions {
       width: 15%;
       text-align: right; }
@@ -172,20 +192,12 @@ html, body {
         .vg-side-panel-footer-content-input:hover .vg-side-panel-footer-content.yo {
           display: block !important; }
       .vg-side-panel-footer-content-input-dropdown {
-        position: absolute;
         width: 220px;
         max-height: 200px;
-        overflow-y: scroll;
-        background: #1F2023;
         bottom: 55%;
-        border-radius: 4px;
-        list-style: none;
-        line-height: 2rem;
-        padding-left: 0px;
-        box-shadow: -1px 0px 15px -4px black; }
+        padding-left: 0px; }
         .vg-side-panel-footer-content-input-dropdown li {
-          padding-left: 20px;
-          cursor: pointer; }
+          padding-left: 20px; }
           .vg-side-panel-footer-content-input-dropdown li:hover {
             background: #3C3F43; }
 
@@ -202,6 +214,18 @@ html, body {
   border: 0;
   outline: none;
   background: #1F2023; }
+
+.vg-side-panel .vg-track-area-container .vg-track-input-container .vg-track-dropdown, .vg-side-panel-footer-content-input-dropdown {
+  position: absolute;
+  overflow-y: auto;
+  background: #1F2023;
+  border-radius: 4px;
+  z-index: 1;
+  list-style: none;
+  line-height: 2rem;
+  box-shadow: -1px 0px 15px -4px black; }
+  .vg-side-panel .vg-track-area-container .vg-track-input-container .vg-track-dropdown li, .vg-side-panel-footer-content-input-dropdown li {
+    cursor: pointer; }
 
 body {
   font-family: Sans-Serif, Arial; }

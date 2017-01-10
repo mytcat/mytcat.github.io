@@ -51,10 +51,41 @@ html, body {
       color: $bg-color-light2;
       background: $bg-color-light3;
       .vg-track-input-container {
+        position: relative;
         width: 85%;
+        &.active {
+          .vg-track-dropdown {
+            display: block;
+          }
+        }
         .vg-track-input {
           @extend %input-default;
           width: 100%;
+          cursor: pointer;
+        }
+        .vg-track-dropdown {
+          @extend %input-dropdown;
+          display: none;
+          width: 100%;
+          height: auto;
+          max-height: 200px;
+          padding-left: 20px;
+          top: 55%;
+          li {
+            display: flex;
+            justify-content: space-between;
+            .vg-track-item-actions {
+              display: none;
+              span {
+                padding-right: 15px;
+              }
+            }
+            &:hover {
+              .vg-track-item-actions {
+                display: block;
+              }
+            }
+          }
         }
       }
       .vg-track-actions {
@@ -237,20 +268,13 @@ html, body {
           }
         }
         &-input-dropdown {
-          position: absolute;
+          @extend %input-dropdown;
           width: 220px;
           max-height: 200px;
-          overflow-y: scroll;
-          background: $bg-color-dark1;
           bottom: 55%;
-          border-radius: 4px;
-          list-style: none;
-          line-height: 2rem;
           padding-left: 0px;
-          box-shadow: -1px 0px 15px -4px black;
           li {
             padding-left: 20px;
-            cursor: pointer;
             &:hover {
               background: $bg-color-light3;
             }

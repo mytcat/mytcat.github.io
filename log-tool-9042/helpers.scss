@@ -15,3 +15,17 @@
   outline: none;
   background: $bg-color-dark1;
 }
+
+%input-dropdown {
+  position: absolute;
+  overflow-y: auto;
+  background: $bg-color-dark1;
+  border-radius: 4px;
+  z-index: 1;
+  list-style: none;
+  line-height: 2rem;
+  box-shadow: -1px 0px 15px -4px black;
+  li {
+    cursor: pointer;
+  }
+}
