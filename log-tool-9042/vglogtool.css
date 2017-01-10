@@ -21,10 +21,32 @@ html, body {
   display: block; }
   .vg-player-wrapper .vg-player-section {
     width: 100%;
-    height: calc(100% - 230px);
+    height: calc(100% - 200px);
     background-image: url("ga.png");
     background-repeat: no-repeat;
     background-size: cover; }
+  .vg-player-wrapper .vg-player-bottom {
+    display: block; }
+    .vg-player-wrapper .vg-player-bottom-status-track {
+      position: relative;
+      height: 13px;
+      background: #000000; }
+  .vg-player-wrapper .vg-player-scrubber {
+    position: absolute;
+    display: block;
+    width: 12px;
+    height: 13px;
+    cursor: pointer; }
+    .vg-player-wrapper .vg-player-scrubber-tail {
+      width: 12px;
+      height: 9px;
+      background-color: #FF0000; }
+    .vg-player-wrapper .vg-player-scrubber-nose {
+      width: 0px;
+      height: 0px;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 4px solid #FF0000; }
 .vg-side-panel {
   position: relative;
   width: 480px;

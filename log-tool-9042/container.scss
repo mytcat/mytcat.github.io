@@ -2,7 +2,8 @@
 
 $headerHeight: 50px;
 $sidePanelWidth: 480px;
-$playerBottomPanelHeigth: 230px;
+$playerBottomPanelHeigth: 200px;
+$playerTrackHeight: 13px;
 
 html, body {
   width: 100%;
@@ -28,18 +29,57 @@ html, body {
     @extend %flex;
     height: calc(100% - #{$headerHeight});
   }
-  &-player-wrapper {
-    width: calc(100% - #{$sidePanelWidth});
-    height: 100%;
-    display: block;
-    .vg-player-section {
-      width: 100%;
-      height: calc(100% - #{$playerBottomPanelHeigth});
-      background-image: url("ga.png");
-      background-repeat: no-repeat;
-      background-size: cover;
+  &-player {
+    &-wrapper {
+      width: calc(100% - #{$sidePanelWidth});
+      height: 100%;
+      display: block;
+      .vg-player {
+        &-section {
+          width: 100%;
+          height: calc(100% - #{$playerBottomPanelHeigth});
+          background-image: url("ga.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        &-bottom {
+          display: block;
+          &-status-track {
+            position: relative;
+            height: $playerTrackHeight;
+            background: $black;
+          
+          }
+          &-controls {
+            
+          }
+          &-filmstrip {
+            
+          }
+        }
+      &-scrubber {
+        position: absolute;
+        display: block;
+        width: 12px;
+        height: 13px;
+        cursor: pointer;
+        &-tail {
+          width: 12px;
+          height: 9px;
+          background-color: $trackScrubberColor;
+        }
+        &-nose {
+          width: 0px;
+          height: 0px;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 4px solid $trackScrubberColor;
+        }
+      }
+      }
     }
   }
+  
   &-side-panel {
     position: relative;
     width: $sidePanelWidth;
