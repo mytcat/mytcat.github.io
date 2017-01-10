@@ -3,7 +3,9 @@
 $headerHeight: 50px;
 $sidePanelWidth: 480px;
 $playerBottomPanelHeigth: 200px;
-$playerTrackHeight: 13px;
+$trackHeight: 13px;
+$trackScrubberWidth: 12px;
+$trackScrubberShift: ($trackScrubberWidth/2);
 
 html, body {
   width: 100%;
@@ -46,36 +48,37 @@ html, body {
           display: block;
           &-status-track {
             position: relative;
-            height: $playerTrackHeight;
+            height: $trackHeight;
+            overflow: hidden;
             background: $black;
-          
           }
           &-controls {
-            
+
           }
           &-filmstrip {
-            
+
           }
         }
-      &-scrubber {
-        position: absolute;
-        display: block;
-        width: 12px;
-        height: 13px;
-        cursor: pointer;
-        &-tail {
-          width: 12px;
-          height: 9px;
-          background-color: $trackScrubberColor;
+        &-scrubber {
+          position: absolute;
+          display: block;
+          width: $trackScrubberWidth;
+          height: 13px;
+          cursor: pointer;
+          transform: translateX(-$trackScrubberShift);
+          &-tail {
+            width: $trackScrubberWidth;
+            height: 9px;
+            background-color: $trackScrubberColor;
+          }
+          &-nose {
+            width: 0px;
+            height: 0px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 4px solid $trackScrubberColor;
+          }
         }
-        &-nose {
-          width: 0px;
-          height: 0px;
-          border-left: 6px solid transparent;
-          border-right: 6px solid transparent;
-          border-top: 4px solid $trackScrubberColor;
-        }
-      }
       }
     }
   }

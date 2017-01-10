@@ -30,13 +30,15 @@ html, body {
     .vg-player-wrapper .vg-player-bottom-status-track {
       position: relative;
       height: 13px;
+      overflow: hidden;
       background: #000000; }
   .vg-player-wrapper .vg-player-scrubber {
     position: absolute;
     display: block;
     width: 12px;
     height: 13px;
-    cursor: pointer; }
+    cursor: pointer;
+    transform: translateX(-6px); }
     .vg-player-wrapper .vg-player-scrubber-tail {
       width: 12px;
       height: 9px;
