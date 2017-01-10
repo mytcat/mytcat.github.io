@@ -1,7 +1,7 @@
 @import "themes/default_theme";
 
 $headerHeight: 50px;
-$sidePanelWidth: 450px;
+$sidePanelWidth: 480px;
 $playerBottomPanelHeigth: 230px;
 
 html, body {
@@ -42,7 +42,7 @@ html, body {
   }
   &-side-panel {
     position: relative;
-    width: 450px;
+    width: $sidePanelWidth;
     height: 100%;
     box-shadow: 1px 1px 27px 1px red;
     .vg-track-area-container {
@@ -84,9 +84,18 @@ html, body {
       }
     }
     &-events {
-      overflow-y: scroll;
+      overflow-y: auto;
       height: inherit;
       max-height: calc(100% - 135px);
+      &::-webkit-scrollbar {
+        width: 12px;
+        background: #000000;
+      }
+      &::-webkit-scrollbar-thumb {
+        border: 4px solid #000000;
+        border-radius: 15px;
+        background: $bg-color-light3;
+      }
       &-item {
         margin: 8px 25px;
         padding: 8px 20px;
@@ -125,6 +134,7 @@ html, body {
             padding-left: 15px !important;
             color: $bg-color-light2;
             &-container {
+              z-index: 1;
               position: absolute;
               width: 100%;
               background: $bg-color-light3;
@@ -134,15 +144,25 @@ html, body {
             &-dropdown {
               position: relative;
               width: 96%;
-              height: 200px;
+              height: auto;
+              max-height: 200px;
               padding-left: 0px;
               margin: 2%;
-              overflow-y: scroll;
+              overflow-y: auto;
               color: $bg-color-light2;
               background: $bg-color-dark2;
               border-radius: 4px;
               list-style: none;
               line-height: 2rem;
+              &::-webkit-scrollbar {
+                width: 10px;
+                background: $bg-color-dark1;
+              }
+              &::-webkit-scrollbar-thumb {
+                border: 3px solid $bg-color-dark1;
+                border-radius: 15px;
+                background: $bg-color-light3;
+              }
               li {
                 padding-left: 10px;
                 cursor: pointer;

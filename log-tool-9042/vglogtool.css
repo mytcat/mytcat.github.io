@@ -16,7 +16,7 @@ html, body {
 .vg-main {
   height: calc(100% - 50px); }
 .vg-player-wrapper {
-  width: calc(100% - 450px);
+  width: calc(100% - 480px);
   height: 100%;
   display: block; }
   .vg-player-wrapper .vg-player-section {
@@ -27,7 +27,7 @@ html, body {
     background-size: cover; }
 .vg-side-panel {
   position: relative;
-  width: 450px;
+  width: 480px;
   height: 100%;
   box-shadow: 1px 1px 27px 1px red; }
   .vg-side-panel .vg-track-area-container {
@@ -53,9 +53,16 @@ html, body {
       width: 220px;
       color: white; }
   .vg-side-panel-events {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: inherit;
     max-height: calc(100% - 135px); }
+    .vg-side-panel-events::-webkit-scrollbar {
+      width: 12px;
+      background: #000000; }
+    .vg-side-panel-events::-webkit-scrollbar-thumb {
+      border: 4px solid #000000;
+      border-radius: 15px;
+      background: #3C3F43; }
     .vg-side-panel-events-item {
       margin: 8px 25px;
       padding: 8px 20px;
@@ -87,6 +94,7 @@ html, body {
           padding-left: 15px !important;
           color: #8A8B8D; }
           .vg-side-panel-events-item-tags-area-input-container {
+            z-index: 1;
             position: absolute;
             width: 100%;
             background: #3C3F43;
@@ -95,15 +103,23 @@ html, body {
           .vg-side-panel-events-item-tags-area-input-dropdown {
             position: relative;
             width: 96%;
-            height: 200px;
+            height: auto;
+            max-height: 200px;
             padding-left: 0px;
             margin: 2%;
-            overflow-y: scroll;
+            overflow-y: auto;
             color: #8A8B8D;
             background: #2D3033;
             border-radius: 4px;
             list-style: none;
             line-height: 2rem; }
+            .vg-side-panel-events-item-tags-area-input-dropdown::-webkit-scrollbar {
+              width: 10px;
+              background: #1F2023; }
+            .vg-side-panel-events-item-tags-area-input-dropdown::-webkit-scrollbar-thumb {
+              border: 3px solid #1F2023;
+              border-radius: 15px;
+              background: #3C3F43; }
             .vg-side-panel-events-item-tags-area-input-dropdown li {
               padding-left: 10px;
               cursor: pointer;
