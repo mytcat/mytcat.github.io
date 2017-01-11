@@ -44,19 +44,60 @@ html, body {
           background-repeat: no-repeat;
           background-size: cover;
         }
-        &-bottom {
+        &-controls {
           display: block;
           &-status-track {
+            .vg-player-timeline-highlight {
+              position: absolute;
+              height: 100%;
+              background: $yellow;
+              opacity: 0.5;
+            }
             position: relative;
             height: $trackHeight;
             overflow: hidden;
             background: $black;
           }
-          &-controls {
-
+          &-buttons {
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: $bg-color-light2;
+            background: $bg-color-dark3;
+            .vg-controls-right {
+              input[type=range] {
+                -webkit-appearance: none;
+                width: 200px;
+                margin: 0;
+                border: none;
+                border-radius: 15px;
+                padding: 1px 2px;
+                outline: none;
+                background: transparent;
+                &::-webkit-slider-runnable-track {
+                  height: 10px;
+                  background: $black;
+                  border: none;
+                  border-radius: 15px;
+                }
+                &::-webkit-slider-thumb {
+                  -webkit-appearance: none;
+                  width: 10px;
+                  height: 20px;
+                  border: none;
+                  background: red;
+                }
+                &::-ms-fill-lower {
+                  background: yellow;
+                }
+              }
+            }
           }
-          &-filmstrip {
-
+          .vg-player-filmstrip {
+            height: 30px;
+            background: $bg-color-light3;
+            color: $bg-color-light2;
           }
         }
         &-scrubber {
