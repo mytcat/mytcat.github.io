@@ -16,6 +16,14 @@
   background: $bg-color-dark1;
 }
 
+%input-icon-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
 %input-dropdown {
   position: absolute;
   overflow-y: auto;
@@ -25,7 +33,4 @@
   list-style: none;
   line-height: 2rem;
   box-shadow: -1px 0px 15px -4px black;
-  li {
-    cursor: pointer;
-  }
 }

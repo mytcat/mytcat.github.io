@@ -15,6 +15,7 @@
                 <div class="vg-header-right">
                     <span>Export</span>
                     <span>Import</span>
+                    <span class="vg-icon vg-icon-user"></span>
                 </div>
             </div>
             <div class="vg-main">
@@ -30,12 +31,34 @@
                             </div>
                         </div>
                         <div class="vg-player-controls-buttons">
-                            <div class="vg-controls-left">1</div>
-                            <div class="vg-controls-center">2</div>
+                            <div class="vg-controls-left">
+                                <span class="vg-icon vg-icon-information"></span>
+                                <span class="vg-icon vg-icon-volume"></span>
+                                <span class="vg-icon vg-icon-auto-black"></span>
+                            </div>
+                            <div class="vg-controls-center">
+                                <div class="vg-controls-center group-1">
+                                    <span class="vg-icon vg-icon-play-event"></span>
+                                    <span class="vg-icon vg-icon-loop-event"></span>
+                                    <span class="vg-icon vg-icon-bracket"></span>
+                                    <span class="vg-icon vg-icon-bracket-close"></span>
+                                    <span class="vg-icon vg-icon-new-event"></span>
+                                </div>
+                                <div class="vg-controls-center group-2">
+                                    <span class="vg-icon vg-icon-rewind"></span>
+                                    <span class="vg-icon vg-icon-play"></span>
+                                    <span class="vg-icon vg-icon-flash-forward"></span>
+                                </div>
+                                <div class="vg-controls-center group-3">
+                                    <span class="vg-icon vg-icon-full-screen"></span>
+                                    <span class="vg-icon vg-icon-screen-shot"></span>
+                                    <span class="vg-icon vg-icon-aspect-ratio"></span>
+                                    <span class="vg-icon vg-icon-sub"></span>
+                                    <span class="vg-icon vg-icon-save-zone"></span>
+                                </div>
+                            </div>
                             <div class="vg-controls-right">
-                                <span>zoom out</span>
-                                <input class="vg-controls-right-zoom-input" type="range" min="0" max="100">
-                                <span>zoom in</span>
+                                <input class="vg-controls-right-zoom-input" type="range" min="0" max="100" step="1">
                             </div>
                         </div>
                         <div class="vg-player-filmstrip">
@@ -49,36 +72,51 @@
                     <div class="vg-track-area-container">
                         <div class="vg-track-input-container active">
                             <input class="vg-track-input" placeholder="Master" disabled>
+                            <span class="vg-icon-right vg-icon-scroll"></span>
                             <ul class="vg-track-dropdown">
                                 <li class="vg-track-item">
                                     <div>Subtitle</div>
-                                    <div class="vg-track-item-actions"><span>&#9998;</span><span>&#10060;</span></div>
+                                    <div class="vg-track-item-actions">
+                                        <span class="vg-icon-edit"></span>
+                                        <span class="vg-icon-delete-track"></span>
+                                    </div>
                                 </li>
                                 <li class="vg-track-item">
                                     <div>Caption</div>
-                                    <div class="vg-track-item-actions"><span>&#9998;</span><span>&#10060;</span></div>
+                                    <div class="vg-track-item-actions">
+                                        <span class="vg-icon vg-icon-edit"></span>
+                                        <span class="vg-icon vg-icon-delete-track"></span>
+                                    </div>
                                 </li>
                                 <li class="vg-track-item">
                                     <div>QC Report</div>
-                                    <div class="vg-track-item-actions"><span>&#9998;</span><span>&#10060;</span></div>
+                                    <div class="vg-track-item-actions">
+                                        <span class="vg-icon vg-icon-edit"></span>
+                                        <span class="vg-icon vg-icon-delete-track"></span>
+                                    </div>
                                 </li>
                                 <li class="vg-track-item">
                                     <div>QC Problem</div>
-                                    <div class="vg-track-item-actions"><span>&#9998;</span><span>&#10060;</span></div>
+                                    <div class="vg-track-item-actions">
+                                        <span class="vg-icon vg-icon-edit"></span>
+                                        <span class="vg-icon vg-icon-delete-track"></span>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
                         <div class="vg-track-actions">
-                            <span>&#8681;</span>
-                            <span>+</span>
+                            <span class="vg-icon vg-icon-export"></span>
+                            <span class="vg-icon vg-icon-add-track"></span>
                         </div>
                     </div>
                     <div class="vg-tags-search-area">
                         <div class="vg-selected-events">
                             <input class="vg-selected-events-input" placeholder="Selected: 1" disabled>
+                            <span class="vg-icon-right vg-icon-show-select-inactive"></span>
                         </div>
                         <div class="vg-tags-search">
-                            <input class="vg-tags-search-input" placeholder="Search tag">
+                            <input type="text" class="vg-tags-search-input" placeholder="Search tag">
+                            <span class="vg-icon-right vg-icon-search"></span>
                         </div>
                     </div>
                     <div class="vg-side-panel-events">
@@ -89,12 +127,12 @@
                                 <div class="duration"><span>&#x23f1;</span> 00:01:00:00 <span>&#9432;</span></div>
                             </div>
                             <div class="vg-side-panel-events-item-tags-area">
-                                <input class="vg-side-panel-events-item-tags-area-input" placeholder="&#8853; Add tag">
-                                <span class="vg-event-tag">First Frame of Composition</span>
-                                <span class="vg-event-tag">Textless Start</span>
-                                <span class="vg-event-tag">Music Shmusic</span>
-                                <span class="vg-event-tag">Music</span>
-                                <span class="vg-event-tag">Music</span>
+                                <input class="vg-side-panel-events-item-tags-area-input" placeholder="+ Add tag">
+                                <span class="vg-event-tag">First Frame of Composition<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag">Textless Start<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag">Music Shmusic<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag">Music<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag">Music<span class="vg-icon vg-icon-delete"></span></span>
                                 <span class="vg-event-tag add_tag">+ Add Tag</span>
                             </div>
                             <div class="vg-side-panel-events-item-description-area">
@@ -104,17 +142,21 @@
 
                         <div class="vg-side-panel-events-item editable">
                             <div class="vg-side-panel-events-item-time-area">
-                                <div class="start-time">Start: <span>00:01:00:00 <span class="vg-edit_icon">&#9998;</span></span></div>
-                                <div class="end-time">End: <span>00:02:00:00 <span class="vg-edit_icon">&#9998;</span></span></div>
-                                <div class="duration"><span>&#x23f1;</span> 00:01:00:00 <span>&#9432;</span></div>
+                                <div class="start-time">Start: <span>00:01:00:00</span></div>
+                                <div class="end-time">End: 00:02:00:00</span></div>
+                                <div class="duration">
+                                    <span class="vg-icon-duration"></span>
+                                    <span class="duration-value">00:01:00:00</span>
+                                    <span class="vg-icon-information"></span>
+                                </div>
                             </div>
                             <div class="vg-side-panel-events-item-tags-area">
-                                <input class="vg-side-panel-events-item-tags-area-input" placeholder="&#8853; Add tag">
-                                <span class="vg-event-tag">First Frame of Composition</span>
-                                <span class="vg-event-tag">Textless Start</span>
-                                <span class="vg-event-tag">Music Shmusic</span>
-                                <span class="vg-event-tag">Music</span>
-                                <span class="vg-event-tag">Music</span>
+                                <input class="vg-side-panel-events-item-tags-area-input" placeholder="+ Add tag">
+                                <span class="vg-event-tag">First Frame of Composition<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag">Textless Start<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag">Music Shmusic<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag">Music<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag">Music<span class="vg-icon vg-icon-delete"></span></span>
                                 <span class="vg-event-tag add_tag">+ Add Tag</span>
                             </div>
                             <div class="vg-side-panel-events-item-description-area">
@@ -129,7 +171,7 @@
                                 <div class="duration"><span>&#x23f1;</span> 00:01:00:00 <span>&#9432;</span></div>
                             </div>
                             <div class="vg-side-panel-events-item-tags-area">
-                                <input class="vg-side-panel-events-item-tags-area-input" placeholder="&#8853; Add tag">
+                                <input class="vg-side-panel-events-item-tags-area-input" placeholder="+ Add tag">
                                 <div class="vg-side-panel-events-item-tags-area-input-container">
                                     <ul class="vg-side-panel-events-item-tags-area-input-dropdown">
                                         <li>Bars and Tone</li>
@@ -155,7 +197,7 @@
                     <div class="vg-side-panel-footer">
                         <div class="vg-side-panel-footer-content">
                             <input class="vg-side-panel-footer-content-input" placeholder="Tape Timecode" disabled/>
-                            <span class="vg-icon">&#9650;</span>
+                            <span class="vg-icon-right vg-icon-scroll"></span>
                             <ul class="vg-side-panel-footer-content-input-dropdown">
                                 <li>Tape Timecode</li>
                                 <li>Frame Number</li>
@@ -166,7 +208,9 @@
                             </ul>
                         </div>
                         <div>
-                            <span>&#x2708;</span><span>&#x2723;</span><span>&#x25b2;</span>
+                            <span class="vg-icon vg-icon-copy"></span>
+                            <span class="vg-icon vg-icon-select-all-new"></span>
+                            <span class="vg-icon vg-icon-garbage"></span>
                         </div>
                     </div>
                 </div>

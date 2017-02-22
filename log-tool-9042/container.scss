@@ -45,7 +45,6 @@ html, body {
           background-size: cover;
         }
         &-controls {
-          display: block;
           &-status-track {
             .vg-player-timeline-highlight {
               position: absolute;
@@ -61,6 +60,7 @@ html, body {
           &-buttons {
             height: 50px;
             display: flex;
+            flex-flow: row wrap;
             justify-content: space-between;
             align-items: center;
             color: $bg-color-light2;
@@ -75,22 +75,42 @@ html, body {
                 padding: 1px 2px;
                 outline: none;
                 background: transparent;
+                &:before {
+                  font-family: VG_Custom_Icons;
+                  font-size: 10px;
+                  content: "\e90f";
+                  cursor: pointer;
+                  padding-right: 10px;
+                }
+                &:after {
+                  font-family: VG_Custom_Icons;
+                  padding: 0 10px;
+                  cursor: pointer;
+                  content: "\e90f";
+                }
                 &::-webkit-slider-runnable-track {
-                  height: 10px;
+                  height: 6px;
                   background: $black;
                   border: none;
                   border-radius: 15px;
                 }
                 &::-webkit-slider-thumb {
                   -webkit-appearance: none;
-                  width: 10px;
-                  height: 20px;
-                  border: none;
-                  background: red;
+                  width: 6px;
+                  height: 12px;
+                  background: url("images/thumb.svg") no-repeat center center;
+                  background-size: contain;
+                  //background: red;
                 }
                 &::-ms-fill-lower {
                   background: yellow;
                 }
+              }
+            }
+            .vg-controls-center {
+              display: flex;
+              &.group-2 {
+                padding: 0 5px;
               }
             }
           }
@@ -110,25 +130,30 @@ html, body {
           &-tail {
             width: $trackScrubberWidth;
             height: 9px;
-            background-color: $trackScrubberColor;
+            background-color: $red;
           }
           &-nose {
             width: 0px;
             height: 0px;
             border-left: 6px solid transparent;
             border-right: 6px solid transparent;
-            border-top: 4px solid $trackScrubberColor;
+            border-top: 4px solid $red;
           }
         }
       }
     }
   }
-  
+  &-icon {
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  &-icon-right {
+    @extend %input-icon-right;
+  }
   &-side-panel {
     position: relative;
     width: $sidePanelWidth;
     height: 100%;
-    box-shadow: 1px 1px 27px 1px red;
     .vg-track-area-container {
       @extend %flex-spaced-between;
       padding: 10px 25px 10px 25px;
@@ -136,7 +161,7 @@ html, body {
       background: $bg-color-light3;
       .vg-track-input-container {
         position: relative;
-        width: 85%;
+        width: 80%;
         &.active {
           .vg-track-dropdown {
             display: block;
@@ -160,21 +185,32 @@ html, body {
             justify-content: space-between;
             .vg-track-item-actions {
               display: none;
-              span {
-                padding-right: 15px;
+              font-size: 0.8em;
+              .vg-icon-edit {
+                margin: 0 5px;
+                cursor: pointer;
+              }
+              .vg-icon-delete-track {
+                color: $red;
+                margin: 0 10px;
+                cursor: pointer;
               }
             }
             &:hover {
               .vg-track-item-actions {
                 display: block;
+                cursor: default;
               }
             }
           }
         }
       }
       .vg-track-actions {
-        width: 15%;
+        width: 20%;
         text-align: right;
+        .vg-icon-add-track {
+          margin-right: 0;
+        }
       }
     }
     .vg-tags-search-area {
@@ -184,17 +220,28 @@ html, body {
       color: $bg-color-light2;
       background: $bg-color-light3;
       .vg-selected-events {
+        position: relative;
         .vg-selected-events-input {
           @extend %input-default;
           width: 120px;
           opacity: 0.6;
         }
+        .vg-icon-right {
+          padding-right: 10px;
+          font-size: 0.8em;
+          cursor: default;
+        }
       }
       .vg-tags-search {
+        position: relative;
         .vg-tags-search-input {
           @extend %input-default;
           width: 220px;
           color: white;
+        }
+        .vg-icon-right {
+          padding-right: 10px;
+          cursor: default;
         }
       }
     }
@@ -221,8 +268,8 @@ html, body {
         &-time-area {
           @extend %flex-spaced-between;
           color: $bg-color-light2;
-          .vg-edit_icon {
-            visibility: hidden;
+          .duration-value {
+            padding: 0 15px 0 5px;
           }
         }
         &-tags-area {
@@ -234,12 +281,20 @@ html, body {
           border-top: 1px solid $bg-color-light;
           border-bottom: 1px solid $bg-color-light;
           .vg-event-tag {
-            padding: 5px 13px 5px 13px;
+            height: 26px;
+            display: inline-flex;
+            align-items: center;
             white-space: nowrap;
+            padding: 0 8px 0 15px;
             background: $bg-color-light;
             border-radius: 13px;
+            .vg-icon-delete {
+              color: $bg-color-light2;
+              margin-right: 0;
+            }
           }
           .add_tag {
+            padding-right: 12px;
             display: none;
           }
           &-input {
@@ -303,11 +358,8 @@ html, body {
         &.editable {
           background: $bg-color-light3;
           box-shadow: inset 6px 0px 0px 0px $blue;
-          .vg-edit_icon {
-            visibility: visible;
-          }
           .add_tag {
-            display: inline;
+            display: inline-flex;
             cursor: pointer;
           }
         }
@@ -317,10 +369,7 @@ html, body {
             display: block;
             width: calc(100% - 15px);
           }
-          box-shadow: inset 6px 0px 0px 0px $yellow;
-          .vg-edit_icon {
-            visibility: visible;
-          }
+          box-shadow: inset 6px 0 0 0 $yellow;
         }
       }
     }
@@ -335,16 +384,11 @@ html, body {
       background: $bg-color-light3;
       &-content {
         position: relative;
-        .vg-icon {
-          position: absolute;
-          right: 0;
-          top: 50%;
-          transform: translateY(-50%);
-        }
         &-input {
           @extend %input-default;
           width: 200px;
           cursor: pointer;
+          margin-right: -10px;
           &:hover {
             .vg-side-panel-footer-content.yo {
               display: block !important;
@@ -356,7 +400,7 @@ html, body {
           width: 220px;
           max-height: 200px;
           bottom: 55%;
-          padding-left: 0px;
+          padding-left: 0;
           li {
             padding-left: 20px;
             &:hover {
