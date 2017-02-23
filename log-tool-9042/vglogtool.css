@@ -21,69 +21,78 @@ html, body {
   display: block; }
   .vg-player-wrapper .vg-player-section {
     width: 100%;
-    height: calc(100% - 200px);
+    height: calc(100% - 162px);
     background-image: url("ga.png");
     background-repeat: no-repeat;
     background-size: cover; }
-  .vg-player-wrapper .vg-player-controls-timeline {
-    position: relative;
-    height: 8px;
-    overflow: hidden;
-    background: #000000; }
-    .vg-player-wrapper .vg-player-controls-timeline .vg-player-timeline-highlight {
-      position: absolute;
-      height: 100%;
-      background: #ffb617;
-      opacity: 0.5; }
-  .vg-player-wrapper .vg-player-controls-buttons {
-    height: 50px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    color: #8f8e94;
-    background: #2D2F32; }
-    .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range] {
-      -webkit-appearance: none;
-      width: 200px;
-      margin: 0;
-      border: none;
-      border-radius: 15px;
-      padding: 1px 2px;
-      outline: none;
-      background: transparent; }
-      .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]:before {
-        font-family: VG_Custom_Icons;
-        font-size: 10px;
-        content: "\e90f";
-        cursor: pointer;
-        padding-right: 10px; }
-      .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]:after {
-        font-family: VG_Custom_Icons;
-        padding: 0 10px;
-        cursor: pointer;
-        content: "\e90f"; }
-      .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]::-webkit-slider-runnable-track {
-        height: 6px;
-        background: #000000;
-        border: none;
-        border-radius: 15px; }
-      .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]::-webkit-slider-thumb {
+  .vg-player-wrapper .vg-player-controls {
+    height: 162px; }
+    .vg-player-wrapper .vg-player-controls-timeline {
+      position: relative;
+      height: 8px;
+      overflow: hidden;
+      background: #000000; }
+      .vg-player-wrapper .vg-player-controls-timeline .vg-player-timeline-highlight {
+        position: absolute;
+        height: 100%;
+        background: #ffb617;
+        opacity: 0.5; }
+    .vg-player-wrapper .vg-player-controls-buttons {
+      height: auto;
+      min-height: 36px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #8f8e94;
+      background: #2D2F32; }
+      .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range] {
         -webkit-appearance: none;
-        width: 6px;
-        height: 12px;
-        background: url("images/thumb.svg") no-repeat center center;
+        width: 200px;
+        margin: 0;
+        border: none;
+        border-radius: 15px;
+        padding: 1px 2px;
+        outline: none;
+        background: transparent; }
+        .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]:before {
+          font-family: VG_Custom_Icons;
+          font-size: 10px;
+          content: "\e90f";
+          cursor: pointer;
+          padding-right: 10px; }
+        .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]:after {
+          font-family: VG_Custom_Icons;
+          padding: 0 10px;
+          cursor: pointer;
+          content: "\e90f"; }
+        .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]::-webkit-slider-runnable-track {
+          height: 6px;
+          background: #000000;
+          border: none;
+          border-radius: 15px; }
+        .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 6px;
+          height: 12px;
+          background: url("images/thumb.svg") no-repeat center center;
+          background-size: contain; }
+        .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]::-ms-fill-lower {
+          background: yellow; }
+      .vg-player-wrapper .vg-player-controls-buttons .vg-controls-center {
+        display: flex; }
+        .vg-player-wrapper .vg-player-controls-buttons .vg-controls-center.group-2 {
+          padding: 0 5px; }
+    .vg-player-wrapper .vg-player-controls .vg-player-filmstrip {
+      height: 118px; }
+      .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timeline {
+        height: 28px;
+        background: #3C3F43;
+        color: #8f8e94; }
+      .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_canvas {
+        height: 90px;
+        background: url("filmstrip.png") no-repeat;
         background-size: contain; }
-      .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]::-ms-fill-lower {
-        background: yellow; }
-    .vg-player-wrapper .vg-player-controls-buttons .vg-controls-center {
-      display: flex; }
-      .vg-player-wrapper .vg-player-controls-buttons .vg-controls-center.group-2 {
-        padding: 0 5px; }
-  .vg-player-wrapper .vg-player-controls .vg-player-filmstrip {
-    height: 30px;
-    background: #3C3F43;
-    color: #8f8e94; }
   .vg-player-wrapper .vg-player-scrubber {
     position: absolute;
     display: block;
@@ -179,6 +188,7 @@ html, body {
       width: 12px;
       background: #000000; }
     .vg-side-panel-events::-webkit-scrollbar-thumb {
+      position: absolute;
       border: 4px solid #000000;
       border-radius: 15px;
       background: #3C3F43; }
