@@ -105,8 +105,8 @@ html, body {
       height: 5px;
       background-color: #fd0304; }
     .vg-player-wrapper .vg-player-scrubber-nose {
-      width: 0px;
-      height: 0px;
+      width: 0;
+      height: 0;
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
       border-top: 3px solid #fd0304; }
@@ -216,10 +216,11 @@ html, body {
           align-items: center;
           white-space: nowrap;
           cursor: default;
-          padding: 0 8px 0 15px;
+          padding: 0 15px 0 15px;
           background: #4B4E51;
           border-radius: 13px; }
           .vg-side-panel-events-item-tags-area .vg-event-tag .vg-icon-delete {
+            display: none;
             color: #8f8e94;
             margin-right: 0; }
         .vg-side-panel-events-item-tags-area .add_tag {
@@ -236,13 +237,13 @@ html, body {
             width: 100%;
             background: #3C3F43;
             border-radius: 4px;
-            box-shadow: -1px 0px 15px -4px black; }
+            box-shadow: -1px 0 15px -4px black; }
           .vg-side-panel-events-item-tags-area-input-dropdown {
             position: relative;
             width: 96%;
             height: auto;
             max-height: 200px;
-            padding-left: 0px;
+            padding-left: 0;
             margin: 2%;
             overflow-y: auto;
             color: #8f8e94;
@@ -274,10 +275,14 @@ html, body {
           color: #8f8e94; }
       .vg-side-panel-events-item.editable {
         background: #3C3F43;
-        box-shadow: inset 6px 0px 0px 0px #00a9d5; }
+        box-shadow: inset 6px 0 0 0 #00a9d5; }
+        .vg-side-panel-events-item.editable .vg-event-tag {
+          padding: 0 8px 0 15px; }
         .vg-side-panel-events-item.editable .add_tag {
           display: inline-flex;
           cursor: pointer; }
+        .vg-side-panel-events-item.editable .vg-icon-delete {
+          display: inline-flex; }
       .vg-side-panel-events-item.new_event {
         background: #3C3F43;
         box-shadow: inset 6px 0 0 0 #ffb617; }

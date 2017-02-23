@@ -144,8 +144,8 @@ html, body {
             background-color: $red;
           }
           &-nose {
-            width: 0px;
-            height: 0px;
+            width: 0;
+            height: 0;
             border-left: 4px solid transparent;
             border-right: 4px solid transparent;
             border-top: 3px solid $red;
@@ -299,10 +299,11 @@ html, body {
             align-items: center;
             white-space: nowrap;
             cursor: default;
-            padding: 0 8px 0 15px;
+            padding: 0 15px 0 15px;
             background: $bg-color-light;
             border-radius: 13px;
             .vg-icon-delete {
+              display: none;
               color: $bg-color-light2;
               margin-right: 0;
             }
@@ -323,14 +324,14 @@ html, body {
               width: 100%;
               background: $bg-color-light3;
               border-radius: 4px;
-              box-shadow: -1px 0px 15px -4px black;
+              box-shadow: -1px 0 15px -4px black;
             }
             &-dropdown {
               position: relative;
               width: 96%;
               height: auto;
               max-height: 200px;
-              padding-left: 0px;
+              padding-left: 0;
               margin: 2%;
               overflow-y: auto;
               color: $bg-color-light2;
@@ -371,10 +372,17 @@ html, body {
         }
         &.editable {
           background: $bg-color-light3;
-          box-shadow: inset 6px 0px 0px 0px $blue;
+          box-shadow: inset 6px 0 0 0 $blue;
+          .vg-event-tag {
+            padding: 0 8px 0 15px;
+          }
+        ;
           .add_tag {
             display: inline-flex;
             cursor: pointer;
+          }
+          .vg-icon-delete {
+            display: inline-flex;
           }
         }
         &.new_event {
