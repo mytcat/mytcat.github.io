@@ -21,6 +21,7 @@ html, body {
   display: block; }
   .vg-player-wrapper .vg-player-section {
     width: 100%;
+    position: relative;
     height: calc(100% - 162px);
     background-image: url("ga.png");
     background-repeat: no-repeat;
@@ -89,6 +90,26 @@ html, body {
         height: 28px;
         background: #3C3F43;
         color: #8f8e94; }
+        .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timeline ul {
+          width: 100%;
+          display: inline-flex;
+          color: #c3c2c6;
+          list-style: none;
+          font-size: 9px; }
+          .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timeline ul li {
+            position: relative;
+            text-align: center;
+            margin: 0.7em -1em;
+            padding-left: 3em;
+            width: 6em;
+            bottom: .7em; }
+            .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timeline ul li:before {
+              content: '';
+              position: absolute;
+              border-left: 1px solid #ccc;
+              height: .7em;
+              top: 1.4em;
+              right: -0.7em; }
       .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_canvas {
         height: 90px;
         background: url("filmstrip.png") no-repeat;
@@ -110,6 +131,33 @@ html, body {
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
       border-top: 3px solid #fd0304; }
+.vg_video-info {
+  display: none;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 100;
+  opacity: 0.65;
+  background: #000000; }
+  .vg_video-info_content {
+    display: flex;
+    line-height: 1.8em; }
+  .vg_video-info_title {
+    width: 40%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #b6b5b9; }
+  .vg_video-info_value {
+    width: 60%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #ffffff; }
+.vg_visible {
+  display: block; }
 .vg-icon {
   cursor: pointer;
   margin: 0 10px; }
@@ -146,7 +194,7 @@ html, body {
               margin: 0 5px;
               cursor: pointer; }
             .vg-side-panel .vg-track-area-container .vg-track-input-container .vg-track-dropdown li .vg-track-item-actions .vg-icon-delete-track {
-              color: #fd0304;
+              color: #b20102;
               margin: 0 10px;
               cursor: pointer; }
           .vg-side-panel .vg-track-area-container .vg-track-input-container .vg-track-dropdown li:hover .vg-track-item-actions {
@@ -299,18 +347,20 @@ html, body {
     background: #3C3F43; }
     .vg-side-panel-footer-content {
       position: relative; }
+      .vg-side-panel-footer-content.active .vg-side-panel-footer-content-input-dropdown {
+        display: block; }
       .vg-side-panel-footer-content-input {
         width: 200px;
         cursor: pointer;
         margin-right: -10px; }
-        .vg-side-panel-footer-content-input:hover .vg-side-panel-footer-content.yo {
-          display: block !important; }
       .vg-side-panel-footer-content-input-dropdown {
+        display: none;
         width: 220px;
         max-height: 200px;
         bottom: 55%;
         padding-left: 0; }
         .vg-side-panel-footer-content-input-dropdown li {
+          cursor: pointer;
           padding-left: 20px; }
           .vg-side-panel-footer-content-input-dropdown li:hover {
             background: #3C3F43; }

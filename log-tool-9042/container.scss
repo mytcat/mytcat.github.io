@@ -41,6 +41,7 @@ html, body {
       .vg-player {
         &-section {
           width: 100%;
+          position: relative;
           height: calc(100% - #{$controlsBottomPanelHeigth});
           background-image: url("ga.png");
           background-repeat: no-repeat;
@@ -123,6 +124,29 @@ html, body {
               height: 28px;
               background: $bg-color-light3;
               color: $bg-color-light2;
+              ul {
+                width: 100%;
+                display: inline-flex;
+                color: lighten($bg-color-light2, 20%);
+                list-style: none;
+                font-size: 9px;
+                li {
+                  position: relative;
+                  text-align: center;
+                  margin: 0.7em -1em;
+                  padding-left: 3em;
+                  width: 6em;
+                  bottom: .7em;
+                  &:before {
+                    content: '';
+                    position: absolute;
+                    border-left: 1px solid #ccc;
+                    height: .7em;
+                    top: 1.4em;
+                    right: -0.7em;
+                  }
+                }
+              }
             }
             &_canvas {
               height: 90px;
@@ -153,6 +177,38 @@ html, body {
         }
       }
     }
+  }
+  &_video-info {
+    display: none;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 100;
+    opacity: 0.65;
+    background: $black;
+    &_content {
+      display: flex;
+      line-height: 1.8em;
+    }
+    &_title {
+      width: 40%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      color: lighten($bg-color-light2, 15%);
+    }
+    &_value {
+      width: 60%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      color: $white;
+    }
+  }
+  &_visible {
+    display: block;
   }
   &-icon {
     cursor: pointer;
@@ -202,7 +258,7 @@ html, body {
                 cursor: pointer;
               }
               .vg-icon-delete-track {
-                color: $red;
+                color: darken($red, 15%);
                 margin: 0 10px;
                 cursor: pointer;
               }
@@ -406,25 +462,27 @@ html, body {
       color: $bg-color-light2;
       background: $bg-color-light3;
       &-content {
+        &.active {
+          .vg-side-panel-footer-content-input-dropdown {
+            display: block;
+          }
+        }
         position: relative;
         &-input {
           @extend %input-default;
           width: 200px;
           cursor: pointer;
           margin-right: -10px;
-          &:hover {
-            .vg-side-panel-footer-content.yo {
-              display: block !important;
-            }
-          }
         }
         &-input-dropdown {
           @extend %input-dropdown;
+          display: none;
           width: 220px;
           max-height: 200px;
           bottom: 55%;
           padding-left: 0;
           li {
+            cursor: pointer;
             padding-left: 20px;
             &:hover {
               background: $bg-color-light3;
