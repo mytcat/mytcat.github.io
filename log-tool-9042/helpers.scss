@@ -16,6 +16,14 @@
   background: $bg-color-dark1;
 }
 
+%text-overflow {
+  &_ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
 %input-icon-right {
   position: absolute;
   right: 0;

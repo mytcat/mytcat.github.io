@@ -3,8 +3,8 @@
 $headerHeight: 50px;
 $sidePanelWidth: 480px;
 $playerBottomPanelHeigth: 200px;
-$trackHeight: 13px;
-$trackScrubberWidth: 12px;
+$timelineHeight: 8px;
+$trackScrubberWidth: 8px;
 $trackScrubberShift: ($trackScrubberWidth/2);
 
 html, body {
@@ -45,17 +45,17 @@ html, body {
           background-size: cover;
         }
         &-controls {
-          &-status-track {
+          &-timeline {
+            position: relative;
+            height: $timelineHeight;
+            overflow: hidden;
+            background: $black;
             .vg-player-timeline-highlight {
               position: absolute;
               height: 100%;
               background: $yellow;
               opacity: 0.5;
             }
-            position: relative;
-            height: $trackHeight;
-            overflow: hidden;
-            background: $black;
           }
           &-buttons {
             height: 50px;
@@ -100,7 +100,6 @@ html, body {
                   height: 12px;
                   background: url("images/thumb.svg") no-repeat center center;
                   background-size: contain;
-                  //background: red;
                 }
                 &::-ms-fill-lower {
                   background: yellow;
@@ -124,20 +123,20 @@ html, body {
           position: absolute;
           display: block;
           width: $trackScrubberWidth;
-          height: 13px;
+          height: 8px;
           cursor: pointer;
           transform: translateX(-$trackScrubberShift);
           &-tail {
             width: $trackScrubberWidth;
-            height: 9px;
+            height: 5px;
             background-color: $red;
           }
           &-nose {
             width: 0px;
             height: 0px;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-top: 4px solid $red;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 3px solid $red;
           }
         }
       }
@@ -236,12 +235,13 @@ html, body {
         position: relative;
         .vg-tags-search-input {
           @extend %input-default;
-          width: 220px;
+          width: 250px;
           color: white;
         }
         .vg-icon-right {
-          padding-right: 10px;
+          padding: 5px;
           cursor: default;
+          background: $bg-color-dark1;
         }
       }
     }
@@ -285,6 +285,7 @@ html, body {
             display: inline-flex;
             align-items: center;
             white-space: nowrap;
+            cursor: default;
             padding: 0 8px 0 15px;
             background: $bg-color-light;
             border-radius: 13px;
@@ -366,6 +367,7 @@ html, body {
         &.new_event {
           background: $bg-color-light3;
           .vg-side-panel-events-item-tags-area-input {
+            @extend %text-overflow_ellipsis;
             display: block;
             width: calc(100% - 15px);
           }
