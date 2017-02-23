@@ -9,10 +9,13 @@ html, body {
   background: #1F2023; }
 .vg-header {
   height: 50px;
+  font-size: 12px;
   color: #8f8e94;
   background: #27282B; }
-  .vg-header span {
+  .vg-header_menu-item {
     padding: 0 15px; }
+  .vg-header-right {
+    padding-right: 10px; }
 .vg-main {
   height: calc(100% - 50px); }
 .vg-player-wrapper {

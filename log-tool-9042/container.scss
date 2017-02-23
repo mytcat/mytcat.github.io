@@ -21,12 +21,16 @@ html, body {
     background: $bg-color-dark1;
   }
   &-header {
-    height: 50px;
     @extend %flex-spaced-between;
+    height: 50px;
+    font-size: 12px;
     color: $bg-color-light2;
     background: $bg-color-dark;
-    span {
+    &_menu-item {
       padding: 0 15px;
+    }
+    &-right {
+      padding-right: 10px;
     }
   }
   &-main {
