@@ -65,7 +65,7 @@ html, body {
       justify-content: space-between;
       align-items: center;
       color: #8f8e94;
-      background: #2D2F32; }
+      background: #27282B; }
       .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right::before {
         font-family: VG_Custom_Icons;
         font-size: 10px;
@@ -79,7 +79,7 @@ html, body {
         content: "\e90f"; }
       .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range] {
         -webkit-appearance: none;
-        width: 200px;
+        width: 150px;
         margin: 0;
         border: none;
         border-radius: 15px;
@@ -127,28 +127,26 @@ html, body {
       height: 118px; }
       .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timeline {
         height: 28px;
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        color: #8f8e94;
+        font-size: 9px;
         background: #3C3F43;
-        color: #8f8e94; }
-        .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timeline ul {
-          width: 100%;
-          display: inline-flex;
-          color: #c3c2c6;
-          list-style: none;
-          font-size: 9px; }
-          .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timeline ul li {
-            position: relative;
-            text-align: center;
-            margin: 0.7em -1em;
-            padding-left: 3em;
-            width: 6em;
-            bottom: .7em; }
-            .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timeline ul li:before {
-              content: '';
-              position: absolute;
-              border-left: 1px solid #ccc;
-              height: .7em;
-              top: 1.4em;
-              right: -0.7em; }
+        white-space: nowrap;
+        font-size: 0;
+        margin: 0;
+        padding: 0; }
+      .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timeline {
+        background-image: linear-gradient(86deg, #ffffff 0, #ffffff 2%, transparent 2%), linear-gradient(180deg, #3C3F43 70%, transparent 50%), linear-gradient(90deg, transparent 50%, #ffffff 50%, #ffffff 52%, transparent 52%), linear-gradient(180deg, #3C3F43 70%, transparent 70%), linear-gradient(90deg, transparent 10%, #ffffff 10%, #ffffff 12%, transparent 12%, transparent 20%, #ffffff 20%, #ffffff 22%, transparent 22%, transparent 30%, #ffffff 30%, #ffffff 32%, transparent 32%, transparent 40%, #ffffff 40%, #ffffff 42%, transparent 42%, transparent 60%, #ffffff 60%, #ffffff 62%, transparent 62%, transparent 70%, #ffffff 70%, #ffffff 72%, transparent 72%, transparent 80%, #ffffff 80%, #ffffff 82%, transparent 82%, transparent 90%, #ffffff 90%, #ffffff 92%, transparent 92%);
+        background-size: 50px 20px;
+        background-repeat: repeat-x;
+        min-height: 20px; }
+      .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timecode {
+        font-size: 9px;
+        padding-top: 2px;
+        display: inline-block;
+        width: 100px; }
       .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_canvas {
         position: relative;
         height: 90px;
