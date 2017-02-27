@@ -51,8 +51,8 @@ html, body {
         align-items: flex-end; }
         .vg-player-wrapper .vg-player-controls-timeline_ruler i {
           width: 1px;
-          height: 2px;
-          background: #4B4E51; }
+          height: 4px;
+          background: #3C3F43; }
           .vg-player-wrapper .vg-player-controls-timeline_ruler i:nth-child(11n) {
             height: 8px; }
           .vg-player-wrapper .vg-player-controls-timeline_ruler i:first-child, .vg-player-wrapper .vg-player-controls-timeline_ruler i:last-child {

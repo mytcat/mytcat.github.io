@@ -80,8 +80,8 @@ html, body {
               align-items: flex-end;
               i {
                 width: 1px;
-                height: 2px;
-                background: $bg-color-light;
+                height: 4px;
+                background: $bg-color-light3;
                 @include each(11) {
                   height: $timelineHeight;
                 }
