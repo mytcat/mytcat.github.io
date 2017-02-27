@@ -9,6 +9,12 @@ $controlsBottomPanelHeigth: $timelineHeight + $minControlsHeight + $filmstripWit
 $trackScrubberWidth: 8px;
 $trackScrubberShift: ($trackScrubberWidth/2);
 
+@mixin each($num) {
+  &:nth-child(#{$num}n) {
+    @content
+  }
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -58,13 +64,31 @@ html, body {
             position: relative;
             height: $timelineHeight;
             overflow: hidden;
-            //background-image: linear-gradient(45deg, red 40%, #ffffff);
-            background: $black;
+            background-color: $black;
             .vg-player-timeline-highlight {
               position: absolute;
               height: 100%;
               background: $yellow;
               opacity: 0.5;
+            }
+            &_ruler {
+              width: 100%;
+              position: absolute;
+              bottom: 0;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              i {
+                width: 1px;
+                height: 2px;
+                background: $bg-color-light;
+                @include each(11) {
+                  height: $timelineHeight;
+                }
+                &:first-child, &:last-child {
+                  height: $timelineHeight;
+                }
+              }
             }
           }
           &-buttons {
@@ -77,6 +101,19 @@ html, body {
             color: $bg-color-light2;
             background: $bg-color-dark3;
             .vg-controls-right {
+              &::before {
+                font-family: VG_Custom_Icons;
+                font-size: 10px;
+                content: "\e90f";
+                cursor: pointer;
+                padding-right: 10px;
+              }
+              &::after {
+                font-family: VG_Custom_Icons;
+                padding: 0 10px;
+                cursor: pointer;
+                content: "\e90f";
+              }
               input[type=range] {
                 -webkit-appearance: none;
                 width: 200px;
@@ -86,19 +123,6 @@ html, body {
                 padding: 1px 2px;
                 outline: none;
                 background: transparent;
-                &::before {
-                  font-family: VG_Custom_Icons;
-                  font-size: 10px;
-                  content: "\e90f";
-                  cursor: pointer;
-                  padding-right: 10px;
-                }
-                &::after {
-                  font-family: VG_Custom_Icons;
-                  padding: 0 10px;
-                  cursor: pointer;
-                  content: "\e90f";
-                }
                 //track
                 &::-webkit-slider-runnable-track {
                   height: 6px;
@@ -185,17 +209,6 @@ html, body {
               height: 90px;
               background: url("filmstrip.png") no-repeat;
               background-size: contain;
-              &:before {
-                content: '';
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 20%;
-                width: 10%;
-                opacity: 0.3;
-                background: $white;
-                border: 1px solid yellow;
-              }
               &:after {
                 content: '';
                 position: absolute;
@@ -204,6 +217,14 @@ html, body {
                 left: 25%;
                 border-right: 1px solid $red;
               }
+            }
+            .filmstrip-crop-frame {
+              position: absolute;
+              width: 15%;
+              height: 100%;
+              left: 19%;
+              box-shadow: inset 0px 0px 0px 1px $yellow;
+              background: rgba(0,0,0,0.3)
             }
           }
         }
@@ -466,6 +487,11 @@ html, body {
               }
             }
           }
+          &.active {
+            .vg-side-panel-events-item-tags-area-input-container {
+              display: block;
+            }
+          }
         }
         &-description-area {
           color: $bg-color-light2;
@@ -544,4 +570,61 @@ html, body {
       }
     }
   }
+}
+
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+//@media only screen
+//and (min-device-width: 768px)
+//and (max-device-width: 1024px)
+//and (-webkit-min-device-pixel-ratio: 2) {
+//  .vg-main { overflow: hidden; }
+//  .vg-player-wrapper { position: absolute; width: 100%; }
+//  .vg-side-panel {
+//    -webkit-transition: all 1s ease;
+//    -moz-transition: all 1s ease;
+//    -o-transition: all 1s ease;
+//    -ms-transition: all 1s ease;
+//    transition: all 1s ease;
+//    margin-left: 480px;
+//  }
+//}
+
+/* Laptops */
+//@media screen
+//and (min-device-width: 768px)
+//and (max-device-width: 1024px)
+//and (-webkit-min-device-pixel-ratio: 1) 
+//{
+//  .vg-main { overflow: hidden; }
+//  .vg-player-wrapper { position: absolute; width: 100%; }
+//  .vg-side-panel {
+//    -webkit-transition: all 1s ease;
+//    -moz-transition: all 1s ease;
+//    -o-transition: all 1s ease;
+//    -ms-transition: all 1s ease;
+//    transition: all 1s ease;
+//    margin-left: 480px;
+//  }
+//}
+
+/* gaga */
+@media only screen
+//and (min-device-width: 768px)
+and (max-width: 1024px) {
+    //.vg-main { overflow: hidden; }
+    //.vg-player-wrapper { position: absolute; width: 100%; }
+    //.vg-side-panel {
+    //  -webkit-transition: all 1s ease;
+    //  -moz-transition: all 1s ease;
+    //  -o-transition: all 1s ease;
+    //  -ms-transition: all 1s ease;
+    //  transition: all 1s ease;
+    //  left: 545px;
+    //  margin-left: 545px;
+    //  background: rgba(44,44,44,0.5);
+    //}
+  .vg-main { display: block !important; width: 100%;}
+  .vg-player-wrapper { width: 100%; }
+  .vg-side-panel { width: 100%; background: $bg-color-dark;}
 }

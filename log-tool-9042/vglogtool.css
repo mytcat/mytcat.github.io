@@ -36,12 +36,27 @@ html, body {
       position: relative;
       height: 8px;
       overflow: hidden;
-      background: #000000; }
+      background-color: #000000; }
       .vg-player-wrapper .vg-player-controls-timeline .vg-player-timeline-highlight {
         position: absolute;
         height: 100%;
-        background: #ffb617;
+        background: #ffc107;
         opacity: 0.5; }
+      .vg-player-wrapper .vg-player-controls-timeline_ruler {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end; }
+        .vg-player-wrapper .vg-player-controls-timeline_ruler i {
+          width: 1px;
+          height: 2px;
+          background: #4B4E51; }
+          .vg-player-wrapper .vg-player-controls-timeline_ruler i:nth-child(11n) {
+            height: 8px; }
+          .vg-player-wrapper .vg-player-controls-timeline_ruler i:first-child, .vg-player-wrapper .vg-player-controls-timeline_ruler i:last-child {
+            height: 8px; }
     .vg-player-wrapper .vg-player-controls-buttons {
       height: auto;
       min-height: 36px;
@@ -51,6 +66,17 @@ html, body {
       align-items: center;
       color: #8f8e94;
       background: #2D2F32; }
+      .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right::before {
+        font-family: VG_Custom_Icons;
+        font-size: 10px;
+        content: "\e90f";
+        cursor: pointer;
+        padding-right: 10px; }
+      .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right::after {
+        font-family: VG_Custom_Icons;
+        padding: 0 10px;
+        cursor: pointer;
+        content: "\e90f"; }
       .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range] {
         -webkit-appearance: none;
         width: 200px;
@@ -60,17 +86,6 @@ html, body {
         padding: 1px 2px;
         outline: none;
         background: transparent; }
-        .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]::before {
-          font-family: VG_Custom_Icons;
-          font-size: 10px;
-          content: "\e90f";
-          cursor: pointer;
-          padding-right: 10px; }
-        .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]::after {
-          font-family: VG_Custom_Icons;
-          padding: 0 10px;
-          cursor: pointer;
-          content: "\e90f"; }
         .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]::-webkit-slider-runnable-track {
           height: 6px;
           background: #000000;
@@ -139,16 +154,6 @@ html, body {
         height: 90px;
         background: url("filmstrip.png") no-repeat;
         background-size: contain; }
-        .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_canvas:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 20%;
-          width: 10%;
-          opacity: 0.3;
-          background: #ffffff;
-          border: 1px solid yellow; }
         .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_canvas:after {
           content: '';
           position: absolute;
@@ -156,6 +161,13 @@ html, body {
           bottom: 0;
           left: 25%;
           border-right: 1px solid #fd0304; }
+      .vg-player-wrapper .vg-player-controls .vg-player-filmstrip .filmstrip-crop-frame {
+        position: absolute;
+        width: 15%;
+        height: 100%;
+        left: 19%;
+        box-shadow: inset 0px 0px 0px 1px #ffc107;
+        background: rgba(0, 0, 0, 0.3); }
   .vg-player-wrapper .vg-player-scrubber {
     position: absolute;
     display: block;
@@ -354,6 +366,8 @@ html, body {
               border-bottom: 1px solid #3C3F43; }
               .vg-side-panel-events-item-tags-area-input-dropdown li:hover {
                 background: #4B4E51; }
+        .vg-side-panel-events-item-tags-area.active .vg-side-panel-events-item-tags-area-input-container {
+          display: block; }
       .vg-side-panel-events-item-description-area {
         color: #8f8e94; }
         .vg-side-panel-events-item-description-area .description-input {
@@ -375,7 +389,7 @@ html, body {
           display: inline-flex; }
       .vg-side-panel-events-item.new_event {
         background: #3C3F43;
-        box-shadow: inset 6px 0 0 0 #ffb617; }
+        box-shadow: inset 6px 0 0 0 #ffc107; }
         .vg-side-panel-events-item.new_event .vg-side-panel-events-item-tags-area-input {
           display: block;
           width: calc(100% - 15px); }
@@ -407,6 +421,21 @@ html, body {
           .vg-side-panel-footer-content-input-dropdown li:hover {
             background: #3C3F43; }
 
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+/* Laptops */
+/* gaga */
+@media only screen and (max-width: 1024px) {
+  .vg-main {
+    display: block !important;
+    width: 100%; }
+
+  .vg-player-wrapper {
+    width: 100%; }
+
+  .vg-side-panel {
+    width: 100%;
+    background: #27282B; } }
 .vg-main, .vg-header, .vg-side-panel .vg-track-area-container, .vg-side-panel .vg-tags-search-area, .vg-side-panel-events-item-time-area, .vg-side-panel-footer {
   display: flex; }
   .vg-header, .vg-side-panel .vg-track-area-container, .vg-side-panel .vg-tags-search-area, .vg-side-panel-events-item-time-area, .vg-side-panel-footer {
