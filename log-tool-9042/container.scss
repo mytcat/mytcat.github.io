@@ -176,99 +176,40 @@ html, body {
           }
           .vg-player-filmstrip {
             height: 118px;
-            
             &_timeline {
               height: 28px;
               display: flex;
               justify-content: space-around;
-              align-items: baseline;
+              align-items: flex-end;
               color: $bg-color-light2;
               font-size: 9px;
               background: $bg-color-light3;
-
-              white-space:nowrap;
-              font-size:0;
-              margin:0;
-              padding:0;
-            }
-            &_timeline {
-
-
-              //background-color: #ffffff;
-              background-image:
-                      linear-gradient(86deg,
-                              $white 0,
-                              $white 2%,
-                              transparent 2%
-                      ),
-                      linear-gradient(180deg,
-                              $bg-color-light3 70%,
-                              transparent 50%
-                      ),
-                      linear-gradient(90deg,
-                              transparent 50%,
-                              $white 50%,
-                              $white 52%,
-                              transparent 52%
-                      ),
-                      linear-gradient(180deg,
-                              $bg-color-light3 70%,
-                              transparent 70%
-                      ),
-                      linear-gradient(90deg,
-                              transparent 10%,
-                              $white 10%,
-                              $white 12%,
-                              transparent 12%,
-
-                              transparent 20%,
-                              $white 20%,
-                              $white 22%,
-                              transparent 22%,
-
-                              transparent 30%,
-                              $white 30%,
-                              $white 32%,
-                              transparent 32%,
-
-                              transparent 40%,
-                              $white 40%,
-                              $white 42%,
-                              transparent 42%,
-
-                              transparent 60%,
-                              $white 60%,
-                              $white 62%,
-                              transparent 62%,
-
-                              transparent 70%,
-                              $white 70%,
-                              $white 72%,
-                              transparent 72%,
-
-                              transparent 80%,
-                              $white 80%,
-                              $white 82%,
-                              transparent 82%,
-
-                              transparent 90%,
-                              $white 90%,
-                              $white 92%,
-                              transparent 92%
-                      );
-              background-size: 50px 20px;
-              background-repeat: repeat-x;
-              min-height: 20px;
-              
-              
-              
             }
             &_timecode {
-              font-size:9px;
-              padding-top:2px;
-              display:inline-block;
-              width:100px;
-              //text-indent:3px;
+              position: relative;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              width: 10%;
+              height: 100%;
+              color: $bg-color-light2;
+              font-size: 9px;
+              .sm-pyaka {
+                width: 10%;
+                border-left: 1px solid;
+                height: 4px;
+              }
+              .bg-pyaka {
+                position: relative;
+                width: 10%;
+                border-left: 1px solid;
+                height: 7px;
+              }
+              .timecode_value {
+                position: absolute;
+                left: -25px;
+                bottom: 10px;
+              }
             }
             &_canvas {
               position: relative;
@@ -678,19 +619,21 @@ html, body {
 @media only screen
 //and (min-device-width: 768px)
 and (max-width: 1024px) {
-    //.vg-main { overflow: hidden; }
-    //.vg-player-wrapper { position: absolute; width: 100%; }
-    //.vg-side-panel {
-    //  -webkit-transition: all 1s ease;
-    //  -moz-transition: all 1s ease;
-    //  -o-transition: all 1s ease;
-    //  -ms-transition: all 1s ease;
-    //  transition: all 1s ease;
-    //  left: 545px;
-    //  margin-left: 545px;
-    //  background: rgba(44,44,44,0.5);
-    //}
-  .vg-main { display: block !important; width: 100%;}
-  .vg-player-wrapper { width: 100%; }
-  .vg-side-panel { width: 100%; background: $bg-color-dark;}
+    .vg-main { overflow: hidden; }
+    .vg-player-wrapper { position: absolute; width: 100%; }
+    .vg-side-panel {
+      -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+      -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+      transition: all 1s ease;
+      left: 545px;
+      margin-left: 545px;
+      background: rgba(44,44,44,0.5);
+    }
+  
+  
+  //.vg-main { display: block !important; width: 100%;}
+  //.vg-player-wrapper { width: 100%; }
+  //.vg-side-panel { width: 100%; background: $bg-color-dark;}
 }

@@ -129,24 +129,32 @@ html, body {
         height: 28px;
         display: flex;
         justify-content: space-around;
-        align-items: baseline;
+        align-items: flex-end;
         color: #8f8e94;
         font-size: 9px;
-        background: #3C3F43;
-        white-space: nowrap;
-        font-size: 0;
-        margin: 0;
-        padding: 0; }
-      .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timeline {
-        background-image: linear-gradient(86deg, #ffffff 0, #ffffff 2%, transparent 2%), linear-gradient(180deg, #3C3F43 70%, transparent 50%), linear-gradient(90deg, transparent 50%, #ffffff 50%, #ffffff 52%, transparent 52%), linear-gradient(180deg, #3C3F43 70%, transparent 70%), linear-gradient(90deg, transparent 10%, #ffffff 10%, #ffffff 12%, transparent 12%, transparent 20%, #ffffff 20%, #ffffff 22%, transparent 22%, transparent 30%, #ffffff 30%, #ffffff 32%, transparent 32%, transparent 40%, #ffffff 40%, #ffffff 42%, transparent 42%, transparent 60%, #ffffff 60%, #ffffff 62%, transparent 62%, transparent 70%, #ffffff 70%, #ffffff 72%, transparent 72%, transparent 80%, #ffffff 80%, #ffffff 82%, transparent 82%, transparent 90%, #ffffff 90%, #ffffff 92%, transparent 92%);
-        background-size: 50px 20px;
-        background-repeat: repeat-x;
-        min-height: 20px; }
+        background: #3C3F43; }
       .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timecode {
-        font-size: 9px;
-        padding-top: 2px;
-        display: inline-block;
-        width: 100px; }
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 10%;
+        height: 100%;
+        color: #8f8e94;
+        font-size: 9px; }
+        .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timecode .sm-pyaka {
+          width: 10%;
+          border-left: 1px solid;
+          height: 4px; }
+        .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timecode .bg-pyaka {
+          position: relative;
+          width: 10%;
+          border-left: 1px solid;
+          height: 7px; }
+        .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_timecode .timecode_value {
+          position: absolute;
+          left: -25px;
+          bottom: 10px; }
       .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_canvas {
         position: relative;
         height: 90px;
@@ -425,15 +433,21 @@ html, body {
 /* gaga */
 @media only screen and (max-width: 1024px) {
   .vg-main {
-    display: block !important;
-    width: 100%; }
+    overflow: hidden; }
 
   .vg-player-wrapper {
+    position: absolute;
     width: 100%; }
 
   .vg-side-panel {
-    width: 100%;
-    background: #27282B; } }
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    left: 545px;
+    margin-left: 545px;
+    background: rgba(44, 44, 44, 0.5); } }
 .vg-main, .vg-header, .vg-side-panel .vg-track-area-container, .vg-side-panel .vg-tags-search-area, .vg-side-panel-events-item-time-area, .vg-side-panel-footer {
   display: flex; }
   .vg-header, .vg-side-panel .vg-track-area-container, .vg-side-panel .vg-tags-search-area, .vg-side-panel-events-item-time-area, .vg-side-panel-footer {
