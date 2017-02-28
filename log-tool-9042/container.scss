@@ -43,19 +43,19 @@ html, body {
   &-main {
     @extend %flex;
     padding: 10px;
-    height: calc(100% - #{$headerHeight});
+    height: calc(100% - #{$headerHeight + 20px});
     background: $bg-color-dark2;
   }
   &-player {
     &-wrapper {
       width: calc(100% - #{$sidePanelWidth});
-      //height: 100%;
+      height: 100%;
       display: block;
       .vg-player {
         &-section {
           width: 100%;
           position: relative;
-          height: calc(100% - #{$controlsBottomPanelHeigth + 20px});
+          height: calc(100% - #{$controlsBottomPanelHeigth});
           background-image: url("ga.png");
           background-repeat: no-repeat;
           background-size: cover;
@@ -95,8 +95,6 @@ html, body {
           }
           &-buttons {
             height: 36px;
-            //height: auto;
-            //min-height: $minControlsHeight;
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
@@ -124,8 +122,12 @@ html, body {
                 border: none;
                 border-radius: 15px;
                 padding: 1px 2px;
+                cursor: pointer;
                 outline: none;
                 background: transparent;
+                &::-moz-focus-outer {
+                  border: 0;
+                }
                 //track
                 &::-webkit-slider-runnable-track {
                   height: 6px;
@@ -153,18 +155,22 @@ html, body {
                   -webkit-appearance: none;
                   width: 6px;
                   height: 12px;
+                  cursor: pointer;
                   background: url("images/thumb.svg") no-repeat center center;
                   background-size: contain;
                 }
                 &::-moz-range-thumb {
                   width: 6px;
                   height: 12px;
+                  cursor: pointer;
+                  border: 0;
                   background: url("images/thumb.svg") no-repeat center center;
                   background-size: contain;
                 }
                 &::-ms-thumb {
                   width: 6px;
                   height: 12px;
+                  cursor: pointer;
                   background: url("images/thumb.svg") no-repeat center center;
                   background-size: contain;
                 }
@@ -303,7 +309,7 @@ html, body {
   &-side-panel {
     position: relative;
     width: $sidePanelWidth;
-    height: calc(100% - 20px);
+    height: 100%;
     background: $bg-color-dark1;
     .vg-track-area-container {
       @extend %flex-spaced-between;
@@ -583,8 +589,7 @@ html, body {
   }
 }
 
-/* ----------- iPad 3 and 4 ----------- */
-/* Portrait and Landscape */
+/* iPad 3 and 4 (Portrait and Landscape) */
 @media only screen
 and (min-device-width: 768px)
 and (max-device-width: 1024px)
@@ -598,28 +603,23 @@ and (-webkit-min-device-pixel-ratio: 2) {
     -ms-transition: all 1s ease;
     transition: all 1s ease;
     left: 445px;
-    margin-left: 100%;
+    margin-left: 545px;
     background: rgba(44,44,44,0.5);
   }
 }
 
 /* Laptops */
 @media only screen and (max-width: 1024px) {
-    .vg-main { overflow: hidden; padding: 0; }
-    .vg-player-wrapper { position: absolute; width: 100%; height: inherit; }
-    .vg-side-panel {
-      -webkit-transition: all 1s ease;
-      -moz-transition: all 1s ease;
-      -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-      transition: all 1s ease;
-      left: 445px;
-      margin-left: 100%;
-      background: rgba(44,44,44,0.5);
-    }
-  
-  
-  //.vg-main { display: block !important; width: 100%;}
-  //.vg-player-wrapper { width: 100%; }
-  //.vg-side-panel { width: 100%; background: $bg-color-dark;}
+  .vg-main { overflow: hidden; padding: 0; }
+  .vg-player-wrapper { position: absolute; width: 100%; height: inherit; }
+  .vg-side-panel {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    left: 445px;
+    margin-left: 100%;
+    background: rgba(44,44,44,0.5);
+  }
 }
