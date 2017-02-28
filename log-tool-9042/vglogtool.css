@@ -18,15 +18,15 @@ html, body {
   .vg-header-right {
     padding-right: 10px; }
 .vg-main {
+  padding: 10px;
   height: calc(100% - 50px); }
 .vg-player-wrapper {
   width: calc(100% - 480px);
-  height: 100%;
   display: block; }
   .vg-player-wrapper .vg-player-section {
     width: 100%;
     position: relative;
-    height: calc(100% - 162px);
+    height: calc(100% - 182px);
     background-image: url("ga.png");
     background-repeat: no-repeat;
     background-size: cover; }
@@ -58,8 +58,7 @@ html, body {
           .vg-player-wrapper .vg-player-controls-timeline_ruler i:first-child, .vg-player-wrapper .vg-player-controls-timeline_ruler i:last-child {
             height: 8px; }
     .vg-player-wrapper .vg-player-controls-buttons {
-      height: auto;
-      min-height: 36px;
+      height: 36px;
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
@@ -159,7 +158,7 @@ html, body {
         position: relative;
         height: 90px;
         background: url("filmstrip.png") no-repeat;
-        background-size: contain; }
+        background-size: cover; }
         .vg-player-wrapper .vg-player-controls .vg-player-filmstrip_canvas:after {
           content: '';
           position: absolute;
@@ -224,7 +223,7 @@ html, body {
 .vg-side-panel {
   position: relative;
   width: 480px;
-  height: 100%; }
+  height: calc(100% - 20px); }
   .vg-side-panel .vg-track-area-container {
     padding: 10px 25px 10px 25px;
     color: #8f8e94;
