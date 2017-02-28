@@ -44,6 +44,7 @@ html, body {
     @extend %flex;
     padding: 10px;
     height: calc(100% - #{$headerHeight});
+    background: $bg-color-dark2;
   }
   &-player {
     &-wrapper {
@@ -303,6 +304,7 @@ html, body {
     position: relative;
     width: $sidePanelWidth;
     height: calc(100% - 20px);
+    background: $bg-color-dark1;
     .vg-track-area-container {
       @extend %flex-spaced-between;
       padding: 10px 25px 10px 25px;
@@ -583,54 +585,36 @@ html, body {
 
 /* ----------- iPad 3 and 4 ----------- */
 /* Portrait and Landscape */
-//@media only screen
-//and (min-device-width: 768px)
-//and (max-device-width: 1024px)
-//and (-webkit-min-device-pixel-ratio: 2) {
-//  .vg-main { overflow: hidden; }
-//  .vg-player-wrapper { position: absolute; width: 100%; }
-//  .vg-side-panel {
-//    -webkit-transition: all 1s ease;
-//    -moz-transition: all 1s ease;
-//    -o-transition: all 1s ease;
-//    -ms-transition: all 1s ease;
-//    transition: all 1s ease;
-//    margin-left: 480px;
-//  }
-//}
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2) {
+  .vg-main { overflow: hidden; padding: 0; }
+  .vg-player-wrapper { position: absolute; width: 100%; height: inherit; }
+  .vg-side-panel {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    left: 445px;
+    margin-left: 100%;
+    background: rgba(44,44,44,0.5);
+  }
+}
 
 /* Laptops */
-//@media screen
-//and (min-device-width: 768px)
-//and (max-device-width: 1024px)
-//and (-webkit-min-device-pixel-ratio: 1) 
-//{
-//  .vg-main { overflow: hidden; }
-//  .vg-player-wrapper { position: absolute; width: 100%; }
-//  .vg-side-panel {
-//    -webkit-transition: all 1s ease;
-//    -moz-transition: all 1s ease;
-//    -o-transition: all 1s ease;
-//    -ms-transition: all 1s ease;
-//    transition: all 1s ease;
-//    margin-left: 480px;
-//  }
-//}
-
-/* gaga */
-@media only screen
-//and (min-device-width: 768px)
-and (max-width: 1024px) {
-    .vg-main { overflow: hidden; }
-    .vg-player-wrapper { position: absolute; width: 100%; }
+@media only screen and (max-width: 1024px) {
+    .vg-main { overflow: hidden; padding: 0; }
+    .vg-player-wrapper { position: absolute; width: 100%; height: inherit; }
     .vg-side-panel {
       -webkit-transition: all 1s ease;
       -moz-transition: all 1s ease;
       -o-transition: all 1s ease;
       -ms-transition: all 1s ease;
       transition: all 1s ease;
-      left: 545px;
-      margin-left: 545px;
+      left: 445px;
+      margin-left: 100%;
       background: rgba(44,44,44,0.5);
     }
   

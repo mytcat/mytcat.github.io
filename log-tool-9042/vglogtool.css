@@ -19,7 +19,8 @@ html, body {
     padding-right: 10px; }
 .vg-main {
   padding: 10px;
-  height: calc(100% - 50px); }
+  height: calc(100% - 50px);
+  background: #2D3033; }
 .vg-player-wrapper {
   width: calc(100% - 480px);
   display: block; }
@@ -223,7 +224,8 @@ html, body {
 .vg-side-panel {
   position: relative;
   width: 480px;
-  height: calc(100% - 20px); }
+  height: calc(100% - 20px);
+  background: #1F2023; }
   .vg-side-panel .vg-track-area-container {
     padding: 10px 25px 10px 25px;
     color: #8f8e94;
@@ -428,15 +430,15 @@ html, body {
 
 /* ----------- iPad 3 and 4 ----------- */
 /* Portrait and Landscape */
-/* Laptops */
-/* gaga */
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   .vg-main {
-    overflow: hidden; }
+    overflow: hidden;
+    padding: 0; }
 
   .vg-player-wrapper {
     position: absolute;
-    width: 100%; }
+    width: 100%;
+    height: inherit; }
 
   .vg-side-panel {
     -webkit-transition: all 1s ease;
@@ -444,8 +446,28 @@ html, body {
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
-    left: 545px;
-    margin-left: 545px;
+    left: 445px;
+    margin-left: 100%;
+    background: rgba(44, 44, 44, 0.5); } }
+/* Laptops */
+@media only screen and (max-width: 1024px) {
+  .vg-main {
+    overflow: hidden;
+    padding: 0; }
+
+  .vg-player-wrapper {
+    position: absolute;
+    width: 100%;
+    height: inherit; }
+
+  .vg-side-panel {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    left: 445px;
+    margin-left: 100%;
     background: rgba(44, 44, 44, 0.5); } }
 .vg-main, .vg-header, .vg-side-panel .vg-track-area-container, .vg-side-panel .vg-tags-search-area, .vg-side-panel-events-item-time-area, .vg-side-panel-footer {
   display: flex; }
