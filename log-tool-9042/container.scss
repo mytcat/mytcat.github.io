@@ -148,7 +148,7 @@ html, body {
                   border-radius: 15px;
                 }
                 &::-ms-fill-lower {
-                  background: red;
+                  
                 }
                 //thumb
                 &::-webkit-slider-thumb {
@@ -417,6 +417,9 @@ html, body {
         border-radius: 15px;
         background: $bg-color-light3;
       }
+      &::-moz-viewport-scroll {
+        
+      }
       &-item {
         margin: 8px 25px;
         padding: 8px 20px;
@@ -465,6 +468,7 @@ html, body {
             padding-left: 15px !important;
             color: $bg-color-light2;
             &-container {
+              display: none;
               z-index: 1;
               position: absolute;
               width: 100%;

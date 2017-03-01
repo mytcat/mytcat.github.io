@@ -105,8 +105,6 @@ html, body {
           background: #000000;
           border: none;
           border-radius: 15px; }
-        .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]::-ms-fill-lower {
-          background: red; }
         .vg-player-wrapper .vg-player-controls-buttons .vg-controls-right input[type=range]::-webkit-slider-thumb {
           -webkit-appearance: none;
           width: 6px;
@@ -349,6 +347,7 @@ html, body {
           padding-left: 15px !important;
           color: #8f8e94; }
           .vg-side-panel-events-item-tags-area-input-container {
+            display: none;
             z-index: 1;
             position: absolute;
             width: 100%;

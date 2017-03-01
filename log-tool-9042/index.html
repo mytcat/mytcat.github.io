@@ -183,7 +183,7 @@
                 </div>
                 <div class="vg-side-panel">
                     <div class="vg-track-area-container">
-                        <div class="vg-track-input-container active">
+                        <div class="vg-track-input-container">
                             <input class="vg-track-input" placeholder="Master" disabled>
                             <span class="vg-icon-right vg-icon-scroll"></span>
                             <ul class="vg-track-dropdown">
@@ -257,30 +257,6 @@
                             </div>
                         </div>
 
-                        <div class="vg-side-panel-events-item editable">
-                            <div class="vg-side-panel-events-item-time-area">
-                                <div class="start-time">Start: <span>00:01:00:00</span></div>
-                                <div class="end-time">End: <span>00:02:00:00</span></div>
-                                <div class="duration">
-                                    <span class="vg-icon-duration"></span>
-                                    <span class="duration-value">00:01:00:00</span>
-                                    <span class="vg-icon vg-icon-information"></span>
-                                </div>
-                            </div>
-                            <div class="vg-side-panel-events-item-tags-area">
-                                <input class="vg-side-panel-events-item-tags-area-input" placeholder="+ Add tag">
-                                <span class="vg-event-tag">First Frame of Composition<span class="vg-icon vg-icon-delete"></span></span>
-                                <span class="vg-event-tag">Textless Start<span class="vg-icon vg-icon-delete"></span></span>
-                                <span class="vg-event-tag">Music Shmusic<span class="vg-icon vg-icon-delete"></span></span>
-                                <span class="vg-event-tag">Music<span class="vg-icon vg-icon-delete"></span></span>
-                                <span class="vg-event-tag">Music<span class="vg-icon vg-icon-delete"></span></span>
-                                <span class="vg-event-tag add_tag">+ Add Tag</span>
-                            </div>
-                            <div class="vg-side-panel-events-item-description-area">
-                                <input class="description-input" placeholder="Add Description">
-                            </div>
-                        </div>
-
                         <div class="vg-side-panel-events-item new_event">
                             <div class="vg-side-panel-events-item-time-area">
                                 <div class="start-time">Start: <span>00:01:00:00</span></div>
@@ -313,10 +289,34 @@
                                 <input class="description-input" placeholder="Add Description">
                             </div>
                         </div>
+
+                        <div class="vg-side-panel-events-item editable">
+                            <div class="vg-side-panel-events-item-time-area">
+                                <div class="start-time">Start: <span>00:01:00:00</span></div>
+                                <div class="end-time">End: <span>00:02:00:00</span></div>
+                                <div class="duration">
+                                    <span class="vg-icon-duration"></span>
+                                    <span class="duration-value">00:01:00:00</span>
+                                    <span class="vg-icon vg-icon-information"></span>
+                                </div>
+                            </div>
+                            <div class="vg-side-panel-events-item-tags-area">
+                                <input class="vg-side-panel-events-item-tags-area-input" placeholder="+ Add tag">
+                                <span class="vg-event-tag">First Frame of Composition<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag">Textless Start<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag">Music Shmusic<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag">Music<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag">Music<span class="vg-icon vg-icon-delete"></span></span>
+                                <span class="vg-event-tag add_tag">+ Add Tag</span>
+                            </div>
+                            <div class="vg-side-panel-events-item-description-area">
+                                <input class="description-input" placeholder="Add Description">
+                            </div>
+                        </div>
                         
                     </div>
                     <div class="vg-side-panel-footer">
-                        <div class="vg-side-panel-footer-content active">
+                        <div class="vg-side-panel-footer-content">
                             <input class="vg-side-panel-footer-content-input" placeholder="Tape Timecode" disabled/>
                             <span class="vg-icon-right vg-icon-scroll"></span>
                             <ul class="vg-side-panel-footer-content-input-dropdown">
@@ -337,5 +337,33 @@
                 </div>
             </div>
         </div>
+        <script>
+            megaActivator("vg-track-input-container");
+            megaActivator("vg-side-panel-footer-content");
+            inputDdownActivator("vg-side-panel-events-item-tags-area-input", "vg-side-panel-events-item-tags-area");
+
+            function megaActivator (className) {
+                var el = document.querySelector("." + className);
+                el.addEventListener("click", function () {
+                    var contains = el.classList.contains("active");
+                    if (contains) {
+                        el.classList.remove("active");
+                    } else {
+                        el.classList.add("active")
+                    }
+                })
+            }
+            
+            function inputDdownActivator (inputClass, containerClass) {
+                var container = document.querySelectorAll("." + containerClass)[1];
+                var inputEl = document.querySelectorAll("." + inputClass)[1];
+                inputEl.addEventListener("focusin", function () {
+                    container.classList.add("active");
+                })
+                inputEl.addEventListener("focusout", function () {
+                    container.classList.remove("active");
+                })
+            }
+        </script>
     </body>
 </html>
