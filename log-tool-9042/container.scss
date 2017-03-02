@@ -1,7 +1,7 @@
 @import "themes/default_theme";
 
 $headerHeight: 50px;
-$sidePanelWidth: 480px;
+$sidePanelWidth: 450px;
 $timelineHeight: 8px;
 $minControlsHeight: 36px;
 $filmstripWithTimelineHeight: 118px;
@@ -302,6 +302,9 @@ html, body {
   &-icon {
     cursor: pointer;
     margin: 0 10px;
+    &.active {
+      color: $blue;
+    }
   }
   &-icon-right {
     @extend %input-icon-right;
@@ -393,7 +396,7 @@ html, body {
         position: relative;
         .vg-tags-search-input {
           @extend %input-default;
-          width: 250px;
+          width: 220px;
           color: white;
         }
         .vg-icon-right {
@@ -404,6 +407,7 @@ html, body {
       }
     }
     &-events {
+      position: relative;
       overflow-y: auto;
       height: inherit;
       max-height: calc(100% - 135px);
@@ -417,9 +421,6 @@ html, body {
         border-radius: 15px;
         background: $bg-color-light3;
       }
-      &::-moz-viewport-scroll {
-        
-      }
       &-item {
         margin: 8px 25px;
         padding: 8px 20px;
@@ -430,8 +431,57 @@ html, body {
         &-time-area {
           @extend %flex-spaced-between;
           color: $bg-color-light2;
+          .duration {
+            .vg-icon-information {
+              margin-right: 0;
+            }
+          }
           .duration-value {
-            padding: 0 15px 0 5px;
+            padding-left: 5px;
+          }
+          .vg_modified {
+              position: relative;
+            &-by {
+              display: none;
+              position: absolute;
+              top: 30px;
+              right: -39px;
+              width: 200px;
+              height: 70px;
+              border-radius: 4px;
+              z-index: 2;
+              cursor: default;
+              background: $bg-color-dark;
+              box-shadow: -1px 0px 15px -4px black;
+              &_title {
+                color: $white;
+              }
+              &_info {
+                display: flex;
+                .avatar {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  background: url("images/avatar1.png") no-repeat;
+                  background-size: cover;
+                }
+                
+              }
+              &:before {
+                content: '';
+                position: absolute;
+                right: 36px;
+                top: -15px;
+                border-right: 10px solid transparent;
+                border-left: 10px solid transparent;
+                border-bottom: 15px solid $bg-color-dark;
+              }
+            }
+            &.show_modified {
+              .vg_modified-by {
+                display: block;
+              }
+            }
           }
         }
         &-tags-area {
