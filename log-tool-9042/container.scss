@@ -46,227 +46,228 @@ html, body {
     height: calc(100% - #{$headerHeight + 20px});
     background: $bg-color-dark2;
   }
+  &-player-wrapper {
+    width: calc(100% - #{$sidePanelWidth});
+    height: 100%;
+    display: block;
+  }
+
   &-player {
-    &-wrapper {
-      width: calc(100% - #{$sidePanelWidth});
-      height: 100%;
-      display: block;
-      .vg-player {
-        &-section {
+    &-section {
+      width: 100%;
+      position: relative;
+      height: calc(100% - #{$controlsBottomPanelHeigth});
+      background-image: url("ga.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &-controls {
+      height: $controlsBottomPanelHeigth;
+      &-timeline {
+        position: relative;
+        height: $timelineHeight;
+        overflow: hidden;
+        background-color: $black;
+        &_ruler {
           width: 100%;
-          position: relative;
-          height: calc(100% - #{$controlsBottomPanelHeigth});
-          background-image: url("ga.png");
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
-        &-controls {
-          height: $controlsBottomPanelHeigth;
-          &-timeline {
-            position: relative;
-            height: $timelineHeight;
-            overflow: hidden;
-            background-color: $black;
-            .vg-player-timeline-highlight {
-              position: absolute;
-              height: 100%;
-              background: $yellow;
-              opacity: 0.5;
-            }
-            &_ruler {
-              width: 100%;
-              position: absolute;
-              bottom: 0;
-              display: flex;
-              justify-content: space-between;
-              align-items: flex-end;
-              i {
-                width: 1px;
-                height: 4px;
-                background: $bg-color-light3;
-                @include each(11) {
-                  height: $timelineHeight;
-                }
-                &:first-child, &:last-child {
-                  height: $timelineHeight;
-                }
-              }
-            }
-          }
-          &-buttons {
-            height: 36px;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
-            align-items: center;
-            color: $bg-color-light2;
-            background: $bg-color-dark;
-            .vg-controls-right {
-              &::before {
-                font-family: VG_Custom_Icons;
-                font-size: 10px;
-                content: "\e90f";
-                cursor: pointer;
-                padding-right: 10px;
-              }
-              &::after {
-                font-family: VG_Custom_Icons;
-                padding: 0 10px;
-                cursor: pointer;
-                content: "\e90f";
-              }
-              input[type=range] {
-                -webkit-appearance: none;
-                width: 150px;
-                margin: 0;
-                border: none;
-                border-radius: 15px;
-                padding: 1px 2px;
-                cursor: pointer;
-                outline: none;
-                background: transparent;
-                &::-moz-focus-outer {
-                  border: 0;
-                }
-                //track
-                &::-webkit-slider-runnable-track {
-                  height: 6px;
-                  background: $black;
-                  border: none;
-                  border-radius: 15px;
-                }
-                &::-moz-range-track {
-                  height: 6px;
-                  background: $black;
-                  border: none;
-                  border-radius: 15px;
-                }
-                &::-ms-track {
-                  height: 6px;
-                  background: $black;
-                  border: none;
-                  border-radius: 15px;
-                }
-                &::-ms-fill-lower {
-                  
-                }
-                //thumb
-                &::-webkit-slider-thumb {
-                  -webkit-appearance: none;
-                  width: 6px;
-                  height: 12px;
-                  cursor: pointer;
-                  background: url("images/thumb.svg") no-repeat center center;
-                  background-size: contain;
-                }
-                &::-moz-range-thumb {
-                  width: 6px;
-                  height: 12px;
-                  cursor: pointer;
-                  border: 0;
-                  background: url("images/thumb.svg") no-repeat center center;
-                  background-size: contain;
-                }
-                &::-ms-thumb {
-                  width: 6px;
-                  height: 12px;
-                  cursor: pointer;
-                  background: url("images/thumb.svg") no-repeat center center;
-                  background-size: contain;
-                }
-              }
-            }
-            .vg-controls-center {
-              display: flex;
-              &.group-2 {
-                padding: 0 5px;
-              }
-            }
-          }
-          .vg-player-filmstrip {
-            height: 118px;
-            &_timeline {
-              height: 28px;
-              display: flex;
-              justify-content: space-around;
-              align-items: flex-end;
-              color: $bg-color-light2;
-              font-size: 9px;
-              background: $bg-color-light3;
-            }
-            &_timecode {
-              position: relative;
-              display: flex;
-              justify-content: space-between;
-              align-items: flex-end;
-              width: 10%;
-              height: 100%;
-              color: $bg-color-light2;
-              font-size: 9px;
-              .sm-pyaka {
-                width: 10%;
-                border-left: 1px solid;
-                height: 4px;
-              }
-              .bg-pyaka {
-                position: relative;
-                width: 10%;
-                border-left: 1px solid;
-                height: 7px;
-              }
-              .timecode_value {
-                position: absolute;
-                left: -25px;
-                bottom: 10px;
-              }
-            }
-            &_canvas {
-              position: relative;
-              height: 90px;
-              background: url("filmstrip.png") no-repeat;
-              background-size: cover;
-              &:after {
-                content: '';
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 25%;
-                border-right: 1px solid $red;
-              }
-            }
-            .filmstrip-crop-frame {
-              position: absolute;
-              width: 15%;
-              height: 100%;
-              left: 19%;
-              box-shadow: inset 0px 0px 0px 1px $yellow;
-              background: rgba(0,0,0,0.3)
-            }
-          }
-        }
-        &-scrubber {
           position: absolute;
-          display: block;
-          width: $trackScrubberWidth;
-          height: 8px;
-          cursor: pointer;
-          transform: translateX(-$trackScrubberShift);
-          &-tail {
-            width: $trackScrubberWidth;
-            height: 5px;
-            background-color: $red;
-          }
-          &-nose {
-            width: 0;
-            height: 0;
-            border-left: 4px solid transparent;
-            border-right: 4px solid transparent;
-            border-top: 3px solid $red;
+          bottom: 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          i {
+            width: 1px;
+            height: 4px;
+            background: $bg-color-light3;
+            @include each(11) {
+              height: $timelineHeight;
+            }
+            &:first-child, &:last-child {
+              height: $timelineHeight;
+            }
           }
         }
       }
+      &-buttons {
+        height: 36px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        color: $bg-color-light2;
+        background: $bg-color-dark;
+      }
+    }
+    &-timeline-highlight {
+      position: absolute;
+      height: 100%;
+      background: $yellow;
+      opacity: 0.5;
+    }
+    &-controls-center {
+      display: flex;
+      &.group-2 {
+        padding: 0 5px;
+      }
+    }
+    &-controls-right {
+      &::before {
+        font-family: VG_Custom_Icons;
+        font-size: 10px;
+        content: "\e90f";
+        cursor: pointer;
+        padding-right: 10px;
+      }
+      &::after {
+        font-family: VG_Custom_Icons;
+        padding: 0 10px;
+        cursor: pointer;
+        content: "\e90f";
+      }
+      input[type=range] {
+        -webkit-appearance: none;
+        width: 150px;
+        margin: 0;
+        border: none;
+        border-radius: 15px;
+        padding: 1px 2px;
+        cursor: pointer;
+        outline: none;
+        background: transparent;
+        &::-moz-focus-outer {
+          border: 0;
+        }
+        //track
+        &::-webkit-slider-runnable-track {
+          height: 6px;
+          background: $black;
+          border: none;
+          border-radius: 15px;
+        }
+        &::-moz-range-track {
+          height: 6px;
+          background: $black;
+          border: none;
+          border-radius: 15px;
+        }
+        &::-ms-track {
+          height: 6px;
+          background: $black;
+          border: none;
+          border-radius: 15px;
+        }
+        &::-ms-fill-lower {
+          background: #ac51b5 !important;
+        }
+        //thumb
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 6px;
+          height: 12px;
+          cursor: pointer;
+          background: url("images/thumb.svg") no-repeat center center;
+          background-size: contain;
+        }
+        &::-moz-range-thumb {
+          width: 6px;
+          height: 16px;
+          cursor: pointer;
+          border: 0;
+          border-radius: 0;
+          background: url("images/thumb.svg") no-repeat center center;
+          background-size: contain;
+        }
+        &::-ms-thumb {
+          width: 6px;
+          height: 12px;
+          cursor: pointer;
+          background: url("images/thumb.svg") no-repeat center center;
+          background-size: contain;
+        }
+      }
+    }
+    &-scrubber {
+      position: absolute;
+      display: block;
+      width: $trackScrubberWidth;
+      height: 8px;
+      cursor: pointer;
+      transform: translateX(-$trackScrubberShift);
+      &-tail {
+        width: $trackScrubberWidth;
+        height: 5px;
+        background-color: $red;
+      }
+      &-nose {
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 3px solid $red;
+      }
     }
   }
+  &-player-filmstrip {
+    height: 118px;
+    &_timeline {
+      height: 28px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      color: $bg-color-light2;
+      font-size: 9px;
+      background: $bg-color-light3;
+    }
+    &_timecode {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 10%;
+      height: 100%;
+      color: $bg-color-light2;
+      font-size: 9px;
+      .sm-pyaka {
+        width: 10%;
+        border-left: 1px solid;
+        height: 4px;
+      }
+      .bg-pyaka {
+        position: relative;
+        width: 10%;
+        border-left: 1px solid;
+        height: 7px;
+      }
+      .timecode_value {
+        position: absolute;
+        left: -25px;
+        bottom: 10px;
+      }
+    }
+    &_canvas {
+      position: relative;
+      height: 90px;
+      background: url("filmstrip.png") no-repeat;
+      background-size: cover;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 25%;
+        border-right: 1px solid $red;
+      }
+    }
+    .filmstrip-crop-frame {
+      position: absolute;
+      width: 15%;
+      height: 100%;
+      left: 19%;
+      box-shadow: inset 0px 0px 0px 1px $yellow;
+      background: rgba(0,0,0,0.3)
+    }
+  }
+  
   &_video-info {
     display: none;
     position: absolute;
@@ -309,17 +310,55 @@ html, body {
   &-icon-right {
     @extend %input-icon-right;
   }
+
+  &-tags-search-area {
+    @extend %flex-spaced-between;
+    padding: 10px 25px 10px 25px;
+    margin-top: 2px;
+    color: $bg-color-light2;
+    background: $bg-color-light3;
+    .vg-selected-events {
+      position: relative;
+      .vg-selected-events-input {
+        @extend %input-default;
+        width: 120px;
+        opacity: 0.6;
+      }
+      .vg-icon-right {
+        padding-right: 10px;
+        font-size: 0.8em;
+        cursor: default;
+      }
+    }
+  }
+  &-tags-search {
+    position: relative;
+    .vg-tags-search-input {
+      @extend %input-default;
+      width: 220px;
+      color: white;
+    }
+    .vg-icon-right {
+      padding: 5px;
+      cursor: default;
+      background: $bg-color-dark1;
+    }
+  }
+  
   &-side-panel {
     position: relative;
     width: $sidePanelWidth;
     height: 100%;
     background: $bg-color-dark1;
-    .vg-track-area-container {
-      @extend %flex-spaced-between;
-      padding: 10px 25px 10px 25px;
-      color: $bg-color-light2;
-      background: $bg-color-light3;
-      .vg-track-input-container {
+    .vg-track {
+      &-area-container {
+        @extend %flex-spaced-between;
+        padding: 10px 25px 10px 25px;
+        color: $bg-color-light2;
+        background: $bg-color-light3;
+      }
+
+      &-input-container {
         position: relative;
         width: 80%;
         &.active {
@@ -327,84 +366,52 @@ html, body {
             display: block;
           }
         }
-        .vg-track-input {
-          @extend %input-default;
-          width: 100%;
-          cursor: pointer;
-        }
-        .vg-track-dropdown {
-          @extend %input-dropdown;
-          display: none;
-          width: 100%;
-          height: auto;
-          max-height: 200px;
-          padding-left: 20px;
-          top: 55%;
-          li {
-            display: flex;
-            justify-content: space-between;
+      }
+      &-input {
+        @extend %input-default;
+        width: 100%;
+        cursor: pointer;
+      }
+      &-dropdown {
+        @extend %input-dropdown;
+        display: none;
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        padding-left: 20px;
+        top: 55%;
+        li {
+          display: flex;
+          justify-content: space-between;
+          &:hover {
             .vg-track-item-actions {
-              display: none;
-              font-size: 0.8em;
-              .vg-icon-edit {
-                margin: 0 5px;
-                cursor: pointer;
-              }
-              .vg-icon-delete-track {
-                color: darken($red, 15%);
-                margin: 0 10px;
-                cursor: pointer;
-              }
-            }
-            &:hover {
-              .vg-track-item-actions {
-                display: block;
-                cursor: default;
-              }
+              display: block;
+              cursor: default;
             }
           }
         }
       }
-      .vg-track-actions {
+      &-item-actions {
+        display: none;
+        font-size: 0.8em;
+        .vg-icon-edit {
+          margin: 0 5px;
+          cursor: pointer;
+        }
+        .vg-icon-delete-track {
+          color: darken($red, 15%);
+          margin: 0 10px;
+          cursor: pointer;
+        }
+      }
+      &-actions {
         width: 20%;
         text-align: right;
         .vg-icon-add-track {
           margin-right: 0;
         }
       }
-    }
-    .vg-tags-search-area {
-      @extend %flex-spaced-between;
-      padding: 10px 25px 10px 25px;
-      margin-top: 2px;
-      color: $bg-color-light2;
-      background: $bg-color-light3;
-      .vg-selected-events {
-        position: relative;
-        .vg-selected-events-input {
-          @extend %input-default;
-          width: 120px;
-          opacity: 0.6;
-        }
-        .vg-icon-right {
-          padding-right: 10px;
-          font-size: 0.8em;
-          cursor: default;
-        }
-      }
-      .vg-tags-search {
-        position: relative;
-        .vg-tags-search-input {
-          @extend %input-default;
-          width: 220px;
-          color: white;
-        }
-        .vg-icon-right {
-          padding: 5px;
-          cursor: default;
-          background: $bg-color-dark1;
-        }
-      }
+      
     }
     &-events {
       position: relative;
@@ -413,11 +420,11 @@ html, body {
       max-height: calc(100% - 135px);
       &::-webkit-scrollbar {
         width: 12px;
-        background: #000000;
+        background: $black;
       }
       &::-webkit-scrollbar-thumb {
         position: absolute;
-        border: 4px solid #000000;
+        border: 4px solid $black;
         border-radius: 15px;
         background: $bg-color-light3;
       }
