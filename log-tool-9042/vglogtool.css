@@ -337,15 +337,20 @@ html, body {
             background: #27282B;
             box-shadow: -1px 0px 15px -4px black; }
             .vg-side-panel-events-item-time-area .vg_modified-by_title {
-              color: #ffffff; }
+              color: #ffffff;
+              margin-left: 10px; }
             .vg-side-panel-events-item-time-area .vg_modified-by_info {
-              display: flex; }
+              display: flex;
+              margin: 10px 0 0 10px; }
               .vg-side-panel-events-item-time-area .vg_modified-by_info .avatar {
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
+                margin-right: 10px;
                 background: url("images/avatar1.png") no-repeat;
                 background-size: cover; }
+              .vg-side-panel-events-item-time-area .vg_modified-by_info .modifier_and_date {
+                align-self: center; }
             .vg-side-panel-events-item-time-area .vg_modified-by:before {
               content: '';
               position: absolute;
