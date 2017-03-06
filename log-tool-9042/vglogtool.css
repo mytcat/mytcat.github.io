@@ -319,15 +319,15 @@ html, body {
       background: #2D3033; }
       .vg-side-panel-events-item:hover {
         background: #3C3F43; }
-      .vg-side-panel-events-item-time-area {
+      .vg-side-panel-events-item-time {
         color: #8f8e94; }
-        .vg-side-panel-events-item-time-area .duration .vg-icon-information {
+        .vg-side-panel-events-item-time .duration .vg-icon-information {
           margin-right: 0; }
-        .vg-side-panel-events-item-time-area .duration-value {
+        .vg-side-panel-events-item-time .duration-value {
           padding-left: 5px; }
-        .vg-side-panel-events-item-time-area .vg_modified {
+        .vg-side-panel-events-item-time .vg_modified {
           position: relative; }
-          .vg-side-panel-events-item-time-area .vg_modified-by {
+          .vg-side-panel-events-item-time .vg_modified-by {
             display: none;
             position: absolute;
             top: 30px;
@@ -339,22 +339,22 @@ html, body {
             cursor: default;
             background: #27282B;
             box-shadow: -1px 0px 15px -4px black; }
-            .vg-side-panel-events-item-time-area .vg_modified-by_title {
+            .vg-side-panel-events-item-time .vg_modified-by_title {
               color: #ffffff;
               margin-left: 10px; }
-            .vg-side-panel-events-item-time-area .vg_modified-by_info {
+            .vg-side-panel-events-item-time .vg_modified-by_info {
               display: flex;
               margin: 10px 0 0 10px; }
-              .vg-side-panel-events-item-time-area .vg_modified-by_info .avatar {
+              .vg-side-panel-events-item-time .vg_modified-by_info .avatar {
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
                 margin-right: 10px;
                 background: url("images/avatar1.png") no-repeat;
                 background-size: cover; }
-              .vg-side-panel-events-item-time-area .vg_modified-by_info .modifier_and_date {
+              .vg-side-panel-events-item-time .vg_modified-by_info .modifier_and_date {
                 align-self: center; }
-            .vg-side-panel-events-item-time-area .vg_modified-by:before {
+            .vg-side-panel-events-item-time .vg_modified-by:before {
               content: '';
               position: absolute;
               right: 36px;
@@ -362,9 +362,9 @@ html, body {
               border-right: 10px solid transparent;
               border-left: 10px solid transparent;
               border-bottom: 15px solid #27282B; }
-          .vg-side-panel-events-item-time-area .vg_modified.show_modified .vg_modified-by {
+          .vg-side-panel-events-item-time .vg_modified.show_modified .vg_modified-by {
             display: block; }
-      .vg-side-panel-events-item-tags-area {
+      .vg-side-panel-events-item-tags {
         position: relative;
         color: white;
         margin: 10px 0;
@@ -372,7 +372,7 @@ html, body {
         line-height: 2rem;
         border-top: 1px solid #4B4E51;
         border-bottom: 1px solid #4B4E51; }
-        .vg-side-panel-events-item-tags-area .vg-event-tag {
+        .vg-side-panel-events-item-tags .vg-event-tag {
           height: 26px;
           display: inline-flex;
           align-items: center;
@@ -381,19 +381,19 @@ html, body {
           padding: 0 15px 0 15px;
           background: #4B4E51;
           border-radius: 13px; }
-          .vg-side-panel-events-item-tags-area .vg-event-tag .vg-icon-delete {
+          .vg-side-panel-events-item-tags .vg-event-tag .vg-icon-delete {
             display: none;
             color: #8f8e94;
             margin-right: 0; }
-        .vg-side-panel-events-item-tags-area .add_tag {
+        .vg-side-panel-events-item-tags .add_tag {
           padding-right: 12px;
           display: none; }
-        .vg-side-panel-events-item-tags-area-input {
+        .vg-side-panel-events-item-tags-input {
           display: none;
           width: 100%;
           padding-left: 15px !important;
           color: #8f8e94; }
-          .vg-side-panel-events-item-tags-area-input-container {
+          .vg-side-panel-events-item-tags-input-container {
             display: none;
             z-index: 1;
             position: absolute;
@@ -401,7 +401,7 @@ html, body {
             background: #3C3F43;
             border-radius: 4px;
             box-shadow: -1px 0 15px -4px black; }
-          .vg-side-panel-events-item-tags-area-input-dropdown {
+          .vg-side-panel-events-item-tags-input-dropdown {
             position: relative;
             width: 96%;
             height: auto;
@@ -414,24 +414,24 @@ html, body {
             border-radius: 4px;
             list-style: none;
             line-height: 2rem; }
-            .vg-side-panel-events-item-tags-area-input-dropdown::-webkit-scrollbar {
+            .vg-side-panel-events-item-tags-input-dropdown::-webkit-scrollbar {
               width: 10px;
               background: #1F2023; }
-            .vg-side-panel-events-item-tags-area-input-dropdown::-webkit-scrollbar-thumb {
+            .vg-side-panel-events-item-tags-input-dropdown::-webkit-scrollbar-thumb {
               border: 3px solid #1F2023;
               border-radius: 15px;
               background: #3C3F43; }
-            .vg-side-panel-events-item-tags-area-input-dropdown li {
+            .vg-side-panel-events-item-tags-input-dropdown li {
               padding-left: 10px;
               cursor: pointer;
               border-bottom: 1px solid #3C3F43; }
-              .vg-side-panel-events-item-tags-area-input-dropdown li:hover {
+              .vg-side-panel-events-item-tags-input-dropdown li:hover {
                 background: #4B4E51; }
-        .vg-side-panel-events-item-tags-area.active .vg-side-panel-events-item-tags-area-input-container {
+        .vg-side-panel-events-item-tags.active .vg-side-panel-events-item-tags-input-container {
           display: block; }
-      .vg-side-panel-events-item-description-area {
+      .vg-side-panel-events-item-description {
         color: #8f8e94; }
-        .vg-side-panel-events-item-description-area .description-input {
+        .vg-side-panel-events-item-description .description-input {
           width: 100%;
           outline: none;
           border: 0;
@@ -451,7 +451,7 @@ html, body {
       .vg-side-panel-events-item.new_event {
         background: #3C3F43;
         box-shadow: inset 6px 0 0 0 #ffc107; }
-        .vg-side-panel-events-item.new_event .vg-side-panel-events-item-tags-area-input {
+        .vg-side-panel-events-item.new_event .vg-side-panel-events-item-tags-input {
           display: block;
           width: calc(100% - 15px); }
   .vg-side-panel-footer {
@@ -522,13 +522,13 @@ html, body {
     left: 445px;
     margin-left: 100%;
     background: rgba(44, 44, 44, 0.5); } }
-.vg-main, .vg-header, .vg-tags-search-area, .vg-side-panel .vg-track-area-container, .vg-side-panel-events-item-time-area, .vg-side-panel-footer {
+.vg-main, .vg-header, .vg-tags-search-area, .vg-side-panel .vg-track-area-container, .vg-side-panel-events-item-time, .vg-side-panel-footer {
   display: flex; }
-  .vg-header, .vg-tags-search-area, .vg-side-panel .vg-track-area-container, .vg-side-panel-events-item-time-area, .vg-side-panel-footer {
+  .vg-header, .vg-tags-search-area, .vg-side-panel .vg-track-area-container, .vg-side-panel-events-item-time, .vg-side-panel-footer {
     align-items: center;
     justify-content: space-between; }
 
-.vg-tags-search-area .vg-selected-events .vg-selected-events-input, .vg-tags-search .vg-tags-search-input, .vg-side-panel .vg-track-input, .vg-side-panel-events-item-tags-area-input, .vg-side-panel-footer-content-input {
+.vg-tags-search-area .vg-selected-events .vg-selected-events-input, .vg-tags-search .vg-tags-search-input, .vg-side-panel .vg-track-input, .vg-side-panel-events-item-tags-input, .vg-side-panel-footer-content-input {
   height: 25px;
   padding-left: 20px;
   border-radius: 4px;
@@ -536,7 +536,7 @@ html, body {
   outline: none;
   background: #1F2023; }
 
-.vg-side-panel-events-item.new_event .vg-side-panel-events-item-tags-area-input {
+.vg-side-panel-events-item.new_event .vg-side-panel-events-item-tags-input {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden; }
