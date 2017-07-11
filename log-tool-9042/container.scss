@@ -207,6 +207,62 @@ html, body {
       }
     }
   }
+  &-event-tag-ddown {
+    position: relative;
+    color: white;
+    margin: 10px 0;
+    padding: 10px 0;
+    line-height: 2rem;
+    border-top: 1px solid $bg-color-light;
+    border-bottom: 1px solid $bg-color-light;
+    &-input {
+      @extend %input-default;
+      display: none;
+      width: 100%;
+      padding-left: 15px !important;
+      color: $bg-color-light2;
+    }
+    &-tags {
+      display: none;
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      background: $bg-color-light3;
+      border-radius: 4px;
+      box-shadow: -1px 0 15px -4px black;
+      &-content {
+        position: relative;
+        width: 96%;
+        height: auto;
+        max-height: 200px;
+        padding-left: 0;
+        margin: 2%;
+        overflow-y: auto;
+        color: $bg-color-light2;
+        background: $bg-color-dark2;
+        border-radius: 4px;
+        list-style: none;
+        line-height: 2rem;
+        &::-webkit-scrollbar {
+          width: 10px;
+          background: $bg-color-dark1;
+        }
+        &::-webkit-scrollbar-thumb {
+          border: 3px solid $bg-color-dark1;
+          border-radius: 15px;
+          background: $bg-color-light3;
+        }
+        li {
+          padding-left: 10px;
+          cursor: pointer;
+          border-bottom: 1px solid $bg-color-light3;
+          &:hover {
+            background: $bg-color-light;
+          }
+        }
+      }
+    }
+  }
   &-player-filmstrip {
     height: 118px;
     &_timeline {
@@ -438,10 +494,23 @@ html, body {
         &-time {
           @extend %flex-spaced-between;
           color: $bg-color-light2;
+          font-weight: 100;
           .duration {
             .vg-icon-information {
               margin-right: 0;
             }
+          }
+          .start-time, .end-time {
+            @extend %flex;
+            width: 33%;
+          }
+          input {
+            width: 100%;
+            border: 0;
+            color: inherit;
+            font-weight: 100;
+            padding: 0 0 0 5px;
+            background: transparent;
           }
           .duration-value {
             padding-left: 5px;

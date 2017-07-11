@@ -149,6 +149,53 @@ html, body {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
     border-top: 3px solid #fd0304; }
+.vg-event-tag-ddown {
+  position: relative;
+  color: white;
+  margin: 10px 0;
+  padding: 10px 0;
+  line-height: 2rem;
+  border-top: 1px solid #4B4E51;
+  border-bottom: 1px solid #4B4E51; }
+  .vg-event-tag-ddown-input {
+    display: none;
+    width: 100%;
+    padding-left: 15px !important;
+    color: #8f8e94; }
+  .vg-event-tag-ddown-tags {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    background: #3C3F43;
+    border-radius: 4px;
+    box-shadow: -1px 0 15px -4px black; }
+    .vg-event-tag-ddown-tags-content {
+      position: relative;
+      width: 96%;
+      height: auto;
+      max-height: 200px;
+      padding-left: 0;
+      margin: 2%;
+      overflow-y: auto;
+      color: #8f8e94;
+      background: #2D3033;
+      border-radius: 4px;
+      list-style: none;
+      line-height: 2rem; }
+      .vg-event-tag-ddown-tags-content::-webkit-scrollbar {
+        width: 10px;
+        background: #1F2023; }
+      .vg-event-tag-ddown-tags-content::-webkit-scrollbar-thumb {
+        border: 3px solid #1F2023;
+        border-radius: 15px;
+        background: #3C3F43; }
+      .vg-event-tag-ddown-tags-content li {
+        padding-left: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #3C3F43; }
+        .vg-event-tag-ddown-tags-content li:hover {
+          background: #4B4E51; }
 .vg-player-filmstrip {
   height: 118px; }
   .vg-player-filmstrip_timeline {
@@ -320,9 +367,19 @@ html, body {
       .vg-side-panel-events-item:hover {
         background: #3C3F43; }
       .vg-side-panel-events-item-time {
-        color: #8f8e94; }
+        color: #8f8e94;
+        font-weight: 100; }
         .vg-side-panel-events-item-time .duration .vg-icon-information {
           margin-right: 0; }
+        .vg-side-panel-events-item-time .start-time, .vg-side-panel-events-item-time .end-time {
+          width: 33%; }
+        .vg-side-panel-events-item-time input {
+          width: 100%;
+          border: 0;
+          color: inherit;
+          font-weight: 100;
+          padding: 0 0 0 5px;
+          background: transparent; }
         .vg-side-panel-events-item-time .duration-value {
           padding-left: 5px; }
         .vg-side-panel-events-item-time .vg_modified {
@@ -522,13 +579,13 @@ html, body {
     left: 445px;
     margin-left: 100%;
     background: rgba(44, 44, 44, 0.5); } }
-.vg-main, .vg-header, .vg-tags-search-area, .vg-side-panel .vg-track-area-container, .vg-side-panel-events-item-time, .vg-side-panel-footer {
+.vg-main, .vg-side-panel-events-item-time .start-time, .vg-side-panel-events-item-time .end-time, .vg-header, .vg-tags-search-area, .vg-side-panel .vg-track-area-container, .vg-side-panel-events-item-time, .vg-side-panel-footer {
   display: flex; }
   .vg-header, .vg-tags-search-area, .vg-side-panel .vg-track-area-container, .vg-side-panel-events-item-time, .vg-side-panel-footer {
     align-items: center;
     justify-content: space-between; }
 
-.vg-tags-search-area .vg-selected-events .vg-selected-events-input, .vg-tags-search .vg-tags-search-input, .vg-side-panel .vg-track-input, .vg-side-panel-events-item-tags-input, .vg-side-panel-footer-content-input {
+.vg-event-tag-ddown-input, .vg-tags-search-area .vg-selected-events .vg-selected-events-input, .vg-tags-search .vg-tags-search-input, .vg-side-panel .vg-track-input, .vg-side-panel-events-item-tags-input, .vg-side-panel-footer-content-input {
   height: 25px;
   padding-left: 20px;
   border-radius: 4px;
