@@ -410,3 +410,18 @@ h2.section-title + p {
     color: #cdff17;
     background-color: black;
 }
+.events-calendar {
+    width: 100%;
+    height: calc(100% - 360px);
+    padding-left: 10px;
+}
+.events-iframe {
+    position: absolute;
+}
+.footer-events {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+}
