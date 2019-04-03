@@ -401,6 +401,11 @@ h2.section-title + p {
 	width: 80px;
 	height: 80px;
 }
+.screen2-description {
+    padding-top: 42px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
 .become-member {
     font-size: 18px;
     color: black;
