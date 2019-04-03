@@ -401,3 +401,12 @@ h2.section-title + p {
 	width: 80px;
 	height: 80px;
 }
+.become-member {
+    font-size: 18px;
+    color: black;
+    background-color: #cdff17;
+}
+.become-member:hover {
+    color: #cdff17;
+    background-color: black;
+}
