@@ -423,6 +423,9 @@ h2.section-title + p {
 .events-iframe {
     position: absolute;
 }
+.footer-logo {
+    width: 25%;
+}
 .footer-events {
     position: absolute;
     bottom: 0;
