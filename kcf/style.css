@@ -433,3 +433,6 @@ h2.section-title + p {
     right: 0;
     padding: 0;
 }
+#contacts {
+    padding-bottom: 0;
+}
