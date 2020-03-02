@@ -139,6 +139,7 @@ body {
     width: 658px;
     height: 925px;
     text-align: left;
+    padding-left: 42px;
 }
 .story .about-title {
     font-style: normal;
@@ -246,6 +247,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 /* -- mobile -- */
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
