@@ -42,7 +42,7 @@ body {
     padding: 142px;
 }
 
-.title-text .title-big {
+.title-text .title-big, .bottom-section .title-big {
     font-style: normal;
     font-weight: 300;
     font-size: 36px;
@@ -60,7 +60,7 @@ body {
     color: #E01010;
 }
 
-.title-text .title-small {
+.title-text .text-small {
     font-style: normal;
     font-weight: 300;
     font-size: 21px;
@@ -197,6 +197,34 @@ body {
     font-style: normal;
     font-weight: 300;
     font-size: 30px;
+}
+
+.bottom-section {
+    max-width: 660px;
+    padding: 270px 0 170px;
+    margin: 0 auto;
+}
+
+.bottom-section .text-small {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.26em;
+    margin-top: 42px;
+}
+
+.bottom-section .btn-red {
+    width: 524px;
+    height: 134px;
+    line-height: 134px;
+    background: #E01010;
+    color: #FFC1C1;
+    font-weight: 300;
+    font-size: 50px;
+    text-align: center;
+    margin: 90px auto 0;
+    cursor: pointer;
 }
 
 .btn-play {
