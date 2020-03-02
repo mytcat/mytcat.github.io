@@ -1,0 +1,172 @@
+body {
+    width: 100%;
+    height: 100%;
+    background: #FFEAEA;
+    font-family: Bitum, sans-serif;
+}
+
+.video-header {
+    width: 100%;
+    height: 981px;
+    position: relative;
+    background: black;
+}
+
+.video-header video {
+    height: inherit;
+}
+
+.video-header::after {
+    content: '#WOMANx2';
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    left: 0;
+    color: #E01010;
+    display: block;
+    height: 100px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 290px;
+}
+
+.stories-wrap {
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.title-text {
+    margin-top: 210px;
+    padding: 142px;
+}
+
+.title-text .title-big {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+}
+.title-text .title-big-red {
+    font-style: normal;
+    font-size: 53px;
+    text-align: center;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    padding: 142px 0 0;
+    color: #E01010;
+}
+
+.title-text .title-small {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 21px;
+    text-align: center;
+    letter-spacing: 0.26em;
+    margin-top: 42px;
+}
+
+.history {
+    display: flex;
+    justify-content: space-between;
+    margin: 242px 0;
+}
+
+.history .video, .history .video-vertical {
+    width: 658px;
+    height: 925px;
+    position: relative;
+}
+
+.history .video::before {
+    content: '#womanx2';
+    position: absolute;
+    top: -65px;
+    left: 0;
+    right: 0;
+    color: #E01010;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 90px;
+    letter-spacing: 0.21em;
+    z-index: 1;
+}
+
+.history .video::after {
+    content: '#womanx2';
+    position: absolute;
+    bottom: -55px;
+    left: 0;
+    right: 0;
+    color: #E01010;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 90px;
+    letter-spacing: 0.21em;
+}
+
+.history .video-vertical::before {
+    content: '#womanx2';
+    position: absolute;
+    top: 625px;
+    left: -315px;
+    color: #E01010;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 90px;
+    letter-spacing: 0.21em;
+    z-index: 1;
+    transform: rotate(-90deg);
+}
+
+.history .video-vertical::after {
+    content: '#womanx2';
+    position: absolute;
+    right: -300px;
+    bottom: 625px;
+    color: #E01010;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 90px;
+    letter-spacing: 0.21em;
+    transform: rotate(-90deg);
+}
+
+.history .about {
+    width: 658px;
+    height: 925px;
+    text-align: left;
+}
+.history .about-title {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 45px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+}
+.history .about-info {
+    padding-top: 84px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+}
+.history .about-info .highlighted {
+    color: pink;
+}
+
+.btn-play {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/play-btn.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
