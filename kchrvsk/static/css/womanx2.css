@@ -154,7 +154,49 @@ body {
     font-size: 28px;
 }
 .history .about-info .highlighted {
-    color: pink;
+    color: #FFC1C1;
+}
+
+.reasons {
+    position: relative;
+    width: 100%;
+    height: 769px;
+    background: #E01010;
+}
+
+.reasons::before {
+    content: '#womanx2';
+    top: -212px;
+    position: absolute;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 290px;
+}
+.reasons::after {
+    content: '#womanx2';
+    bottom: -165px;
+    position: absolute;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 290px;
+}
+
+.reasons-list {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #FFC1C1;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
 }
 
 .btn-play {
